@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HomeController@index')->name('homepage');
+Route::get('/admin', 'AdminController@index')->name('dashboard');

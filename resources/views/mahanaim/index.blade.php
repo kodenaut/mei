@@ -235,18 +235,21 @@
                         <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="card card-body">
-                                <h4 class="text-black-50">Post Title<small class="float-right">Date</small> </h4>
-                                <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
-                                <p class=""></p>
+                        <article class="media content-section">
+                            <div class="media-body">
+                                <div class="article-metadata">
+                                    <h2><a class="article-title" href="">Title</a><small class="text-muted float-right" style="font-size: 14px;">Date</small></h2>
+                                </div>
+                                <div class="col-sm-3 float-left">
+                                    <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
+                                </div>
+                                <div class="col-sm-9 float-right">
+                                <p class="article-content">Mahanaim Educational Institute (College) philosophies are based on utilizing the true word and knowledge of the heart that is manifested in the Bible. Through this methodology many students have amazingly acquired progressive and healthy mindsets while evolving into more effective individuals. We have discovered with assurance how people such as Abraham Lincoln and biblical figures such as Joseph and David gained wisdom from the word of God. We have employed education methodologies that will produce leaders for the next generation who will become catalysts of peace and bliss in the society.</p>
                                 <hr>
-                                <h5 class="float-left">Comments<button class="btn btn-info btn-sm float-right">
-                                        <i class="fas fa-info"></i>
-                                    </button> </h5>
+                                    <a class="mr-2 float-right" href="">Author</a>
+                                </div>
                             </div>
-                        </div>
-
+                        </article>
                     </div>
 
                 </div>
@@ -466,23 +469,4 @@
     </section><!-- #contact -->
         </div>
 </main>
-
-
-
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/superfish/hoverIntent.js"></script>
-<script src="lib/superfish/superfish.min.js"></script>
-
-<!-- Contact Form JavaScript File -->
-<script src="contactform/contactform.js"></script>
-
-<!-- Template Main Javascript File -->
-<script src="js/main.js"></script>
 @endsection
