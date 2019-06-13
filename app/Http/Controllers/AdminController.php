@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mission;
+use App\Philosophy;
+use App\Vision;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -14,7 +17,10 @@ class AdminController extends Controller
     public function index()
     {
         //
-        return view('admin.dashboard');
+        $missions = Mission::all();
+        $visions = Vision::all();
+        $philosophies = Philosophy::all();
+        return view('admin.dashboard', compact('missions', 'philosophies', 'visions'));
     }
 
     /**

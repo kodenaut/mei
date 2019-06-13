@@ -14,61 +14,44 @@
                         <div class="container wow fadeIn">
                             <div class="section-header">
                                 <h3 class="section-title">About Us</h3>
-                                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                                <br>
                             </div>
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
-                                        <h4 class="title"><a href="">Overview</a></h4>
-                                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                                    </div>
-                                </div>
+                                @foreach($missions as $mission)
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
                                     <div class="box">
                                         <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
                                         <h4 class="title"><a href="">Mission</a></h4>
-                                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                                        <p class="description">{{ $mission->content }}</p>
                                     </div>
                                 </div>
+                                @endforeach
+
+                                @foreach($visions as $vision)
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                                     <div class="box">
                                         <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
                                         <h4 class="title"><a href="">Vision</a></h4>
-                                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                                        <p class="">{{ $vision->content }}</p>
                                     </div>
                                 </div>
+                                    @endforeach
 
+                                @foreach($philosophies as $philosophy)
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                                     <div class="box">
                                         <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
                                         <h4 class="title"><a href="">Philosophy</a></h4>
-                                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                                        <p class="description">{{ $philosophy->content }}</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
-                                        <h4 class="title"><a href="">Nemo Enim</a></h4>
-                                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
-                                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                                    @endforeach
                         </div>
 
                 <div class="col-lg-6 background order-lg-2 order-1 wow fadeInRight"></div>
+                        </div>
                     </section>
-            </div>
 
-        </div>
 
             <!--==========================
       Team Section
@@ -82,59 +65,20 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="member">
-                                <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                <div class="card card-body">
+                                    <img src="img/team-1.jpg" alt="" style="height: 200px; width: 100%;">
+                                    <div class="caption">
+                                        <h5>Name</h5>
+                                        <span>Position</span>
+                                        <p class="description">Staff short bio...</p>
+                                        <a href="" class="btn btn-info btn-sm float-left">
+                                            <i class="fas fa-info"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member">
-                                <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-                                <h4>Sarah Jhinson</h4>
-                                <span>Product Manager</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member">
-                                <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6">
-                            <div class="member">
-                                <div class="pic"><img src="img/team-4.jpg" alt=""></div>
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
-                                <div class="social">
-                                    <a href=""><i class="fa fa-twitter"></i></a>
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-google-plus"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -155,48 +99,38 @@
                                 <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
                                 <h4 class="title"><a href="">Lorem Ipsum</a></h4>
                                 <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="box">
-                                <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-                                <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="box">
-                                <div class="icon"><a href=""><i class="fa fa-paper-plane"></i></a></div>
-                                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                                <button class="btn btn-info btn-sm float-left" data-toggle="modal" data-target="#school-modal">
+                                    <i class="fas fa-info"></i>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="box">
-                                <div class="icon"><a href=""><i class="fa fa-photo"></i></a></div>
-                                <h4 class="title"><a href="">Magni Dolores</a></h4>
-                                <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="box">
-                                <div class="icon"><a href=""><i class="fa fa-road"></i></a></div>
-                                <h4 class="title"><a href="">Nemo Enim</a></h4>
-                                <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="box">
-                                <div class="icon"><a href=""><i class="fa fa-shopping-bag"></i></a></div>
-                                <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                                <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
             </section><!-- #schools -->
+
+                    <!-- School Modal -->
+                    <div class="modal" id="school-modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">School Name</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <p>
+                                        School description...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal-->
 
     <!--==========================
       Facts Section
@@ -204,19 +138,23 @@
     <section id="facts">
         <div class="container wow fadeIn">
             <div class="section-header">
-                <h3 class="section-title">Events</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <h3 class="section-title">Upcoming Events</h3>
+                <hr>
             </div>
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="card card-body">
+                <div class="col-sm-4">
+                    <div class="card card-body m-2">
                         <h4 class="text-black-50">Event Title<small class="float-right">Date</small> </h4>
-                        <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
-                        <p class=""></p>
-                        <hr>
-                        <h5 class="float-left">Venue<button class="btn btn-info btn-sm float-right">
+                        <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%; height: 200px;">
+                        <div class="caption">
+                            <p class="description">This is the event content...</p>
+                            <h6 class="float-left">Venue</h6>
+                        </div>
+                        <div class="icons">
+                            <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#event-modal" style="width: 25px;">
                                 <i class="fas fa-info"></i>
-                            </button> </h5>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -225,17 +163,38 @@
         </div>
     </section><!-- #facts -->
 
+            <!-- Events Modal-->
+            <div class="modal" id="event-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Event Title</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p>
+                                Mahanaim Educational Institute (College) philosophies are based on utilizing the true word and knowledge of the heart that is manifested in the Bible. Through this methodology many students have amazingly acquired progressive and healthy mindsets while evolving into more effective individuals. We have discovered with assurance how people such as Abraham Lincoln and biblical figures such as Joseph and David gained wisdom from the word of God. We have employed education methodologies that will produce leaders for the next generation who will become catalysts of peace and bliss in the society.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Modal -->
+
     <!--==========================
     Blog Section
     ============================-->
             <section id="facts">
                 <div class="container wow fadeIn">
                     <div class="section-header">
-                        <h3 class="section-title">Blog</h3>
-                        <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                        <h3 class="section-title">Latest Posts</h3>
                     </div>
                     <div class="row">
-                        <article class="media content-section">
+                        <article class="media content-section m-3">
                             <div class="media-body">
                                 <div class="article-metadata">
                                     <h2><a class="article-title" href="">Title</a><small class="text-muted float-right" style="font-size: 14px;">Date</small></h2>
@@ -262,129 +221,21 @@
         <div class="container wow fadeInUp">
             <div class="section-header">
                 <h3 class="section-title">Gallery</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <hr>
             </div>
 
             <div class="row" id="portfolio-wrapper">
                 <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                     <a href="">
-                        <img src="img/portfolio/app1.jpg" alt="">
-                        <div class="details">
+                        <img src="img/portfolio/app1.jpg" alt="" style="width: 100%; height: 100%;">
+                        <div class="details" style="width: 84%;">
                             <h4>App 1</h4>
                             <span>Alored dono par</span>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-                    <a href="">
-                        <img src="img/portfolio/web2.jpg" alt="">
-                        <div class="details">
-                            <h4>Web 2</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-                    <a href="">
-                        <img src="img/portfolio/app3.jpg" alt="">
-                        <div class="details">
-                            <h4>App 3</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <a href="">
-                        <img src="img/portfolio/card1.jpg" alt="">
-                        <div class="details">
-                            <h4>Card 1</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <a href="">
-                        <img src="img/portfolio/card2.jpg" alt="">
-                        <div class="details">
-                            <h4>Card 2</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-                    <a href="">
-                        <img src="img/portfolio/web3.jpg" alt="">
-                        <div class="details">
-                            <h4>Web 3</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-                    <a href="">
-                        <img src="img/portfolio/card3.jpg" alt="">
-                        <div class="details">
-                            <h4>Card 3</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-                    <a href="">
-                        <img src="img/portfolio/app2.jpg" alt="">
-                        <div class="details">
-                            <h4>App 2</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-                    <a href="">
-                        <img src="img/portfolio/logo1.jpg" alt="">
-                        <div class="details">
-                            <h4>Logo 1</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-                    <a href="">
-                        <img src="img/portfolio/logo3.jpg" alt="">
-                        <div class="details">
-                            <h4>Logo 3</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-                    <a href="">
-                        <img src="img/portfolio/web1.jpg" alt="">
-                        <div class="details">
-                            <h4>Web 1</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-                    <a href="">
-                        <img src="img/portfolio/logo2.jpg" alt="">
-                        <div class="details">
-                            <h4>Logo 2</h4>
-                            <span>Alored dono par</span>
-                        </div>
-                    </a>
-                </div>
 
             </div>
 
@@ -413,17 +264,18 @@
                     <div class="info">
                         <div>
                             <i class="fa fa-map-marker"></i>
-                            <p>A108 Adam Street<br>New York, NY 535022</p>
+                            <p>Off Thika Road<br>Behind Safari Park Hotel<br>
+                            Next to USIU University</p>
                         </div>
 
                         <div>
                             <i class="fa fa-envelope"></i>
-                            <p>info@example.com</p>
+                            <p>info@mahanaim.ac.ke</p>
                         </div>
 
                         <div>
                             <i class="fa fa-phone"></i>
-                            <p>+1 5589 55488 55s</p>
+                            <p>+254 701033228</p>
                         </div>
                     </div>
 
@@ -431,7 +283,6 @@
                         <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
                         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                     </div>
 
@@ -439,8 +290,6 @@
 
                 <div class="col-lg-5 col-md-8">
                     <div class="form">
-                        <div id="sendmessage">Your message has been sent. Thank you!</div>
-                        <div id="errormessage"></div>
                         <form action="" method="post" role="form" class="contactForm">
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -456,9 +305,8 @@
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                                <div class="validation"></div>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="form-group"><button type="submit" style="width: 100%;">Send Message</button></div>
                         </form>
                     </div>
                 </div>

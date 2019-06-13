@@ -49,14 +49,10 @@ Header
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-                <li class="menu-active"><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Schools</a></li>
-                <li><a href="#portfolio">Gallery</a></li>
-                <li><a href="#team">Staff</a></li>
+                <li class="menu-active"><a href="{{route('homepage')}}">Home</a></li>
+                <li><a href="{{route('about-us')}}">About</a></li>
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
-                        <li><a href="#">Schools</a></li>
                         <li><a href="#">Courses</a></li>
                         <li><a href="#">Examination</a></li>
                     </ul>
@@ -69,6 +65,7 @@ Header
                         <li><a href="#">E-Learning</a></li>
                     </ul>
                 </li>
+                <li><a href="#portfolio">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav><!-- #nav-menu-container -->

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mission;
 use App\Philosophy;
-use App\Vision;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class PhilosophyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,8 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $visions = Vision::all();
-        $missions = Mission::all();
         $philosophies = Philosophy::all();
-        return view('mahanaim.index', compact('missions', 'philosophies', 'visions'));
+        return view('mahanaim.index', compact('philosophies'));
     }
 
     /**
@@ -64,6 +60,8 @@ class HomeController extends Controller
     public function edit($id)
     {
         //
+        $philosophy = Philosophy::find($id);
+        return view('admin.update-philosophy', compact('philosophy'));
     }
 
     /**
@@ -76,6 +74,15 @@ class HomeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'content'=>'required',
+        ]);
+
+        $philosophy = Philosophy::find($id);
+        $philosophy->content = $request->get('content');
+
+        $philosophy->save();
+        return redirect('/admin')->with('success', 'Philosophy Has Been Updated!');
     }
 
     /**

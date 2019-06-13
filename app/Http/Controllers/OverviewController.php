@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Mission;
-use App\Philosophy;
-use App\Vision;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class OverviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $visions = Vision::all();
-        $missions = Mission::all();
-        $philosophies = Philosophy::all();
-        return view('mahanaim.index', compact('missions', 'philosophies', 'visions'));
+        return view('admin.overview');
     }
 
     /**

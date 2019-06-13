@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mission;
 use App\Philosophy;
-use App\Vision;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class MissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $visions = Vision::all();
         $missions = Mission::all();
-        $philosophies = Philosophy::all();
-        return view('mahanaim.index', compact('missions', 'philosophies', 'visions'));
+        return view('mahanaim.index', compact('missions'));
     }
 
     /**
@@ -30,7 +27,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -53,6 +50,7 @@ class HomeController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -64,6 +62,8 @@ class HomeController extends Controller
     public function edit($id)
     {
         //
+        $mission = Mission::find($id);
+        return view('admin.update-mission', compact('mission'));
     }
 
     /**
@@ -76,6 +76,15 @@ class HomeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'content'=>'required',
+            ]);
+
+        $mission = Mission::find($id);
+        $mission->content = $request->get('content');
+
+        $mission->save();
+        return redirect('/admin')->with('success', 'Mission Has Been Updated!');
     }
 
     /**

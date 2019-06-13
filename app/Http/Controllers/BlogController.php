@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mission;
-use App\Philosophy;
-use App\Vision;
+use App\Post;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,8 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $visions = Vision::all();
-        $missions = Mission::all();
-        $philosophies = Philosophy::all();
-        return view('mahanaim.index', compact('missions', 'philosophies', 'visions'));
+        $posts = Post::all();
+        return view('admin.blog', compact('posts'));
     }
 
     /**
@@ -31,6 +27,7 @@ class HomeController extends Controller
     public function create()
     {
         //
+        return view('admin.add-post');
     }
 
     /**
