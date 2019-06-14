@@ -17,24 +17,30 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('add-staff') }}" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" name="salutation" placeholder="Mr/Mrs/Miss...">
+                            <label class="control-label">Salutation:</label>
+                            <input type="text" class="form-control" name="salutation">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="fname" placeholder="First Name...">
+                            <label class="control-label">First Name:</label>
+                            <input type="text" class="form-control" name="fname">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="sname" placeholder="Last Name...">
+                            <label class="control-label">Last Name:</label>
+                            <input type="text" class="form-control" name="sname">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="position" placeholder="Position...">
+                            <label class="control-label">Position:</label>
+                            <input type="text" class="form-control" name="position">
                         </div>
                         <div class="form-group">
-                            <textarea type="text" class="form-control" name="bio" rows="4" placeholder="Short Bio..."></textarea>
+                            <label class="control-label">Bio:</label>
+                            <textarea type="text" class="form-control" name="bio" rows="2"></textarea>
                         </div>
                         <div class="form-group">
+                            <label class="control-label">Passport:</label>
                             <input type="file" class="form-control" name="passport">
                         </div>
                         <div class="form-group">
@@ -59,14 +65,16 @@
                     <hr>
                 </div>
                 <div class="row">
+
+                    @foreach($staffs as $staff)
                     <div class="col-lg-3 col-md-6">
                         <div class="member">
                             <div class="card card-body">
                                 <img src="img/team-1.jpg" alt="">
                             <div class="caption">
-                                <h5>Name</h5>
-                                <span>Position</span>
-                                <p class="description">Staff short bio...</p>
+                                <h5>{{ $staff->salutation }} {{ $staff->first_name }}</h5>
+                                <span>{{ $staff->position }}</span>
+                                <p class="description">{{ $staff->bio }}</p>
                                 <a href="" class="btn btn-info btn-sm float-left">
                                     <i class="fas fa-info"></i>
                                 </a>
@@ -80,6 +88,7 @@
                             </div>
                         </div>
                     </div>
+                        @endforeach
                 </div>
 
             </div>

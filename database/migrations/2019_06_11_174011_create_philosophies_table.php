@@ -14,7 +14,7 @@ class CreatePhilosophiesTable extends Migration
     public function up()
     {
         Schema::create('philosophies', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->longText('content');
             $table->timestamps();
         });

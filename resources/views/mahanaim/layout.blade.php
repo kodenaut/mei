@@ -8,8 +8,7 @@
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link href="{{asset('img/favicon.png')}}" rel="icon">
-    <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{asset('images/icon/logo.jpg')}}" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
@@ -42,7 +41,7 @@ Header
     <div class="container">
 
         <div id="logo" class="pull-left">
-            <a href="#hero"><img src="{{asset('img/logo.png')}}" alt="" title="" /></a>
+            <a href="{{route('homepage')}}"><img src="{{asset('img/logo.png')}}" alt="" title="" /></a>
             <!-- Uncomment below if you prefer to use a text logo -->
             <!--<h1><a href="#hero">Regna</a></h1>-->
         </div>

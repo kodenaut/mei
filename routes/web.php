@@ -31,3 +31,6 @@ Route::get('/posts', 'BlogController@index')->name('posts');
 Route::get('/add-post', 'BlogController@create')->name('add-post');
 Route::get('/events', 'EventController@index')->name('events');
 Route::get('/about-us', 'AboutController@index')->name('about-us');
+Route::post('/add-photo', 'GalleryController@store')->name('add-photo');
+Route::post('/add-school', 'SchoolController@store')->name('add-school');
+Route::post('/add-staff', 'StaffController@store')->name('add-staff');

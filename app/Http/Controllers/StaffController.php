@@ -38,6 +38,33 @@ class StaffController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'salutation' => 'required',
+            'fname' => 'required',
+            'sname' => 'required',
+            'position' => 'required',
+            'bio' => 'required',
+            'passport' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        //save the data to the database
+        $staff  = new Staff() ;
+        $staff->first_name = $request->fname;
+        $staff->last_name = $request->sname;
+        $staff->position = $request->position;
+        $staff->bio = $request->bio;
+
+        if($request->hasFile('passport')){
+            $passport = $request->file('passport');
+            $filename = time() . '.' . $passport->getClientOriginalExtension();
+            $passport->move(public_path('/uploads/' . $filename ));
+            $staff->passport = $filename;
+            $staff->save();
+
+            return redirect()->route('staffs')
+                ->with('success','Staff Added successfully');
+        };
+
+        return redirect()->route('staffs');
     }
 
     /**

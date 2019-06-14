@@ -8,6 +8,7 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <link href="{{asset('images/icon/logo.jpg')}}" rel="icon">
 
     <!-- Title Page-->
     <title>Dashboard</title>
@@ -39,12 +40,12 @@
 <body class="animsition">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
-    <header class="header-mobile d-block d-lg-none">
+    <header class="header-mobile d-block d-lg-none" >
         <div class="header-mobile__bar">
             <div class="container-fluid">
                 <div class="header-mobile-inner">
                     <a class="logo" href="">
-                        <img src="{{asset('img/logo.png')}}" alt="CoolAdmin" />
+                        <img src="{{asset('img/logo.png')}}" alt="Mahanaim College" />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -54,9 +55,9 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar-mobile">
-            <div class="container-fluid">
-                <ul class="navbar-mobile__list list-unstyled">
+        <nav class="navbar-mobile" style="background: black; height: 100%;">
+            <div class="container-fluid" >
+                <ul class="navbar-mobile__list list-unstyled" style="background: black; height: 100%;">
                     <li class="has-sub">
                         <a class="js-arrow" href="{{route('dashboard')}}">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
@@ -107,7 +108,7 @@
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar">
+            <nav class="navbar-sidebar" style="background: black; height: 100%;">
                 <ul class="list-unstyled navbar__list">
                     <li class="has-sub">
                         <a class="js-arrow" href="{{route('dashboard')}}">

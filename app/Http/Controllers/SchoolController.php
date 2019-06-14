@@ -38,6 +38,29 @@ class SchoolController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        //save the data to the database
+        $school  = new School() ;
+        $school->name = $request->name;
+        $school->description = $request->description;
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/' . $filename ));
+            $school->image = $filename;
+            $school->save();
+
+            return redirect()->route('schools')
+                ->with('success','School Added successfully');
+        };
+
+        return redirect()->route('schools');
+
     }
 
     /**

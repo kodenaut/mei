@@ -14,7 +14,7 @@ class CreateCoursesTable extends Migration
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name');
             $table->string('qualification');
             $table->string('duration');
@@ -22,7 +22,9 @@ class CreateCoursesTable extends Migration
             $table->string('exam_body');
             $table->string('mode');
 
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->integer('school_id')->unsigned();
+
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
 
             $table->timestamps();
         });

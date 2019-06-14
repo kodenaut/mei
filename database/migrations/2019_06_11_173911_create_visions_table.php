@@ -14,7 +14,7 @@ class CreateVisionsTable extends Migration
     public function up()
     {
         Schema::create('visions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->longText('content');
             $table->timestamps();
         });

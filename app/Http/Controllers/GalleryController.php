@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Photo;
 use Illuminate\Http\Request;
 
+
 class GalleryController extends Controller
 {
     /**
@@ -37,6 +38,28 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'caption' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        //save the data to the database
+        $photo  = new Photo ;
+        $photo->caption = $request->caption;
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/uploads/' . $filename ));
+            $photo->image = $filename;
+            $photo->save();
+
+            return redirect()->route('photos')
+                ->with('success','Photo Added successfully');
+        };
+
+        return redirect()->route('photos');
+
+
     }
 
     /**

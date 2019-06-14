@@ -23,16 +23,16 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">New Staff</h4>
+                        <h4 class="modal-title">New Photo</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="post" action="{{route('add-photo')}}" class="form-horizontal" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <textarea type="text" class="form-control" name="bio" rows="2">Caption...</textarea>
+                                <textarea type="text" class="form-control" name="caption" rows="2" placeholder="Caption..."></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="file" class="form-control" name="image">
@@ -48,15 +48,17 @@
         <!-- End of Modal -->
 
         <div class="row" id="portfolio-wrapper">
+
+            @foreach($photos as $photo)
             <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                 <a href="">
                     <img src="img/portfolio/app1.jpg" alt="" style="width: 100%; height: 100%;">
                     <div class="details">
-                        <h4>App 1</h4>
-                        <span>Alored dono par</span>
+                        <span>{{ $photo->caption }}</span>
                     </div>
                 </a>
             </div>
+                @endforeach
         </div>
 
     </div>

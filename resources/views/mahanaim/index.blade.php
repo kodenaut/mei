@@ -59,6 +59,7 @@
             <section id="team">
                 <div class="container wow fadeInUp">
                     <div class="section-header">
+                        <br><br><br>
                         <h3 class="section-title">Staff</h3>
                         <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
                     </div>
@@ -90,8 +91,10 @@
             <section id="services">
                 <div class="container wow fadeIn">
                     <div class="section-header">
+                        <br><br><br>
                         <h3 class="section-title">Schools</h3>
                         <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                        <br>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
@@ -102,6 +105,7 @@
                                 <button class="btn btn-info btn-sm float-left" data-toggle="modal" data-target="#school-modal">
                                     <i class="fas fa-info"></i>
                                 </button>
+                                <a href="" class="btn btn-danger btn-sm float-right"><i class="fas fa-book-open">&nbsp;Courses</i> </a>
                             </div>
                         </div>
 
