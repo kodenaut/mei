@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use App\Mission;
+use App\Partner;
 use App\Philosophy;
+use App\Photo;
+use App\Post;
+use App\School;
+use App\Staff;
 use App\Vision;
 use Illuminate\Http\Request;
 
@@ -20,7 +26,14 @@ class HomeController extends Controller
         $visions = Vision::all();
         $missions = Mission::all();
         $philosophies = Philosophy::all();
-        return view('mahanaim.index', compact('missions', 'philosophies', 'visions'));
+        $staffs = Staff::all();
+        $schools = School::all();
+        $posts = Post::all();
+        $events = Event::all();
+        $photos = Photo::all();
+        $partners = Partner::all();
+        return view('mahanaim.index', compact('missions', 'philosophies', 'visions',
+            'schools', 'staffs', 'posts', 'photos', 'events', 'partners'));
     }
 
     /**

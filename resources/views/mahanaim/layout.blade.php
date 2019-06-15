@@ -64,6 +64,8 @@ Header
                         <li><a href="#">E-Learning</a></li>
                     </ul>
                 </li>
+                <li><a href="{{route('our-posts')}}">Blog</a></li>
+                <li><a href="{{route('our-events')}}">Events</a></li>
                 <li><a href="#portfolio">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>

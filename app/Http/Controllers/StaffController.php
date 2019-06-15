@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Staff;
+use Illuminate\Support\Facades\DB;
 
 class StaffController extends Controller
 {
@@ -98,9 +99,25 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $salutation = $request->get('salutation');
+        $first_name = $request->get('fname');
+        $last_name = $request->get('sname');
+        $position = $request->get('position');
+        $bio = $request->get('bio');
 
+        if ($request->hasFile('passport')) {
+            $passport = $request->file('passport');
+            $filename = time() . '.' . $passport->getClientOriginalExtension();
+            $passport->move(public_path('/uploads/' . $filename));
+
+            DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?,
+                            position = ?, bio = ?, passport = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $bio, $filename, $id]);
+            return redirect('/staffs')->with('success', 'Staff Has Been Updated!');
+        }else {
+            DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?, position = ?, bio = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $bio, $id]);
+            return redirect('/staffs')->with('success', 'Staff Has Been Updated!');
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *

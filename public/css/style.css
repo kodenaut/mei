@@ -563,11 +563,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #about .description {
   font-size: 14px;
-  line-height: 18px;
   white-space: nowrap;
-  height: 98%;
-  overflow:hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%
 }
 
 
@@ -607,6 +604,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   border: 1px solid #e6e6e6;
   height: 200px;
+  position: relative;
+  background: #fafafa;
+}
+
+#services .boxmodal {
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  height: 300px;
   position: relative;
   background: #fafafa;
 }
@@ -664,12 +669,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #services .description {
   font-size: 14px;
   white-space: nowrap;
-  height: 20px;
   max-height: 3.6em;
   max-lines: 5;
-  line-height: 1.8em;
-  overflow:hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%
 }
 
 /* Call To Action Section

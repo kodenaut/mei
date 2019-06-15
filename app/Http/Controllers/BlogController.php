@@ -85,4 +85,9 @@ class BlogController extends Controller
     {
         //
     }
+
+    public function posts(){
+        $posts = Post::all();
+        return view('mahanaim.posts', compact('posts'));
+    }
 }

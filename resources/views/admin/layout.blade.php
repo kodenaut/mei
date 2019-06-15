@@ -21,6 +21,8 @@
 
     <!-- Bootstrap CSS-->
     <link href="{{asset('vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 
     <!-- Vendor CSS-->
     <link href="{{asset('vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
@@ -90,9 +92,13 @@
                         <a href="{{route('photos')}}">
                             <i class="fas fa-photo"></i>Gallery</a>
                     </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
+                    <li>
+                        <a href="#">
                             <i class="fas fa-copy"></i>Admissions</a>
+                    </li>
+                    <li>
+                        <a href="{{route('partners')}}">
+                            <i class="fas fa-copy"></i>Partners</a>
                     </li>
                 </ul>
             </div>
@@ -108,7 +114,7 @@
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar" style="background: black; height: 100%;">
+            <nav class="navbar-sidebar" style="background: black; height: 105%; padding-top: 0; padding-bottom: 0;">
                 <ul class="list-unstyled navbar__list">
                     <li class="has-sub">
                         <a class="js-arrow" href="{{route('dashboard')}}">
@@ -142,9 +148,13 @@
                         <a href="{{route('photos')}}">
                             <i class="fas fa-photo"></i>Gallery</a>
                     </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
+                    <li>
+                        <a href="#">
                             <i class="fas fa-copy"></i>Admissions</a>
+                    </li>
+                    <li>
+                        <a href="{{route('partners')}}">
+                            <i class="fas fa-copy"></i>Partners</a>
                     </li>
                 </ul>
             </nav>

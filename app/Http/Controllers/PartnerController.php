@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\School;
-use Illuminate\Support\Facades\DB;
+use App\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class SchoolController extends Controller
+class PartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class SchoolController extends Controller
     public function index()
     {
         //
-        $schools = School::all();
-        return view('admin.schools', compact('schools'));
+        $partners = Partner::all();
+        return view('admin.partners', compact('partners'));
     }
 
     /**
@@ -41,27 +41,25 @@ class SchoolController extends Controller
         //
         $this->validate($request, array(
             'name' => 'required',
-            'description' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'country' => 'required',
+            'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ));
         //save the data to the database
-        $school  = new School() ;
-        $school->name = $request->name;
-        $school->description = $request->description;
+        $partner  = new Partner() ;
+        $partner->name = $request->name;
+        $partner->country = $request->country;
 
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/' . $filename ));
-            $school->image = $filename;
-            $school->save();
+        if($request->hasFile('logo')){
+            $logo = $request->file('logo');
+            $filename = time() . '.' . $logo->getClientOriginalExtension();
+            $logo->move(public_path('/uploads/' . $filename ));
+            $partner->logo = $filename;
+            $partner->save();
 
-            return redirect()->route('schools')
-                ->with('success','School Added successfully');
+            return redirect()->route('partners')
+                ->with('success','Partner Added successfully');
         };
-
-        return redirect()->route('schools');
-
+        return redirect()->route('partners');
     }
 
     /**
@@ -97,18 +95,19 @@ class SchoolController extends Controller
     {
         //
         $name = $request->get('name');
-        $description = $request->get('description');
+        $country = $request->get('country');
+        $link = $request->get('link');
 
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/' . $filename));
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $filename = time() . '.' . $logo->getClientOriginalExtension();
+            $logo->move(public_path('/uploads/' . $filename));
 
-            DB::update("UPDATE schools set name = ?, description = ?, image = ? WHERE id = ?", [$name, $description, $filename, $id]);
-            return redirect('/schools')->with('success', 'School Has Been Updated!');
+            DB::update("UPDATE partners set name = ?, country = ?, link = ? logo = ? WHERE id = ?", [$name, $country, $link, $filename, $id]);
+            return redirect('/partners')->with('success', 'Partner Has Been Updated!');
         }else {
-            DB::update("UPDATE schools set name = ?, description = ? WHERE id = ?", [$name, $description, $id]);
-            return redirect('/schools')->with('success', 'School Has Been Updated!');
+            DB::update("UPDATE partners set name = ?, country = ?, link = ? WHERE id = ?", [$name, $country, $link, $id]);
+            return redirect('/partners')->with('success', 'Partner Has Been Updated!');
         }
     }
 

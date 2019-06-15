@@ -6,7 +6,7 @@
     <section id="facts">
         <div class="container wow fadeIn">
             <div class="section-header">
-                <a href="{{route('add-post')}}" class="btn btn-outline-info btn-sm float-right" style="margin: 2px;">Add Event
+                <a href="{{route('add-event')}}" class="btn btn-outline-info btn-sm float-right" style="margin: 2px;">Add Event
                     <i class="fas fa-plus-circle"></i>
                 </a>
                 <h3 class="section-title">Events</h3>

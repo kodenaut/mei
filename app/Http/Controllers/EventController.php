@@ -27,6 +27,7 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('admin.add-event');
     }
 
     /**
@@ -83,5 +84,10 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function events(){
+        $events = Event::all();
+        return view('mahanaim.events', compact('events'));
     }
 }
