@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 
 class GalleryController extends Controller
@@ -48,9 +50,9 @@ class GalleryController extends Controller
 
         if($request->hasFile('image')){
             $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/' . $filename ));
-            $photo->image = $filename;
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());;
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+            $photo->image = $url;
             $photo->save();
 
             return redirect()->route('photos')
@@ -94,6 +96,19 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $caption = $request->get('caption');
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+
+            DB::update("UPDATE photos set caption = ?, image = ? WHERE id = ?", [$caption, $url, $id]);
+            return redirect('/photos')->with('success', 'Image Has Been Updated!');
+        }else {
+            DB::update("UPDATE photos set caption = ?, WHERE id = ?", [$caption, $id]);
+            return redirect('/photos')->with('success', 'Image Has Been Updated!');
+        }
     }
 
     /**
@@ -105,5 +120,9 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         //
+        $photo = Photo::find($id);
+        $photo->delete();
+        return redirect()->route('photos')
+            ->with('success','Photo Deleted successfully');
     }
 }

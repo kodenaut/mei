@@ -52,13 +52,55 @@
             @foreach($photos as $photo)
             <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                 <a href="">
-                    <img src="img/portfolio/app1.jpg" alt="" style="width: 100%; height: 100%;">
+                    <img src="{{$photo->image}}" alt="" style="width: 100%; height: 100%;">
                     <div class="details">
                         <span>{{ $photo->caption }}</span>
+                        <button class="btn btn-success btn-sm float-left m-1" data-toggle="modal" data-target="#updatemodal-{{ $photo->id }}">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <a class="btn btn-danger btn-sm float-right m-1"  href="{{route('delete-photo', $photo->id)}}" onclick='return confirm("Delete Photo??")'>
+                            <i class="fas fa-trash"></i>
+                        </a>
                     </div>
                 </a>
             </div>
-                @endforeach
+
+                <!-- Update Modal -->
+                <div class="modal" id="updatemodal-{{ $photo->id }}">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Update Image</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Update body -->
+                            <div class="modal-body">
+                                <form method="post" class="form-horizontal" action="{{route('update-photo', $photo->id)}}" enctype="multipart/form-data">
+                                    @csrf
+
+                                    <div class="form-group">
+                                        <label class="control-label">Caption:</label>
+                                        <textarea type="text" class="form-control" name="description" rows="4">{{ $photo->caption }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Image:</label>
+                                        <input type="file" name="image" class="form-control" value="{{ $photo->image }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-info">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of Modal-->
+
+            @endforeach
         </div>
 
     </div>

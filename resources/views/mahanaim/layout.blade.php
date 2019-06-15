@@ -52,7 +52,7 @@ Header
                 <li><a href="{{route('about-us')}}">About</a></li>
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
-                        <li><a href="#">Courses</a></li>
+                        <li><a href="#services">Schools</a></li>
                         <li><a href="#">Examination</a></li>
                     </ul>
                 </li>

@@ -58,7 +58,7 @@
             </div>
         </div>
         <nav class="navbar-mobile" style="background: black; height: 100%;">
-            <div class="container-fluid" >
+            <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled" style="background: black; height: 100%;">
                     <li class="has-sub">
                         <a class="js-arrow" href="{{route('dashboard')}}">

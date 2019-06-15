@@ -15,11 +15,10 @@ class CreateStaffTable extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('salutation')->nullable();
+            $table->string('salutation');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('position');
-            $table->longText('bio');
             $table->string('passport');
 
             $table->timestamps();

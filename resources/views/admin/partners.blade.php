@@ -63,7 +63,7 @@ Schools Section
                 @foreach($partners as $partner)
                     <div class="partner text-center m-3">
                         <a href="{{ $partner->link }}" target="_blank">
-                            <img class="rounded-circle" src="{{asset('img/logo.png')}}" alt="Name" style="height: 120px; width: 120px;">
+                            <img class="rounded-circle mx-auto d-block" src="{{$partner->logo}}" alt="Name" style="height: 120px; width: 120px;">
                         </a>
                         <div class="caption">
                             <h6>{{ $partner->name }}</h6>
@@ -72,7 +72,7 @@ Schools Section
                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#update-{{ $partner->id }}">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <a href="" class="btn btn-danger btn-sm">
+                            <a href="{{route('delete-partner', $partner->id)}}" class="btn btn-danger btn-sm" onclick='return confirm("Delete Partner {{ $partner->name }}??")'>
                                 <i class="fas fa-trash"></i>
                             </a>
                         </div>

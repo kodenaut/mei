@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\School;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class SchoolController extends Controller
 {
@@ -51,9 +52,9 @@ class SchoolController extends Controller
 
         if($request->hasFile('image')){
             $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/' . $filename ));
-            $school->image = $filename;
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+            $school->image = $url;
             $school->save();
 
             return redirect()->route('schools')
@@ -101,10 +102,10 @@ class SchoolController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('/uploads/' . $filename));
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
 
-            DB::update("UPDATE schools set name = ?, description = ?, image = ? WHERE id = ?", [$name, $description, $filename, $id]);
+            DB::update("UPDATE schools set name = ?, description = ?, image = ? WHERE id = ?", [$name, $description, $url, $id]);
             return redirect('/schools')->with('success', 'School Has Been Updated!');
         }else {
             DB::update("UPDATE schools set name = ?, description = ? WHERE id = ?", [$name, $description, $id]);
@@ -121,5 +122,8 @@ class SchoolController extends Controller
     public function destroy($id)
     {
         //
+        $school = School::find($id);
+        $school->delete();
+        return redirect('/schools')->with('success', 'School Has Been Deleted!');
     }
 }

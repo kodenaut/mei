@@ -2,6 +2,7 @@
 
 @section('content')
     <main id="main">
+        <div class="container">
         <div class="row about-container">
 
             <div class="col-lg-12 content order-lg-1 order-2">
@@ -42,6 +43,8 @@
                         </div>
                     </div>
                 </section>
+                <br>
+                <hr>
 
                 <!-- Messages -->
                 <section id="messages">
@@ -130,6 +133,7 @@
 
             </div>
 
+        </div>
         </div>
     </main>
     @endsection

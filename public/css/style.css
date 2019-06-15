@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu ul li a:hover {
   background: #2dc997;
-  color: #fff;
+  color: #0c5460;
 }
 
 .nav-menu ul ul {
@@ -495,7 +495,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* About Us Section
 --------------------------------*/
 #about {
-  background: white;
+  background: #fff;
   background-size: cover;
   padding-top: 35px;
   padding-bottom: 30px;
@@ -508,7 +508,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 1px solid #e6e6e6;
   height: 200px;
   position: relative;
-  background: #fafafa;
+  background: #e2f0fb;
 }
 
 #about .icon {
@@ -538,8 +538,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .box:hover .icon {
-  background: #fff;
-  border: 2px solid #2dc997;
+  background: #2dc997;
+  border: 1px solid #2dc997;
 }
 
 #about .box:hover .icon i {
@@ -605,7 +605,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 1px solid #e6e6e6;
   height: 200px;
   position: relative;
-  background: #fafafa;
+  background: #e2f0fb;
 }
 
 #services .boxmodal {

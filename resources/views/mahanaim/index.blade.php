@@ -51,6 +51,74 @@
                 <div class="col-lg-6 background order-lg-2 order-1 wow fadeInRight"></div>
                         </div>
                     </section>
+                    <br>
+                    <hr>
+
+                    <!--==========================
+   Schools Section
+ ============================-->
+                    <section id="services">
+                        <div class="container wow fadeIn">
+                            <div class="section-header">
+                                <h3 class="section-title">Schools</h3>
+                                <p class="section-description">Mahanaim Eduacational Institute Has A Variety of Schools:</p>
+                                <br><br>
+                            </div>
+                            <div class="row">
+                                @foreach($schools as $school)
+                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="box">
+                                            <div class="icon"><a href=""><img src="{{asset('uploads')}}/{{$school->image}}"></a></div>
+                                            <h4 class="title"><a href="">{{ $school->name }}</a></h4>
+                                            <p class="description">{{ $school->description }}</p>
+                                            <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#courses-{{ $school->id }}"><i class="fas fa-book-open">&nbsp;Courses</i> </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- School Modal -->
+                                    <div class="modal" id="courses-{{ $school->id }}">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">{{ $school->name }} Courses</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <div class="boxmodal">
+                                                                <table class="table" style="margin: 0 auto;">
+                                                                    <tr><td>Name</td></tr>
+                                                                    <tr><td>Qualification</td></tr>
+                                                                    <tr><td>Duration</td></tr>
+                                                                    <tr><td>Modules</td></tr>
+                                                                    <tr><td>Exam Body</td></tr>
+                                                                    <tr><td>Mode</td></tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End of Modal-->
+
+                                @endforeach
+
+                            </div>
+
+                        </div>
+                    </section><!-- #schools -->
+                    <br>
+                <hr>
 
 
             <!--==========================
@@ -59,7 +127,7 @@
             <section id="team">
                 <div class="container wow fadeInUp">
                     <div class="section-header">
-                        <br><br><br>
+                        <br>
                         <h3 class="section-title">Staff</h3>
                         <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
                     </div>
@@ -69,40 +137,14 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="member">
                                 <div class="card card-body">
-                                    <img src="img/team-1.jpg" alt="" style="height: 200px; width: 100%;">
+                                    <img src="{{ $staff->passport }}" class="rounded-circle mx-auto d-block" alt="" style="height: 150px; width: 150px;">
                                     <div class="caption">
                                         <h5>{{ $staff->salutation }}&nbsp;{{ $staff->first_name }}</h5>
                                         <span>{{ $staff->position }}</span>
-                                        <p class="description">{{ $staff->bio }}</p>
-                                        <button class="btn btn-info btn-sm float-left" data-toggle="modal" data-target="#staff-{{ $staff->id }}">
-                                            <i class="fas fa-info"></i>
-                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                            <!--  Modal -->
-                            <div class="modal" id="staff-{{ $staff->id }}">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">{{ $staff->salutation }} {{ $staff->first_name }}</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <p>{{ $staff->bio }}</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <p>{{ $staff->position }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Modal -->
                             @endforeach
 
                     </div>
@@ -110,72 +152,8 @@
                 </div>
             </section><!-- #team -->
 
-            <!--==========================
-     Schools Section
-   ============================-->
-            <section id="services">
-                <div class="container wow fadeIn">
-                    <div class="section-header">
-                        <br><br><br>
-                        <h3 class="section-title">Schools</h3>
-                        <p class="section-description">Mahanaim Eduacational Institute Has A Variety of Schools:</p>
-                        <br><br>
-                    </div>
-                    <div class="row">
-                        @foreach($schools as $school)
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="box">
-                                <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
-                                <h4 class="title"><a href="">{{ $school->name }}</a></h4>
-                                <p class="description">{{ $school->description }}</p>
-                                <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#courses-{{ $school->id }}"><i class="fas fa-book-open">&nbsp;Courses</i> </button>
-                            </div>
-                        </div>
-
-                            <!-- School Modal -->
-                            <div class="modal" id="courses-{{ $school->id }}">
-                                <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-
-                                        <!-- Modal Header -->
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">{{ $school->name }} Courses</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-
-                                        <!-- Modal body -->
-                                        <div class="modal-body">
-                                            <div class="row">
-                                            <div class="col-sm-3">
-                                            <div class="boxmodal">
-                                            <table class="table" style="margin: 0 auto;">
-                                                <tr><td>Name</td></tr>
-                                                <tr><td>Qualification</td></tr>
-                                                <tr><td>Duration</td></tr>
-                                                <tr><td>Modules</td></tr>
-                                                <tr><td>Exam Body</td></tr>
-                                                <tr><td>Mode</td></tr>
-                                            </table>
-                                            </div>
-                                            </div>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End of Modal-->
-
-                            @endforeach
-
-                    </div>
-
-                </div>
-            </section><!-- #schools -->
-
-
+                    <br>
+                    <hr>
 
     <!--==========================
       Facts Section
@@ -248,7 +226,7 @@
                                     <h2><a class="article-title" href="">{{ $post->title }}</a><small class="text-muted float-right" style="font-size: 14px;">{{ $post->date }}</small></h2>
                                 </div>
                                 <div class="col-sm-3 float-left">
-                                    <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
+                                    <img src="{{$post->image}}" alt="" style="width: 100%;">
                                 </div>
                                 <div class="col-sm-9 float-right">
                                 <p class="article-content">{{ $post->content }}</p>
@@ -263,6 +241,8 @@
                 </div>
             </section>
 
+                    <br>
+                    <hr>
     <!--==========================
       Portfolio Section
     ============================-->
@@ -278,7 +258,7 @@
                 @foreach($photos as $photo)
                 <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                     <a href="">
-                        <img src="img/portfolio/app1.jpg" alt="" style="width: 100%; height: 100%;">
+                        <img src="{{$photo->image}}" alt="" style="">
                         <div class="details" style="width: 84%;">
                             <span>{{ $photo->caption }}</span>
                         </div>
@@ -290,9 +270,10 @@
 
         </div>
     </section><!-- #portfolio -->
+                    <br>
+                    <hr>
 
 
-                    <div class="row">
                         <!--==========================
                     Schools Section
                     ============================-->
@@ -308,7 +289,7 @@
                                     @foreach($partners as $partner)
                                         <div class="partner text-center m-3">
                                             <a href="{{ $partner->link }}" target="_blank">
-                                                <img class="rounded-circle" src="{{asset('img/logo.png')}}" alt="Name" style="height: 120px; width: 120px;">
+                                                <img class="rounded-circle" src="{{$partner->logo}}" alt="Name" style="height: 120px; width: 120px;">
                                             </a>
                                             <div class="caption">
                                                 <h6>{{ $partner->name }}</h6>
@@ -319,7 +300,8 @@
                                 </div>
                             </div>
                         </section>
-                    </div>
+                    <br>
+                    <hr>
 
 
                                         <!--==========================

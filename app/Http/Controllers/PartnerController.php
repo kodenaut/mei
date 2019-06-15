@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class PartnerController extends Controller
 {
@@ -42,18 +43,20 @@ class PartnerController extends Controller
         $this->validate($request, array(
             'name' => 'required',
             'country' => 'required',
+            'link' => 'required',
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ));
         //save the data to the database
         $partner  = new Partner() ;
         $partner->name = $request->name;
         $partner->country = $request->country;
+        $partner->link = $request->link;
 
         if($request->hasFile('logo')){
             $logo = $request->file('logo');
-            $filename = time() . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('/uploads/' . $filename ));
-            $partner->logo = $filename;
+            $logo->move(public_path().'/uploads', $logo->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $logo->getClientOriginalName();
+            $partner->logo = $url;
             $partner->save();
 
             return redirect()->route('partners')
@@ -100,10 +103,10 @@ class PartnerController extends Controller
 
         if ($request->hasFile('logo')) {
             $logo = $request->file('logo');
-            $filename = time() . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('/uploads/' . $filename));
+            $logo->move(public_path().'/uploads', $logo->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $logo->getClientOriginalName();
 
-            DB::update("UPDATE partners set name = ?, country = ?, link = ? logo = ? WHERE id = ?", [$name, $country, $link, $filename, $id]);
+            DB::update("UPDATE partners set name = ?, country = ?, link = ?, logo = ? WHERE id = ?", [$name, $country, $link, $url, $id]);
             return redirect('/partners')->with('success', 'Partner Has Been Updated!');
         }else {
             DB::update("UPDATE partners set name = ?, country = ?, link = ? WHERE id = ?", [$name, $country, $link, $id]);
@@ -120,5 +123,8 @@ class PartnerController extends Controller
     public function destroy($id)
     {
         //
+        $partner = Partner::find($id);
+        $partner->delete();
+        return redirect('/partners')->with('success', 'Partner Has Been Deleted!');
     }
 }

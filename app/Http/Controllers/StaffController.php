@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Staff;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class StaffController extends Controller
 {
@@ -44,7 +45,6 @@ class StaffController extends Controller
             'fname' => 'required',
             'sname' => 'required',
             'position' => 'required',
-            'bio' => 'required',
             'passport' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ));
         //save the data to the database
@@ -52,13 +52,12 @@ class StaffController extends Controller
         $staff->first_name = $request->fname;
         $staff->last_name = $request->sname;
         $staff->position = $request->position;
-        $staff->bio = $request->bio;
 
         if($request->hasFile('passport')){
             $passport = $request->file('passport');
-            $filename = time() . '.' . $passport->getClientOriginalExtension();
-            $passport->move(public_path('/uploads/' . $filename ));
-            $staff->passport = $filename;
+            $passport->move(public_path().'/uploads', $passport->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $passport->getClientOriginalName();
+            $staff->passport = $url;
             $staff->save();
 
             return redirect()->route('staffs')
@@ -103,18 +102,17 @@ class StaffController extends Controller
         $first_name = $request->get('fname');
         $last_name = $request->get('sname');
         $position = $request->get('position');
-        $bio = $request->get('bio');
 
         if ($request->hasFile('passport')) {
             $passport = $request->file('passport');
-            $filename = time() . '.' . $passport->getClientOriginalExtension();
-            $passport->move(public_path('/uploads/' . $filename));
+            $passport->move(public_path().'/uploads', $passport->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $passport->getClientOriginalName();
 
             DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?,
-                            position = ?, bio = ?, passport = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $bio, $filename, $id]);
+                            position = ?, passport = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $url, $id]);
             return redirect('/staffs')->with('success', 'Staff Has Been Updated!');
         }else {
-            DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?, position = ?, bio = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $bio, $id]);
+            DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?, position = ?, WHERE id = ?", [$salutation, $first_name, $last_name, $position, $id]);
             return redirect('/staffs')->with('success', 'Staff Has Been Updated!');
         }
     }
@@ -127,5 +125,8 @@ class StaffController extends Controller
     public function destroy($id)
     {
         //
+        $staff = Staff::find($id);
+        $staff->delete();
+        return redirect('/staffs')->with('success', 'Staff Has Been Deleted!');
     }
 }

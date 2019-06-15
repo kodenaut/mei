@@ -60,7 +60,7 @@
                         <div class="box">
                             <div class="icon">
                                 <a href="">
-                                    <i class="fa fa-desktop"></i>
+                                    <img class="rounded-circle" src="{{ $school->image }}" alt="{{ $school->name }}" style="height: 70px; width: 74px;">
                                 </a>
                             </div>
 
@@ -73,7 +73,7 @@
                                 <button class="btn btn-success btn-sm mx-1" data-toggle="modal" data-target="#updatemodal-{{ $school->id }}">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <a href="" class="btn btn-danger btn-sm">
+                                <a class="btn btn-danger btn-sm"  href="{{route('delete-school', $school->id)}}" onclick='return confirm("Are you sure you want to Delete this School?")'>
                                     <i class="fas fa-trash"></i>
                                 </a>
                                 <button class="btn btn-warning btn-sm float-right" data-toggle="modal" data-target="#courses-{{ $school->id }}">
@@ -132,10 +132,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">Image:</label>
-                                                <input type="file" name="image" class="form-control" value="">
+                                                <input type="file" name="image" class="form-control" value="{{ $school->image }}">
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-info">Submit</button>
+                                                <button type="submit" class="btn btn-info">Update</button>
                                             </div>
                                         </form>
                                     </div>

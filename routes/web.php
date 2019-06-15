@@ -20,25 +20,39 @@ Route::get('/our-events', 'EventController@events')->name('our-events');
 
 //Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
+
 Route::get('/edit-mission/{id}', 'MissionController@edit')->name('edit-mission');
 Route::post('/update-mission/{id}', 'MissionController@update')->name('update-mission');
 Route::get('/edit-philosophy/{id}', 'PhilosophyController@edit')->name('edit-philosophy');
 Route::post('/update-philosophy/{id}', 'PhilosophyController@update')->name('update-philosophy');
 Route::get('/edit-vision/{id}', 'VisionController@edit')->name('edit-vision');
 Route::post('/update-vision/{id}', 'VisionController@update')->name('update-vision');
+
+
 Route::get('/overview', 'OverviewController@index')->name('overview');
-Route::get('/staffs', 'StaffController@index')->name('staffs');
-Route::get('/schools', 'SchoolController@index')->name('schools');
-Route::get('/photos', 'GalleryController@index')->name('photos');
+
 Route::get('/posts', 'BlogController@index')->name('posts');
 Route::get('/add-post', 'BlogController@create')->name('add-post');
+
 Route::get('/add-event', 'EventController@create')->name('add-event');
 Route::get('/events', 'EventController@index')->name('events');
+
+Route::get('/photos', 'GalleryController@index')->name('photos');
 Route::post('/add-photo', 'GalleryController@store')->name('add-photo');
+Route::post('/update-photo/{id}', 'GalleryController@update')->name('update-photo');
+Route::get('delete-photo/{id}', 'GalleryController@destroy')->name('delete-photo');
+
+Route::get('/schools', 'SchoolController@index')->name('schools');
 Route::post('/add-school', 'SchoolController@store')->name('add-school');
 Route::post('/update-school/{id}', 'SchoolController@update')->name('update-school');
+Route::get('/delete-school/{id}', 'SchoolController@destroy')->name('delete-school');
+
+Route::get('/staffs', 'StaffController@index')->name('staffs');
 Route::post('/add-staff', 'StaffController@store')->name('add-staff');
 Route::post('/update-staff/{id}', 'StaffController@update')->name('update-staff');
+Route::get('/delete-staff/{id}', 'StaffController@destroy')->name('delete-staff');
+
 Route::get('/partners', 'PartnerController@index')->name('partners');
 Route::post('/add-partner', 'PartnerController@store')->name('add-partner');
 Route::post('/update-partner/{id}', 'PartnerController@update')->name('update-partner');
+Route::get('/delete-partner/{id}', 'PartnerController@destroy')->name('delete-partner');
