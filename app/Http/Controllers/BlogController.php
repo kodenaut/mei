@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class BlogController extends Controller
 {
@@ -39,6 +41,28 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'title' => 'required',
+            'content' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        //save the data to the database
+        $post  = new Post() ;
+        $post->title = $request->get('title');
+        $post->content = $request->get('content');
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+            $post->image = $url;
+            $post->save();
+
+            return redirect()->route('posts')
+                ->with('success','Post Added successfully');
+        };
+
+        return redirect()->route('posts');
     }
 
     /**
@@ -61,6 +85,8 @@ class BlogController extends Controller
     public function edit($id)
     {
         //
+        $post = Post::find($id);
+        return view('admin.edit-post', compact('post'));
     }
 
     /**
@@ -73,6 +99,20 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $title = $request->get('title');
+        $content = $request->get('content');
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+
+            DB::update("UPDATE posts set title = ?, content = ?, image = ? WHERE id = ?", [$title, $content, $url, $id]);
+            return redirect('/posts')->with('success', 'Post Has Been Updated!');
+        }else {
+            DB::update("UPDATE posts set title = ?, content = ? WHERE id = ?", [$title, $content, $id]);
+            return redirect('/posts')->with('success', 'Post Has Been Updated!');
+        }
     }
 
     /**
@@ -84,6 +124,9 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/posts')->with('success', 'Post Has Been Deleted!');
     }
 
     public function posts(){

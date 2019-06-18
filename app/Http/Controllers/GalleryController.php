@@ -125,4 +125,9 @@ class GalleryController extends Controller
         return redirect()->route('photos')
             ->with('success','Photo Deleted successfully');
     }
+
+    public function photos(){
+        $photos = Photo::all();
+        return view('mahanaim.photos', compact('photos'));
+    }
 }

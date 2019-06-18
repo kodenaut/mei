@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\School;
+use App\Course;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -74,6 +75,9 @@ class SchoolController extends Controller
     public function show($id)
     {
         //
+        $school = School::find($id);
+        $courses = DB::select("SELECT * FROM courses WHERE school_id = $id");
+        return view('admin.courses', compact('courses', 'school'));
     }
 
     /**
@@ -125,5 +129,10 @@ class SchoolController extends Controller
         $school = School::find($id);
         $school->delete();
         return redirect('/schools')->with('success', 'School Has Been Deleted!');
+    }
+
+    public function schools(){
+        $schools = School::all();
+        return view('mahanaim.our-schools', compact('schools'));
     }
 }

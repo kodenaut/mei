@@ -12,14 +12,17 @@
                 <hr>
             </div>
             <div class="row">
+                @foreach($events as $event)
                 <div class="col-sm-4">
-                    <div class="card card-body">
-                        <h4 class="text-black-50">Event Title<small class="float-right">Date</small> </h4>
-                        <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
+                    <div class="card card-body" style="background: #e2f0fb;">
+                        <h4 class="text-black-50">{{ $event->title }}<small class="float-right">{{ $event->created_at }}</small> </h4>
+                        <a href="{{ $event->image }}" target="_blank">
+                        <img src="{{ $event->image }}" alt="" style="width: 100%; height: 250px;">
+                        </a>
                         <div class="caption">
-                            <p class="description">This is the event content...</p>
+                            <p class="description">{!! $event->description !!} </p>
                             <hr>
-                            <h5 class="float-left">Venue</h5>
+                            <h6 class="float-left">Venue:&nbsp;{{ $event->venue }}</h6>
                         </div>
                         <div class="icons">
                             <button class="btn btn-info btn-sm" style="width: 25px;">
@@ -28,6 +31,7 @@
                         </div>
                     </div>
                 </div>
+                    @endforeach
 
             </div>
 

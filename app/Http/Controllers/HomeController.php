@@ -27,13 +27,12 @@ class HomeController extends Controller
         $missions = Mission::all();
         $philosophies = Philosophy::all();
         $staffs = Staff::all();
-        $schools = School::all();
         $posts = Post::all();
         $events = Event::all();
         $photos = Photo::all();
         $partners = Partner::all();
         return view('mahanaim.index', compact('missions', 'philosophies', 'visions',
-            'schools', 'staffs', 'posts', 'photos', 'events', 'partners'));
+             'staffs', 'posts', 'photos', 'events', 'partners'));
     }
 
     /**

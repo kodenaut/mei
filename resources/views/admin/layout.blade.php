@@ -36,10 +36,12 @@
     <!-- Main CSS-->
     <link href="{{asset('css/theme.css')}}" rel="stylesheet" media="all">
 
+    <script src="{{asset('tinymce/js/tinymce/tinymce.min.js')}}"></script>
+
     <!--js and jquery-->
 </head>
 
-<body class="animsition">
+<body class="">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
     <header class="header-mobile d-block d-lg-none" >
@@ -57,9 +59,9 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar-mobile" style="background: black; height: 100%;">
+        <nav class="navbar-mobile" style="background: black; height: 105%;">
             <div class="container-fluid">
-                <ul class="navbar-mobile__list list-unstyled" style="background: black; height: 100%;">
+                <ul class="navbar-mobile__list list-unstyled" style="background: black;">
                     <li class="has-sub">
                         <a class="js-arrow" href="{{route('dashboard')}}">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
@@ -96,6 +98,14 @@
                         <a href="#">
                             <i class="fas fa-copy"></i>Admissions</a>
                     </li>
+                    <li><a href="{{route('fees')}}">
+                            <i class="fas fa-book-open"></i> Fees</a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('notices')}}">
+                            <i class="fas fa-copy"></i>Notice</a>
+                    </li>
                     <li>
                         <a href="{{route('partners')}}">
                             <i class="fas fa-copy"></i>Partners</a>
@@ -114,7 +124,7 @@
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar" style="background: black; height: 105%; padding-top: 0; padding-bottom: 0;">
+            <nav class="navbar-sidebar" style="background: black; height: 120%; padding-top: 0; padding-bottom: 0;">
                 <ul class="list-unstyled navbar__list">
                     <li class="has-sub">
                         <a class="js-arrow" href="{{route('dashboard')}}">
@@ -151,6 +161,13 @@
                     <li>
                         <a href="#">
                             <i class="fas fa-copy"></i>Admissions</a>
+                    </li>
+                    <li><a href="{{route('fees')}}">
+                            <i class="fas fa-book-open"></i> Fees</a>
+                    </li>
+                    <li>
+                        <a href="{{route('notices')}}">
+                            <i class="fas fa-copy"></i>Notice</a>
                     </li>
                     <li>
                         <a href="{{route('partners')}}">

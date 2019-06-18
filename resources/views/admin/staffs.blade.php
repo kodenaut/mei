@@ -77,9 +77,12 @@
                                 <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#updatemodal-{{ $staff->id }}">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <a href="" class="btn btn-danger btn-sm float-right mx-1">
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                <form method="post" action="{{route('delete-staff', $staff->id)}}" class="form-btn">
+                                    @csrf
+                                    <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Staff?")'>
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
                             </div>
                             </div>
                         </div>

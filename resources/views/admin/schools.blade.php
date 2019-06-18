@@ -73,12 +73,17 @@
                                 <button class="btn btn-success btn-sm mx-1" data-toggle="modal" data-target="#updatemodal-{{ $school->id }}">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <a class="btn btn-danger btn-sm"  href="{{route('delete-school', $school->id)}}" onclick='return confirm("Are you sure you want to Delete this School?")'>
+
+                                <form method="post" action="{{route('delete-school', $school->id)}}" class="form-btn">
+                                    @csrf
+                                <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this School?")'>
                                     <i class="fas fa-trash"></i>
-                                </a>
-                                <button class="btn btn-warning btn-sm float-right" data-toggle="modal" data-target="#courses-{{ $school->id }}">
-                                    <i class="fas fa-book-open">&nbsp;Courses</i>
                                 </button>
+                                </form>
+
+                                <a href="{{route('courses', $school->id)}}" class="btn btn-warning btn-sm float-right">
+                                    <i class="fas fa-book-open">&nbsp;Courses</i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -144,65 +149,6 @@
                         </div>
 
                         <!-- End of Modal-->
-
-                        <!-- School Modal -->
-                        <div class="modal" id="schoolmodal-{{ $school->id }}">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">{{ $school->name }}</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <p>
-                                            {{ $school->description }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Modal-->
-
-                        <!-- Courses Modal -->
-                        <div class="modal" id="courses-{{ $school->id }}">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">{{ $school->name }} Courses</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <div class="boxmodal">
-                                                    <table class="table" style="margin: 0 auto;">
-                                                        <tr><td>Name</td></tr>
-                                                        <tr><td>Qualification</td></tr>
-                                                        <tr><td>Duration</td></tr>
-                                                        <tr><td>Modules</td></tr>
-                                                        <tr><td>Exam Body</td></tr>
-                                                        <tr><td>Mode</td></tr>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End of Modal-->
-
                         @endforeach
 
 

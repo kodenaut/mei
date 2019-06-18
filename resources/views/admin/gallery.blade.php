@@ -58,9 +58,12 @@
                         <button class="btn btn-success btn-sm float-left m-1" data-toggle="modal" data-target="#updatemodal-{{ $photo->id }}">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <a class="btn btn-danger btn-sm float-right m-1"  href="{{route('delete-photo', $photo->id)}}" onclick='return confirm("Delete Photo??")'>
-                            <i class="fas fa-trash"></i>
-                        </a>
+                        <form method="post" action="{{route('delete-photo', $photo->id)}}" class="form-btn">
+                            @csrf
+                            <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Photo?")'>
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                     </div>
                 </a>
             </div>
@@ -100,9 +103,13 @@
 
                 <!-- End of Modal-->
 
+
+
+
             @endforeach
         </div>
 
     </div>
 </section><!-- #portfolio -->
+
     @endsection

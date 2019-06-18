@@ -52,21 +52,21 @@ Header
                 <li><a href="{{route('about-us')}}">About</a></li>
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
-                        <li><a href="#services">Schools</a></li>
+                        <li><a href="{{route('our-schools')}}">Schools</a></li>
                         <li><a href="#">Examination</a></li>
                     </ul>
                 </li>
                 <li class="menu-has-children"><a href="">Admissions</a>
                     <ul>
                         <li><a href="#">Academic Calender</a></li>
-                        <li><a href="#">Fee Structure</a></li>
+                        <li><a href="{{route('fee-structure')}}">Fee Structure</a></li>
                         <li><a href="#">Scholarship</a></li>
                         <li><a href="#">E-Learning</a></li>
                     </ul>
                 </li>
                 <li><a href="{{route('our-posts')}}">Blog</a></li>
                 <li><a href="{{route('our-events')}}">Events</a></li>
-                <li><a href="#portfolio">Gallery</a></li>
+                <li><a href="{{route('our-photos')}}">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav><!-- #nav-menu-container -->

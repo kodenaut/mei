@@ -72,9 +72,12 @@ Schools Section
                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#update-{{ $partner->id }}">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <a href="{{route('delete-partner', $partner->id)}}" class="btn btn-danger btn-sm" onclick='return confirm("Delete Partner {{ $partner->name }}??")'>
-                                <i class="fas fa-trash"></i>
-                            </a>
+                            <form method="post" action="{{route('delete-partner', $partner->id)}}" class="form-btn">
+                                @csrf
+                                <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Partner?")'>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                         </div>
                 </div>
 

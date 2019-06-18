@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class EventController extends Controller
 {
@@ -39,6 +41,30 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'title' => 'required',
+            'venue' => 'required',
+            'description' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        //save the data to the database
+        $event  = new Event() ;
+        $event->title = $request->get('title');
+        $event->venue = $request->get('venue');
+        $event->description = $request->get('description');
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+            $event->image = $url;
+            $event->save();
+
+            return redirect()->route('events')
+                ->with('success','Event Added successfully');
+        };
+
+        return redirect()->route('events');
     }
 
     /**
@@ -61,6 +87,8 @@ class EventController extends Controller
     public function edit($id)
     {
         //
+        $event = Event::find($id);
+        return view('admin.edit-event', compact('event'));
     }
 
     /**
@@ -73,6 +101,21 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $title = $request->get('title');
+        $venue = $request->get('venue');
+        $description = $request->get('description');
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+
+            DB::update("UPDATE events set title = ?, venue = ?, description = ?, image = ? WHERE id = ?", [$title, $venue, $description, $url, $id]);
+            return redirect('/events')->with('success', 'Event Has Been Updated!');
+        }else {
+            DB::update("UPDATE events set title = ?, venue = ?, description = ? WHERE id = ?", [$title, $venue, $description, $id]);
+            return redirect('/events')->with('success', 'Event Has Been Updated!');
+        }
     }
 
     /**
@@ -84,6 +127,9 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+        $event = Event::find($id);
+        $event->delete();
+        return redirect('/events')->with('success', 'Event Has Been Deleted!');
     }
 
     public function events(){
