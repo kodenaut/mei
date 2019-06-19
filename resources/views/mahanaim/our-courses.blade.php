@@ -1,4 +1,4 @@
-@extends('mahanaim.layout')
+@extends('mahanaim.custom')
 
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 

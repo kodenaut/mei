@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Overview;
+use App\Message;
 use Illuminate\Http\Request;
-use App\Mission;
-use App\Vision;
-use App\Philosophy;
 use Illuminate\Support\Facades\DB;
 
-class AboutController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,23 +15,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('mahanaim.about-us');
-
-    }
-
-    public function background(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Background'");
-        return view('mahanaim.background', compact('overviews'));
-}
-
-    public function chancellor(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Chancellor'");
-        return view('mahanaim.chancellor', compact('overviews'));
-    }
-
-    public function principal(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Principal'");
-        return view('mahanaim.principal', compact('overviews'));
+        //
+        $messages = Message::all();
+        return view('admin.messages', compact('messages'));
     }
 
     /**
@@ -56,6 +39,20 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         //
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $subject = $request->input('subject');
+        $message = $request->input('message');
+
+        DB::table('messages')->insert([[
+            'name'=>$name,
+            'email'=>$email,
+            'subject'=>$subject,
+            'message'=>$message,
+
+        ]]);
+        return redirect()->route('homepage')
+            ->with('success','Message Sent successfully');
     }
 
     /**
@@ -101,5 +98,10 @@ class AboutController extends Controller
     public function destroy($id)
     {
         //
+        $message = Message::find($id);
+        $message->delete();
+        return redirect()->route('messages')
+            ->with('success','Message Has Been Deleted');
+
     }
 }

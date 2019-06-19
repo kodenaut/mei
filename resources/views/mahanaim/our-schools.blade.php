@@ -1,4 +1,4 @@
-@extends('mahanaim.layout')
+@extends('mahanaim.custom')
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 @section('content')
@@ -43,12 +43,12 @@
 
                         <!-- School Modal -->
                         <div class="modal" id="modal-{{ $school->id }}">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
 
                                     <!-- Modal Header -->
                                     <div class="modal-header">
-                                        <h4 class="modal-title">{{ $school->name }}</h4>
+                                        <h4 class="modal-title">School of&nbsp;{{ $school->name }}</h4>
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
 

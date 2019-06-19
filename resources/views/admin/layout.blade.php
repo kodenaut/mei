@@ -71,7 +71,7 @@
                             <i class="fas fa-chart-bar"></i>About</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="{{route('overview')}}">
+                        <a class="js-arrow" href="">
                             <i class="fas fa-copy"></i>Admissions</a>
                     </li>
                     <li>
@@ -102,10 +102,13 @@
                             <i class="fas fa-book-open"></i> Fees</a>
                     </li>
 
+                    <!--
                     <li>
                         <a href="{{route('notices')}}">
                             <i class="fas fa-copy"></i>Notice</a>
                     </li>
+                    -->
+
                     <li>
                         <a href="{{route('partners')}}">
                             <i class="fas fa-copy"></i>Partners</a>
@@ -126,18 +129,23 @@
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar" style="background: black; height: 120%; padding-top: 0; padding-bottom: 0;">
                 <ul class="list-unstyled navbar__list">
-                    <li class="has-sub">
-                        <a class="js-arrow" href="{{route('dashboard')}}">
+                    <li>
+                        <a href="{{route('dashboard')}}">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li>
                         <a href="">
                             <i class="fas fa-chart-bar"></i>About</a>
                     </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="{{route('overview')}}">
+                    <li>
+                        <a href="{{route('overview')}}">
                             <i class="fas fa-copy"></i>Overview</a>
                     </li>
+                    <li>
+                        <a href="{{route('info')}}">
+                            <i class="fas fa-copy"></i>Info</a>
+                    </li>
+
                     <li>
                         <a href="{{route('staffs')}}">
                             <i class="fas fa-table"></i>Staff</a>
@@ -165,10 +173,12 @@
                     <li><a href="{{route('fees')}}">
                             <i class="fas fa-book-open"></i> Fees</a>
                     </li>
+                    <!--
                     <li>
                         <a href="{{route('notices')}}">
                             <i class="fas fa-copy"></i>Notice</a>
                     </li>
+                    -->
                     <li>
                         <a href="{{route('partners')}}">
                             <i class="fas fa-copy"></i>Partners</a>
@@ -220,6 +230,11 @@
                                                 <a href="#">
                                                     <i class="zmdi zmdi-account"></i>Account</a>
                                             </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="{{route('messages')}}">
+                                                    <i class="zmdi zmdi-comments"></i>Messages</a>
+                                            </div>
+
                                             <div class="account-dropdown__item">
                                                 <a href="#">
                                                     <i class="zmdi zmdi-settings"></i>Setting</a>

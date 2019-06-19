@@ -2,67 +2,153 @@
 
      @section('content')
      <!-- MAIN CONTENT-->
-     <div class="row">
+     <main id="main">
+          <div class="row about-container">
 
-          <!-- Mission -->
-          @foreach($missions as $mission)
-          <div class="col-sm-4">
-               <div class="card card-body" style="border-radius: 25px;">
-                    <i class="fas fa-graduation-cap fa-2x text-center"></i>
-                    <hr>
-                    <p class="content">{{ $mission->content }}</p>
-                    <hr>
-                    <div class="caption">
-                    <button class="btn btn-info btn-sm" style="width: 23px;">
-                         <i class="fas fa-info"></i>
-                    </button>
-                    <a href="{{route('edit-mission',$mission->id)}}" class="btn btn-info btn-sm float-right" style="width: 29px;">
-                         <i class="fas fa-edit"></i>
-                    </a>
-                    </div>
+               <div class="col-lg-12 content order-lg-1 order-2">
+                    <section id="facts">
+                         <div class="container wow fadeIn">
+                    <div class="row">
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-success o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-users"></i>
+                                             </div>
+                                             <div class="mr-5">Staff</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[0] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-warning o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-users"></i>
+                                             </div>
+                                             <div class="mr-5">Schools</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[1] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-danger o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-book"></i>
+                                             </div>
+                                             <div class="mr-5">Courses</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[2] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-primary o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-envelope-open"></i>
+                                             </div>
+                                             <div class="mr-5">Messages</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[3] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-info o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-bookmark"></i>
+                                             </div>
+                                             <div class="mr-5">Posts</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[4] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-success o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-users"></i>
+                                             </div>
+                                             <div class="mr-5">Events</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[5] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-secondary o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-photo"></i>
+                                             </div>
+                                             <div class="mr-5">Photos</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[6] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+
+                              <div class="col-sm-3 mb-3">
+                                   <div class="card text-white bg-warning o-hidden h-100">
+                                        <div class="card-body">
+                                             <div class="card-body-icon">
+                                                  <i class="fas fa-fw fa-users"></i>
+                                             </div>
+                                             <div class="mr-5">Partners</div>
+                                        </div>
+                                        <a class="card-footer text-white clearfix small z-1" href="">
+                                             <span class="float-left">{{ $details[7] }}</span>
+                                             <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                        </a>
+                                   </div>
+                              </div>
+                         </div>
+                         </div>
+                    </section>
                </div>
           </div>
-          @endforeach
-
-          @foreach($visions as $vision)
-          <div class="col-sm-4">
-               <div class="card card-body" style="border-radius: 25px;">
-                    <i class="fas fa-binoculars fa-2x text-center"></i>
-                    <hr>
-                    <p class="content">{{ $vision->content }}</p>
-                    <hr>
-                    <div class="caption">
-                         <a href="" class="btn btn-info btn-sm" style="width: 23px;">
-                              <i class="fas fa-info"></i>
-                         </a>
-                         <a href="{{route('edit-vision', $vision->id)}}" class="btn btn-info btn-sm float-right" style="width: 29px;">
-                              <i class="fas fa-edit"></i>
-                         </a>
-                    </div>
-               </div>
-          </div>
-          @endforeach
-
-          @foreach($philosophies as $philosophy)
-          <div class="col-sm-4">
-               <div class="card card-body" style="border-radius: 25px;">
-                    <i class="fas fa-globe fa-2x text-center"></i>
-                    <hr>
-                    <p class="content">{{ $philosophy->content }}</p>
-                    <hr>
-                    <div class="caption">
-                         <a href="" class="btn btn-info btn-sm" style="width: 23px;">
-                              <i class="fas fa-info"></i>
-                         </a>
-                         <a href="{{route('edit-philosophy', $philosophy->id)}}" class="btn btn-info btn-sm float-right" style="width: 29px;">
-                              <i class="fas fa-edit"></i>
-                         </a>
-                    </div>
-               </div>
-          </div>
-               @endforeach
-
-
-     </div>
+     </main>
      @endsection
 <!-- end document-->

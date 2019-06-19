@@ -6,57 +6,63 @@
     <section id="messages">
         <div class="container wow fadeIn">
             <div class="section-header">
+                <a href="{{route('add-overview')}}" class="btn btn-outline-info btn-sm float-right" style="margin: 2px;">Add Overview
+                    <i class="fas fa-plus-circle"></i>
+                </a>
                 <h3 class="section-title">Overview</h3>
                 <hr>
             </div>
             <div class="row">
+                @foreach($overviews as $overview)
                 <article class="media content-section">
                     <div class="media-body">
                         <div class="article-metadata">
-                            <h4><a class="article-title" href="">Background</a><small class="text-muted float-right" style="font-size: 14px;">Date</small></h4>
+                            <h4><a class="article-title" href="">{{ $overview->title }}</a></h4>
                         </div>
                         <div class="col-sm-3 float-left">
-                            <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
+                            <img src="{{ $overview->image }}" alt="" style="width: 100%;">
                         </div>
                         <div class="col-sm-9 float-right">
-                            <p class="article-content">Mahanaim Educational Institute (College) philosophies are based on utilizing the true word and knowledge of the heart that is manifested in the Bible. Through this methodology many students have amazingly acquired progressive and healthy mindsets while evolving into more effective individuals. We have discovered with assurance how people such as Abraham Lincoln and biblical figures such as Joseph and David gained wisdom from the word of God. We have employed education methodologies that will produce leaders for the next generation who will become catalysts of peace and bliss in the society.</p>
+                            <p class="article-content">{!! $overview->content !!}</p>
                             <hr>
-                            <button class="btn btn-info btn-sm float-right"><i class="fas fa-info"></i> </button>
+                            <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-{{ $overview->id }}"><i class="fas fa-info"></i> </button>
+                            <a href="{{route('edit-overview', $overview->id)}}" class="btn btn-success btn-sm mx-1">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <form method="post" action="{{route('delete-overview', $overview->id)}}" class="form-btn float-right">
+                                @csrf
+                                <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Information?")'>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </article>
 
-                <article class="media content-section">
-                    <div class="media-body">
-                        <div class="article-metadata">
-                            <h4><a class="article-title" href="">Chancellor's Message</a><small class="text-muted float-right" style="font-size: 14px;">Name</small></h4>
-                        </div>
-                        <div class="col-sm-3 float-right">
-                            <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
-                        </div>
-                        <div class="col-sm-9 float-left">
-                            <p class="article-content">Mahanaim Educational Institute (College) philosophies are based on utilizing the true word and knowledge of the heart that is manifested in the Bible. Through this methodology many students have amazingly acquired progressive and healthy mindsets while evolving into more effective individuals. We have discovered with assurance how people such as Abraham Lincoln and biblical figures such as Joseph and David gained wisdom from the word of God. We have employed education methodologies that will produce leaders for the next generation who will become catalysts of peace and bliss in the society.</p>
-                            <hr>
-                            <button class="btn btn-info btn-sm float-right"><i class="fas fa-info"></i> </button>
-                        </div>
-                    </div>
-                </article>
+                    <!-- School Modal -->
+                    <div class="modal" id="modal-{{ $overview->id }}">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
 
-                <article class="media content-section">
-                    <div class="media-body">
-                        <div class="article-metadata">
-                            <h4><a class="article-title" href="">Principal's Message</a><small class="text-muted float-right" style="font-size: 14px;">Name</small></h4>
-                        </div>
-                        <div class="col-sm-3 float-left">
-                            <img src="{{asset('img/team-1.jpg')}}" alt="" style="width: 100%;">
-                        </div>
-                        <div class="col-sm-9 float-right">
-                            <p class="article-content">Mahanaim Educational Institute (College) philosophies are based on utilizing the true word and knowledge of the heart that is manifested in the Bible. Through this methodology many students have amazingly acquired progressive and healthy mindsets while evolving into more effective individuals. We have discovered with assurance how people such as Abraham Lincoln and biblical figures such as Joseph and David gained wisdom from the word of God. We have employed education methodologies that will produce leaders for the next generation who will become catalysts of peace and bliss in the society.</p>
-                            <hr>
-                            <button class="btn btn-info btn-sm float-right"><i class="fas fa-info"></i> </button>
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">{{ $overview->title }}</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <p>
+                                        {!! $overview->content  !!}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
+
+                    <!-- End of Modal-->
+
+                    @endforeach
             </div>
 
         </div>

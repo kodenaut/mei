@@ -15,10 +15,15 @@
 Route::get('/', 'HomeController@index')->name('homepage');
 Route::get('/about-us', 'AboutController@index')->name('about-us');
 Route::get('/our-posts', 'BlogController@posts')->name('our-posts');
+Route::get('/show-post/{id}', 'BlogController@show')->name('show-post');
 Route::get('/our-events', 'EventController@events')->name('our-events');
 Route::get('/our-photos', 'GalleryController@photos')->name('our-photos');
 Route::get('/our-schools', 'SchoolController@schools')->name('our-schools');
 Route::get('/our-courses/{id}', 'CourseController@courses')->name('our-courses');
+Route::get('/our-staffs', 'StaffController@staffs')->name('our-staffs');
+Route::get('/background', 'AboutController@background')->name('background');
+Route::get('/chancellor-message', 'AboutController@chancellor')->name('chancellor');
+Route::get('/principal-message', 'AboutController@principal')->name('principal');
 
 
 Route::get('/fee-structure', 'FeeController@engineering')->name('fee-structure');
@@ -31,6 +36,8 @@ Route::get('/journalism-fee', 'FeeController@journalismfee')->name('journalism-f
 Route::get('/business-fee', 'FeeController@businessfee')->name('business-fee');
 Route::get('/languages-fee', 'FeeController@languagesfee')->name('languages-fee');
 Route::get('/sports-fee', 'FeeController@sportsfee')->name('sports-fee');
+
+Route::post('/save-message', 'MessageController@store')->name('save-message');
 
 
 //Admin
@@ -45,8 +52,14 @@ Route::post('/update-vision/{id}', 'VisionController@update')->name('update-visi
 
 
 Route::get('/overview', 'OverviewController@index')->name('overview');
+Route::get('/add-overview', 'OverviewController@create')->name('add-overview');
+Route::post('/save-overview', 'OverviewController@store')->name('save-overview');
+Route::get('/edit-overview/{id}', 'OverviewController@edit')->name('edit-overview');
+Route::post('/update-overview/{id}', 'OverviewController@update')->name('update-overview');
+Route::post('/delete-overview/{id}', 'OverviewController@destroy')->name('delete-overview');
 
 Route::get('/posts', 'BlogController@index')->name('posts');
+Route::get('/view-post/{id}', 'BlogController@view')->name('view-post');
 Route::get('/add-post', 'BlogController@create')->name('add-post');
 Route::post('/save-post', 'BlogController@store')->name('save-post');
 Route::get('/edit-post/{id}', 'BlogController@edit')->name('edit-post');
@@ -102,3 +115,15 @@ Route::post('/delete-course/{id}', 'CourseController@destroy')->name('delete-cou
 
 Route::get('/notices', 'NoticeController@index')->name('notices');
 Route::post('/add-notice', 'NoticeController@store')->name('add-notice');
+
+Route::get('/messages', 'MessageController@index')->name('messages');
+Route::post('/delete-message/{id}', 'MessageController@destroy')->name('delete-message');
+
+Route::get('/info', 'InfoController@index')->name('info');
+Route::get('/add-info', 'InfoController@create')->name('add-info');
+Route::post('/save-info', 'InfoController@store')->name('save-info');
+Route::get('/edit-info/{id}', 'InfoController@edit')->name('edit-info');
+Route::post('/update-info/{id}', 'InfoController@update')->name('update-info');
+Route::post('/delete-info/{id}', 'InfoController@destroy')->name('delete-info');
+
+

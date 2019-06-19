@@ -37,14 +37,28 @@ class FeeController extends Controller
         return view('admin.fees', compact('fees'));
     }
 
+    public function languagesfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='SOL'");
+        return view('mahanaim.fee-structure', compact('fees'));
+    }
+
     public function ict(){
         $fees = DB::select("SELECT * FROM fees WHERE title='ICT'");
         return view('admin.fees', compact('fees'));
     }
 
+    public function ictfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='ICT'");
+        return view('mahanaim.fee-structure', compact('fees'));
+    }
     public function hospitality(){
         $fees = DB::select("SELECT * FROM fees WHERE title='SOH'");
         return view('admin.fees', compact('fees'));
+    }
+
+    public function hospitalityfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='SOH'");
+        return view('mahanaim.fee-structure', compact('fees'));
     }
 
     public function journalism(){
@@ -52,9 +66,19 @@ class FeeController extends Controller
         return view('admin.fees', compact('fees'));
     }
 
+    public function journalismfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='SOJ'");
+        return view('mahanaim.fee-structure', compact('fees'));
+    }
+
     public function sports(){
         $fees = DB::select("SELECT * FROM fees WHERE title='SOM'");
         return view('admin.fees', compact('fees'));
+    }
+
+    public function sportsfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='SOM'");
+        return view('mahanaim.fee-structure', compact('fees'));
     }
 
     public function business(){
@@ -62,14 +86,29 @@ class FeeController extends Controller
         return view('admin.fees', compact('fees'));
     }
 
+    public function businessfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='SOB'");
+        return view('mahanaim.fee-structure', compact('fees'));
+    }
+
     public function icdl(){
         $fees = DB::select("SELECT * FROM fees WHERE title='ICDL'");
         return view('admin.fees', compact('fees'));
     }
 
+    public function icdlfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='ICDL'");
+        return view('mahanaim.fee-structure', compact('fees'));
+    }
+
     public function catering(){
         $fees = DB::select("SELECT * FROM fees WHERE title='CAT'");
         return view('admin.fees', compact('fees'));
+    }
+
+    public function cateringfee(){
+        $fees = DB::select("SELECT * FROM fees WHERE title='CAT'");
+        return view('mahanaim.fee-structure', compact('fees'));
     }
 
 

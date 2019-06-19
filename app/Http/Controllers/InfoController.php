@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Overview;
+use App\Info;
 use Illuminate\Http\Request;
-use App\Mission;
-use App\Vision;
-use App\Philosophy;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
-class AboutController extends Controller
+class InfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,23 +16,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('mahanaim.about-us');
-
-    }
-
-    public function background(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Background'");
-        return view('mahanaim.background', compact('overviews'));
-}
-
-    public function chancellor(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Chancellor'");
-        return view('mahanaim.chancellor', compact('overviews'));
-    }
-
-    public function principal(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Principal'");
-        return view('mahanaim.principal', compact('overviews'));
+        //
+        $infos = Info::all();
+        return view('admin.info', compact('infos'));
     }
 
     /**
@@ -45,6 +29,7 @@ class AboutController extends Controller
     public function create()
     {
         //
+        return view('admin.add-info');
     }
 
     /**
@@ -56,6 +41,20 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'title' => 'required',
+            'content' => 'required',
+        ));
+        //save the data to the database
+        $info  = new Info();
+        $info->title = $request->get('title');
+        $info->content = $request->get('content');
+
+
+        $info->save();
+
+            return redirect()->route('info')
+                ->with('success','Information Added successfully');
     }
 
     /**
@@ -78,6 +77,8 @@ class AboutController extends Controller
     public function edit($id)
     {
         //
+        $info = Info::find($id);
+        return view('admin.edit-info', compact('info'));
     }
 
     /**
@@ -90,6 +91,13 @@ class AboutController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $title = $request->get('title');
+        $content = $request->get('content');
+
+
+            DB::update("UPDATE infos set title = ?, content = ? WHERE id = ?", [$title, $content, $id]);
+            return redirect('/info')->with('success', 'Info Has Been Updated!');
+
     }
 
     /**
@@ -101,5 +109,9 @@ class AboutController extends Controller
     public function destroy($id)
     {
         //
+        $info = Info::find($id);
+        $info->delete();
+        return redirect('/info')->with('success', 'Info Has Been Deleted!');
+
     }
 }

@@ -1,4 +1,4 @@
-@extends('mahanaim.layout')
+@extends('mahanaim.custom')
 
 @section('content')
     <main id="main">

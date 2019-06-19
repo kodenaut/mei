@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Info;
 use App\Mission;
+use App\Overview;
 use App\Partner;
 use App\Philosophy;
 use App\Photo;
@@ -31,8 +33,10 @@ class HomeController extends Controller
         $events = Event::all();
         $photos = Photo::all();
         $partners = Partner::all();
+        $overviews = Overview::all();
+        $infos = Info::all();
         return view('mahanaim.index', compact('missions', 'philosophies', 'visions',
-             'staffs', 'posts', 'photos', 'events', 'partners'));
+             'staffs', 'posts', 'photos', 'events', 'partners', 'overviews', 'infos'));
     }
 
     /**

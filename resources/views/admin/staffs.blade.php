@@ -36,10 +36,6 @@
                             <input type="text" class="form-control" name="position">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Bio:</label>
-                            <textarea type="text" class="form-control" name="bio" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
                             <label class="control-label">Passport:</label>
                             <input type="file" class="form-control" name="passport">
                         </div>

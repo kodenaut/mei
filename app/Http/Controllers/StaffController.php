@@ -49,6 +49,7 @@ class StaffController extends Controller
         ));
         //save the data to the database
         $staff  = new Staff() ;
+        $staff->salutation = $request->salutation;
         $staff->first_name = $request->fname;
         $staff->last_name = $request->sname;
         $staff->position = $request->position;
@@ -112,7 +113,7 @@ class StaffController extends Controller
                             position = ?, passport = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $url, $id]);
             return redirect('/staffs')->with('success', 'Staff Has Been Updated!');
         }else {
-            DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?, position = ?, WHERE id = ?", [$salutation, $first_name, $last_name, $position, $id]);
+            DB::update("UPDATE staff set salutation = ?, first_name = ?, last_name = ?, position = ? WHERE id = ?", [$salutation, $first_name, $last_name, $position, $id]);
             return redirect('/staffs')->with('success', 'Staff Has Been Updated!');
         }
     }
@@ -128,5 +129,10 @@ class StaffController extends Controller
         $staff = Staff::find($id);
         $staff->delete();
         return redirect('/staffs')->with('success', 'Staff Has Been Deleted!');
+    }
+
+    public function staffs(){
+        $staffs = Staff::all();
+        return view('mahanaim.our-staff', compact('staffs'));
     }
 }

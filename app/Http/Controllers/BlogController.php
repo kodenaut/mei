@@ -74,6 +74,13 @@ class BlogController extends Controller
     public function show($id)
     {
         //
+        $post = Post::find($id);
+        return view('mahanaim.show-post', compact('post'));
+    }
+
+    public function view($id){
+        $post = Post::find($id);
+        return view('admin.view-post', compact('post'));
     }
 
     /**

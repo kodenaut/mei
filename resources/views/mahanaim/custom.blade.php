@@ -49,10 +49,17 @@ Header
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <li class="menu-active"><a href="{{route('homepage')}}">Home</a></li>
-                <li><a href="{{route('about-us')}}">About</a></li>
+                <li class="menu-has-children"><a href="">About</a>
+                    <ul>
+                        <li><a href="{{route('our-staffs')}}">Staff</a></li>
+                        <li><a href="{{route('background')}}">Backround</a> </li>
+                        <li><a href="{{route('chancellor')}}">Chancellor's Message</a> </li>
+                        <li><a href="{{route('principal')}}">Principal's Message</a> </li>
+                    </ul>
+                </li>
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
-                        <li><a href="#services">Schools</a></li>
+                        <li><a href="{{route('our-schools')}}">Schools</a></li>
                         <li><a href="#">Examination</a></li>
                     </ul>
                 </li>
@@ -67,26 +74,27 @@ Header
                 <li><a href="{{route('our-posts')}}">Blog</a></li>
                 <li><a href="{{route('our-events')}}">Events</a></li>
                 <li><a href="{{route('our-photos')}}">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="menu-has-children"><a href="">Accounts</a>
+                    <ul>
+                        <li><a href="https://mahanaim.dsl.ke/staff/" target="_blank">Staff</a></li>
+                        <li><a href="https://mahanaim.dsl.ke/students/" target="_blank">Student</a> </li>
+                    </ul>
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>
 </header><!-- #header -->
 
-
 <!--==========================
   Hero Section
 ============================-->
-<section id="hero">
+<section id="hero1">
     <div class="hero-container">
         <h1>Mahanaim Educational Institute</h1>
         <h2>Challenge Change Cohesion</h2>
-        <a href="#about" class="btn-get-started">Get Started</a>
     </div>
 </section><!-- #hero -->
 
 @yield('content')
-
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 

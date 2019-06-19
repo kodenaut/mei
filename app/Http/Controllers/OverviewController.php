@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
+use App\Overview;
 
 class OverviewController extends Controller
 {
@@ -14,7 +17,8 @@ class OverviewController extends Controller
     public function index()
     {
         //
-        return view('admin.overview');
+        $overviews = Overview::all();
+        return view('admin.overview', compact('overviews'));
     }
 
     /**
@@ -25,6 +29,7 @@ class OverviewController extends Controller
     public function create()
     {
         //
+        return view('admin.add-overview');
     }
 
     /**
@@ -36,6 +41,28 @@ class OverviewController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'title' => 'required',
+            'name'=> 'required',
+            'content' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ));
+        //save the data to the database
+        $overview  = new Overview();
+        $overview->title = $request->get('title');
+        $overview->name = $request->get('name');
+        $overview->content = $request->get('content');
+
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+            $overview->image = $url;
+            $overview->save();
+
+            return redirect()->route('overview')
+                ->with('success','Overview Added successfully');
+        };
     }
 
     /**
@@ -58,6 +85,8 @@ class OverviewController extends Controller
     public function edit($id)
     {
         //
+        $overview = Overview::find($id);
+        return view('admin.edit-overview', compact('overview'));
     }
 
     /**
@@ -70,6 +99,21 @@ class OverviewController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $title = $request->get('title');
+        $name = $request->get('name');
+        $content = $request->get('content');
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $image->move(public_path().'/uploads', $image->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
+
+            DB::update("UPDATE overviews set title = ?, name = ?, content = ?, image = ? WHERE id = ?", [$title, $name, $content, $url, $id]);
+            return redirect('/overview')->with('success', 'Overview Has Been Updated!');
+        }else {
+            DB::update("UPDATE overviews set title = ?, $name, content = ? WHERE id = ?", [$title, $name, $content, $id]);
+            return redirect('/overview')->with('success', 'Overview Has Been Updated!');
+        }
     }
 
     /**
@@ -81,5 +125,8 @@ class OverviewController extends Controller
     public function destroy($id)
     {
         //
+        $overview = Overview::find($id);
+        $overview->delete();
+        return redirect('/overview')->with('success', 'Overview Has Been Deleted!');
     }
 }

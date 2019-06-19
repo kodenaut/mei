@@ -16,6 +16,7 @@ class CreateOverviewsTable extends Migration
         Schema::create('overviews', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('image');
             $table->string('name');
             $table->longText('content');
             $table->timestamps();

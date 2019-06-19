@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mission;
-use App\Philosophy;
-use App\Vision;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,11 +14,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
-        $missions = Mission::all();
-        $visions = Vision::all();
-        $philosophies = Philosophy::all();
-        return view('admin.dashboard', compact('missions', 'philosophies', 'visions'));
+        $staffs = DB::table("staff")->count();
+        $schools = DB::table("schools")->count();
+        $courses = DB::table("courses")->count();
+        $messages = DB::table("messages")->count();
+        $posts = DB::table("posts")->count();
+        $events = DB::table("events")->count();
+        $photos = DB::table("photos")->count();
+        $partners = DB::table("partners")->count();
+
+        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners");
+        return view('admin.dashboard', compact('details'));
     }
 
     /**
