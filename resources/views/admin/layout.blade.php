@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar-mobile" style="background: black; height: 105%;">
+        <nav class="navbar-mobile" style="background: black; height: 1105%;">
             <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled" style="background: black;">
                     <li class="has-sub">
@@ -101,13 +101,10 @@
                     <li><a href="{{route('fees')}}">
                             <i class="fas fa-book-open"></i> Fees</a>
                     </li>
-
-                    <!--
                     <li>
                         <a href="{{route('notices')}}">
                             <i class="fas fa-copy"></i>Notice</a>
                     </li>
-                    -->
 
                     <li>
                         <a href="{{route('partners')}}">
@@ -127,7 +124,7 @@
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
-            <nav class="navbar-sidebar" style="background: black; height: 120%; padding-top: 0; padding-bottom: 0;">
+            <nav class="navbar-sidebar" style="background: black; height: 130%; padding-top: 0; padding-bottom: 0;">
                 <ul class="list-unstyled navbar__list">
                     <li>
                         <a href="{{route('dashboard')}}">
@@ -155,10 +152,6 @@
                             <i class="far fa-check-square"></i>Schools</a>
                     </li>
                     <li>
-                        <a href="{{route('events')}}">
-                            <i class="fas fa-calendar-alt"></i>Events</a>
-                    </li>
-                    <li>
                         <a href="{{route('posts')}}">
                             <i class="fas fa-map-marker-alt"></i>Blog</a>
                     </li>
@@ -173,12 +166,10 @@
                     <li><a href="{{route('fees')}}">
                             <i class="fas fa-book-open"></i> Fees</a>
                     </li>
-                    <!--
                     <li>
                         <a href="{{route('notices')}}">
                             <i class="fas fa-copy"></i>Notice</a>
                     </li>
-                    -->
                     <li>
                         <a href="{{route('partners')}}">
                             <i class="fas fa-copy"></i>Partners</a>

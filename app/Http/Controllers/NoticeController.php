@@ -41,25 +41,28 @@ class NoticeController extends Controller
         //
         $this->validate($request, array(
             'title' => 'required',
-            'structure' => 'file|image|mimes:pdf, jpg, png, jpeg, svg|max:2048',
+            'content'=>'required',
+            'file' => 'file|mimes:pdf|max:4096',
         ));
         //save the data to the database
         $notice  = new Notice() ;
         $notice->title = $request->get('title');
         $notice->content = $request->get('content');
 
-        if($request->hasFile('file')){
+        if($request->hasFile('file')) {
             $file = $request->file('file');
-            $file->move(public_path().'/uploads', $file->getClientOriginalName());
-            $url=URL::to("/") . '/uploads'.'/'. $file->getClientOriginalName();
+            $file->move(public_path() . '/uploads', $file->getClientOriginalName());
+            $url = URL::to("/") . '/uploads' . '/' . $file->getClientOriginalName();
             $notice->file = $url;
-            $notice->save();
 
+            $notice->save();
             return redirect()->route('notices')
                 ->with('success','Notice Added successfully');
-        };
+        }else{
+        $notice->save();
         return redirect()->route('notices')
-            ->with('success','Notice Added successfully');
+            ->with('success', 'Notice Added successfully');
+    }
     }
 
     /**
@@ -106,4 +109,10 @@ class NoticeController extends Controller
     {
         //
     }
+
+    public function notices(){
+        $notices = Notice::all();
+        return view('mahanaim.notice-board', compact('notices'));
+    }
+
 }

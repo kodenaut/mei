@@ -14,6 +14,7 @@
             </div>
             <div class="row">
                 @foreach($infos as $info)
+                    <div class="col-sm-12">
                     <article class="media content-section">
                         <div class="media-body">
                             <div class="article-metadata">
@@ -34,7 +35,7 @@
                             </div>
                         </div>
                     </article>
-
+                    </div>
                 @endforeach
             </div>
 

@@ -66,6 +66,9 @@ Route::get('/edit-post/{id}', 'BlogController@edit')->name('edit-post');
 Route::post('/update-post/{id}', 'BlogController@update')->name('update-post');
 Route::post('/delete-post/{id}', 'BlogController@destroy')->name('delete-post');
 
+Route::get('/our-notices', 'NoticeController@notices')->name('our-notices');
+Route::get('/view-notice/{id}', 'NoticeController@view')->name('view-notice');
+
 Route::get('/events', 'EventController@index')->name('events');
 Route::get('/add-event', 'EventController@create')->name('add-event');
 Route::post('/save-event', 'EventController@store')->name('save-event');

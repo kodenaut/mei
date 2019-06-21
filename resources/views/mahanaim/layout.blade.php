@@ -65,6 +65,7 @@ Header
                 </li>
                 <li class="menu-has-children"><a href="">Admissions</a>
                     <ul>
+                        <li><a href="#">Apply</a></li>
                         <li><a href="#">Academic Calender</a></li>
                         <li><a href="{{route('fee-structure')}}">Fee Structure</a></li>
                         <li><a href="#">Scholarship</a></li>
@@ -72,7 +73,7 @@ Header
                     </ul>
                 </li>
                 <li><a href="{{route('our-posts')}}">Blog</a></li>
-                <li><a href="{{route('our-events')}}">Events</a></li>
+                <li><a href="{{route('our-notices')}}">Notice</a></li>
                 <li><a href="{{route('our-photos')}}">Gallery</a></li>
                 <li class="menu-has-children"><a href="">Accounts</a>
                     <ul>

@@ -7,10 +7,10 @@
         <!--==========================
     Schools Section
   ============================-->
-        <div class="col-sm-3 m-1" style="padding-top: 5%;">
+        <div class="col-sm-3" style="padding-top: 5%;">
             <div class="list-group">
                 <a class="list-group-item list-group-item-light" style="color: black;"><b>Schools</b></a>
-                <a class="list-group-item list-group-item-primary" href="{{route('engineering-fee')}}">Engineering</a>
+                <a class="list-group-item list-group-item-primary" href="{{route('fee-structure')}}">Engineering</a>
                 <a class="list-group-item list-group-item-success" href="{{route('ict-fee')}}">ICT</a>
                 <a class="list-group-item list-group-item-warning" href="{{route('icdl-fee')}}">ICDL</a>
                 <a class="list-group-item list-group-item-danger" href="{{route('hospitality-fee')}}">Hospitality</a>
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-9">
                 <div class="section-header text-center">
                     <h3 class="section-title pt-2">Fee Structure</h3>
                     <hr>
