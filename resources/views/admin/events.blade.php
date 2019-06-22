@@ -18,7 +18,7 @@
                 <div class="col-sm-4">
                     <div class="card card-body" style="background: #e2f0fb;">
                         <h4 class="text-black-50">{{ $event->title }}<small class="float-right">{{ $event->created_at }}</small> </h4>
-                        <img src="{{ $event->image }}" alt="" style="height: 150px; width: 100%;">
+                        <img src="{{ $event->image }}" class="img-fluid rounded" alt="" style="height: 150px; width: 100%;">
                         <div class="caption">
                         <p class="description">{!! $event->description !!}</p>
                         <hr>

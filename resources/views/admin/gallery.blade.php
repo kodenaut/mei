@@ -52,7 +52,7 @@
             @foreach($photos as $photo)
             <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                 <a href="">
-                    <img src="{{$photo->image}}" alt="" style="width: 100%; height: 100%;">
+                    <img src="{{$photo->image}}" alt="" style="width: 100%; height: 100%;" class="img-fluid rounded">
                     <div class="details">
                         <span>{{ $photo->caption }}</span>
                         <button class="btn btn-success btn-sm float-left m-1" data-toggle="modal" data-target="#updatemodal-{{ $photo->id }}">

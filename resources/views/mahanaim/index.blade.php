@@ -96,7 +96,7 @@
                                     @foreach($partners as $partner)
                                         <div class="partner text-center m-3">
                                             <a href="{{ $partner->link }}" target="_blank">
-                                                <img class="rounded-circle" src="{{$partner->logo}}" alt="Name" style="height: 70px; width: 70px;">
+                                                <img class="img-fluid rounded-circle" src="{{$partner->logo}}" alt="Name" style="height: 70px; width: 70px;">
                                             </a>
                                             <div class="caption">
                                                 <h6>{{ $partner->name }}</h6>
@@ -117,13 +117,12 @@
     <section id="contact">
         <div class="container wow fadeInUp">
             <div class="section-header">
-                <h3 class="section-title">Contact</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <h3 class="section-title">Contact Us</h3>
+                <p class="section-description">Visit our offices or send us any inquiries:</p>
             </div>
         </div>
 
         <!-- Uncomment below if you wan to use dynamic maps -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
         <div class="container wow fadeInUp mt-5">
             <div class="row justify-content-center">
@@ -149,10 +148,10 @@
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/Mahanaimcollege" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
                     </div>
 
                 </div>

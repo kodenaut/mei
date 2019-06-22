@@ -777,12 +777,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #services .box {
   padding: 50px 20px;
-  margin-bottom: 50px;
   text-align: center;
   border: 1px solid #e6e6e6;
   height: 200px;
   position: relative;
   background: #e2f0fb;
+  margin-bottom: 20%;
 }
 
 #services .boxmodal {
@@ -835,7 +835,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #services .title {
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 2px;
   text-transform: uppercase;
 }
 
@@ -848,7 +848,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   white-space: nowrap;
   max-height: 3.6em;
   max-lines: 5;
-  line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%
+  line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%;
 }
 
 /* Call To Action Section

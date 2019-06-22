@@ -17,7 +17,7 @@
                     <div class="card card-body" style="background: #e2f0fb;">
                         <h4 class="text-black-50">{{ $event->title }}<small class="float-right">{{ $event->created_at }}</small> </h4>
                         <a href="{{ $event->image }}" target="_blank">
-                        <img src="{{ $event->image }}" alt="" style="width: 100%; height: 250px;">
+                        <img src="{{ $event->image }}" class="img-fluid" alt="" style="width: 100%; height: 250px;">
                         </a>
                         <div class="caption">
                             <p class="description">{!! $event->description !!} </p>

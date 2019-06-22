@@ -72,6 +72,7 @@ Header
                         <li><a href="#">E-Learning</a></li>
                     </ul>
                 </li>
+                <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
                 <li><a href="{{route('our-posts')}}">Blog</a></li>
                 <li><a href="{{route('our-notices')}}">Notice</a></li>
                 <li><a href="{{route('our-photos')}}">Gallery</a></li>

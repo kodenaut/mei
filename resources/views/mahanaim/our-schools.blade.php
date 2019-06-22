@@ -23,7 +23,7 @@
                             <div class="box">
                                 <div class="icon">
                                     <a href="">
-                                        <img class="rounded-circle" src="{{ $school->image }}" alt="{{ $school->name }}" style="height: 70px; width: 74px;">
+                                        <img class="img-fluid rounded-circle" src="{{ $school->image }}" alt="{{ $school->name }}" style="height: 70px; width: 74px;">
                                     </a>
                                 </div>
 

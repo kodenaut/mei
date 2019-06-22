@@ -63,7 +63,7 @@ Schools Section
                 @foreach($partners as $partner)
                     <div class="partner text-center m-3">
                         <a href="{{ $partner->link }}" target="_blank">
-                            <img class="rounded-circle mx-auto d-block" src="{{$partner->logo}}" alt="Name" style="height: 120px; width: 120px;">
+                            <img class="img-fluid rounded-circle mx-auto d-block" src="{{$partner->logo}}" alt="Name" style="height: 120px; width: 120px;">
                         </a>
                         <div class="caption">
                             <h6>{{ $partner->name }}</h6>

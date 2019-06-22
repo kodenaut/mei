@@ -19,7 +19,7 @@
                                             <h4><a class="article-title" href="">{{ $overview->title }}</a></h4>
                                         </div>
                                         <div class="col-sm-3 float-left">
-                                            <img src="{{ $overview->image }}" alt="" style="width: 100%;">
+                                            <img src="{{ $overview->image }}" class="img-fluid" alt="" style="width: 100%;">
                                         </div>
                                         <div class="col-sm-9 float-right">
                                             <p class="article-content">{!! $overview->content !!}</p>

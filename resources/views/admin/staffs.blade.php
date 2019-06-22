@@ -66,7 +66,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="member">
                             <div class="card card-body">
-                                <img src="{{ $staff->passport }}" class="rounded-circle mx-auto d-block" alt="" style="height: 150px; width: 150px;">
+                                <img src="{{ $staff->passport }}" class="img-fluid rounded-circle mx-auto d-block" alt="" style="height: 150px; width: 150px;">
                             <div class="caption">
                                 <h5>{{ $staff->salutation }} {{ $staff->first_name }}</h5>
                                 <span>{{ $staff->position }}</span>

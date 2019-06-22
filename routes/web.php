@@ -39,6 +39,8 @@ Route::get('/sports-fee', 'FeeController@sportsfee')->name('sports-fee');
 
 Route::post('/save-message', 'MessageController@store')->name('save-message');
 
+Route::get('/our-alumni', 'AlumniController@alumnis')->name('our-alumnis');
+
 
 //Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
@@ -128,5 +130,17 @@ Route::post('/save-info', 'InfoController@store')->name('save-info');
 Route::get('/edit-info/{id}', 'InfoController@edit')->name('edit-info');
 Route::post('/update-info/{id}', 'InfoController@update')->name('update-info');
 Route::post('/delete-info/{id}', 'InfoController@destroy')->name('delete-info');
+
+Route::get('/alumnis', 'AlumniController@index')->name('alumnis');
+Route::get('/add-alumnus', 'AlumniController@create')->name('add-alumnus');
+Route::post('/save-alumnus', 'AlumniController@store')->name('save-alumnus');
+Route::get('/edit-alumnus/{id}', 'AlumniController@edit')->name('edit-alumnus');
+Route::post('/update-alumnus/{id}', 'AlumniController@update')->name('update-alumnus');
+Route::post('/delete-alumnus/{id}', 'AlumniController@destroy')->name('delete-alumnus');
+
+Route::get('/slides', 'SliderController@index')->name('slides');
+Route::post('/add-slide', 'SliderController@store')->name('add-slide');
+Route::post('/update-slide/{id}', 'SliderController@update')->name('update-slide');
+Route::post('/delete-slide', 'SliderController@destroy')->name('delete-slide');
 
 

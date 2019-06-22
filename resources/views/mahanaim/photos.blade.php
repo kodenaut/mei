@@ -25,7 +25,7 @@
                             @foreach($photos as $photo)
                                 <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                                     <a href="">
-                                        <img src="{{$photo->image}}" alt="" style="width: 100%; height: 100%;">
+                                        <img src="{{$photo->image}}" class="img-fluid" alt="" style="width: 100%; height: 100%;">
                                         <div class="details" style="width: 84%;">
                                             <span>{{ $photo->caption }}</span>
                                         </div>
