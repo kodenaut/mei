@@ -5,7 +5,8 @@
     <!--==========================
     Blog Section
     ============================-->
-    <main id="main">
+    <main id="main" style="padding-top: 131px;">
+        <div class="container">
         <div class="row about-container">
 
             <div class="col-lg-12 content order-lg-1 order-2">
@@ -13,7 +14,7 @@
                     <div class="container wow fadeIn">
                         <div class="section-header">
                             <h3 class="section-title">{{ $post->title }}</h3>
-                            <hr>
+                            <hr style="margin-right: 25px;">
                         </div>
                         <div class="row">
                                 <article class="media content-section m-2" style="width: 100%;">
@@ -21,9 +22,9 @@
                                         <div class="col-sm-3 float-left">
                                             <img src="{{ $post->image }}" class="img-fluid" alt="" style="width: 100%;">
                                         </div>
-                                        <div class="col-sm-9 float-right">
+                                        <div class="col-sm-9 float-right" style="padding-right: 45px;">
                                             <p class="article-content" style="white-space: pre-line; line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%;">{!! $post->content !!}</p>
-                                            <hr>
+                                            <hr style="margin-right: 25px;">
                                             <a class="mr-2 float-right" href="">Author</a>
                                         </div>
                                     </div>
@@ -33,6 +34,7 @@
                     </div>
                 </section>
             </div>
+        </div>
         </div>
     </main>
 @endsection

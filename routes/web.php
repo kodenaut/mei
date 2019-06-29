@@ -41,6 +41,13 @@ Route::post('/save-message', 'MessageController@store')->name('save-message');
 
 Route::get('/our-alumni', 'AlumniController@alumnis')->name('our-alumnis');
 
+Route::get('/view-notice/{id}', 'NoticeController@show')->name('view-notice');
+
+Route::get('/past-papers', 'PaperController@papers')->name('past-papers');
+Route::get('/course-papers/{id}', 'PaperController@coursepapers')->name('course-papers');
+
+
+
 
 //Admin
 Route::get('/admin', 'AdminController@index')->name('dashboard');
@@ -69,7 +76,7 @@ Route::post('/update-post/{id}', 'BlogController@update')->name('update-post');
 Route::post('/delete-post/{id}', 'BlogController@destroy')->name('delete-post');
 
 Route::get('/our-notices', 'NoticeController@notices')->name('our-notices');
-Route::get('/view-notice/{id}', 'NoticeController@view')->name('view-notice');
+//Route::get('/view-notice/{id}', 'NoticeController@view')->name('view-notice');
 
 Route::get('/events', 'EventController@index')->name('events');
 Route::get('/add-event', 'EventController@create')->name('add-event');
@@ -143,4 +150,12 @@ Route::post('/add-slide', 'SliderController@store')->name('add-slide');
 Route::post('/update-slide/{id}', 'SliderController@update')->name('update-slide');
 Route::post('/delete-slide', 'SliderController@destroy')->name('delete-slide');
 
+Route::get('/past-papers/{id}', 'PaperController@index')->name('papers');
+Route::post('/add-paper/{id}', 'PaperController@store')->name('add-paper');
+Route::post('/update-paper/{id}', 'PaperController@update')->name('update-paper');
+Route::post('/delete-paper/{id}', 'PaperController@destroy')->name('delete-paper');
+
+
+
+Auth::routes();
 

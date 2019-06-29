@@ -113,7 +113,7 @@ class AlumniController extends Controller
             $image->move(public_path().'/uploads', $image->getClientOriginalName());
             $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
 
-            DB::update("UPDATE posts set firstname = ?, lastname = ? title = ?, content = ?, image = ? WHERE id = ?", [$fname, $lname, $title, $content, $url, $id]);
+            DB::update("UPDATE alumnis set firstname = ?, lastname = ?, title = ?, content = ?, image = ? WHERE id = ?", [$fname, $lname, $title, $content, $url, $id]);
             return redirect('/alumnis')->with('success', 'Alumni Has Been Updated!');
         }else {
             DB::update("UPDATE alumnis set firstname = ?, lastname = ?, title = ?, content = ? WHERE id = ?", [$fname, $lname, $title, $content, $id]);
@@ -136,7 +136,7 @@ class AlumniController extends Controller
     }
 
     public function alumnis(){
-        $alumnis = Alumni::all();
+        $alumnis = Alumni::paginate(6);
         return view('mahanaim.our-alumni', compact('alumnis'));
     }
 }

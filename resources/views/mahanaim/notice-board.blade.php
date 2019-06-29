@@ -2,65 +2,55 @@
 
 @section('content')
     <main id="main">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                    <section id="services" style="width: 100%;">
+                    <div class="container wow fadeIn">
                 <div class="section-header pt-3">
-                    <h3 class="text-center"> <strong>Mahanaim Educational Institute Notice Board</strong></h3>
+                    <h3 class="text-center"> <strong>{{ $notice->title }}</strong></h3>
                     <hr>
-                    <p class="text-center"> All the important College Notice will be posted here:</p>
-                </div>
                 </div>
             </div>
-
-            <div class="row">
-
                 <!--==========================
             Schools Section
           ============================-->
-                @foreach($notices as $notice)
-                <div class="col-sm-3">
-                    <div class="list-group">
-                        <h5 class="list-group-item list-group-item-info" href="">{{ $notice->title }}<small class="float-right">
-                                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#notice-{{ $notice->id }}">
-                                    <i class="fas fa-info"></i>
-                                </button>
-                            </small>
-                            <small class="">Posted:&nbsp;{{ $notice->created_at }}</small>
-                        </h5>
 
-                            <div class="caption" style="border: solid 1px grey; height: 130px; max-height: 130px;">
-                                <p class="m-1">{{ $notice->content }}</p>
-                            </div>
-                    </div>
-                </div>
+                <article class="media content-section" style="width: 100%;">
+                    <div class="media-body">
+                        <div class="row">
+                        <div class="col-sm-9">
+                            <p class="article-content m-2">{!! $notice->content  !!} </p>
 
-                    <!-- Notice Modal-->
-                    <div class="modal" id="notice-{{ $notice->id }}">
-                        <div class="modal-dialog modal-lg" style="height: 150%;">
-                            <div class="modal-content" style="height: 90%;">
+                            @if($notice->file)
+                                <iframe src="{{ $notice->file }}" width="100%" style="height: 200%;"></iframe>
+                                @endif
+                            <hr>
+                        </div>
+                                <!-- Notice Board-->
+                                <div class="col-sm-3">
+                                    <div class="list-group mt-2" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
+                                        <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Recent News</b></a>
+                                        @foreach($posts as $post)
+                                            <a class="list-group-item list-group-item-light" href="{{route('show-post', $post->id)}}"><i class="fas fa-angle-double-right"></i> {{ $post->title }}</a>
+                                        @endforeach
+                                    </div>
 
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">{{ $notice->title }}</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <div class="list-group mt-2" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
+                                        <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Follow Us:</b></a>
+                                        <a class="list-group-item list-group-item-light" href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-facebook-square"></i> Facebook</b></a>
+                                        <a class="list-group-item list-group-item-light" href="https://twitter.com/Mahanaimcollege" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-twitter-square"></i> Twitter</b></a>
+                                        <a class="list-group-item list-group-item-light" href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-linkedin-square"></i> LinkedIn</b></a>
+                                        <a class="list-group-item list-group-item-light" href="" style="color: #1b4b72;"><b><i class="fab fa-instagram"></i> Instagram</b></a>
+                                    </div>
+
                                 </div>
 
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <p>
-                                        {{ $notice->content }}
-                                    </p>
-                                    <hr>
-                                    <iframe src="{{ $notice->file }}" style="height: 80%; width: 100%;"></iframe>
-                                </div>
-                            </div>
+                                <!-- End of Notice Board -->
                         </div>
                     </div>
+                </article>
 
-                    <!-- End of Modal-->
-
-                @endforeach
+                    </section>
             </div>
 
         </div>

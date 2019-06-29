@@ -1,20 +1,17 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Event;
 use App\Info;
 use App\Mission;
+use App\Notice;
 use App\Overview;
 use App\Partner;
 use App\Philosophy;
 use App\Photo;
 use App\Post;
-use App\School;
 use App\Staff;
 use App\Vision;
 use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -35,10 +32,11 @@ class HomeController extends Controller
         $partners = Partner::all();
         $overviews = Overview::all();
         $infos = Info::all();
+        $notices = Notice::all();
+        $posts = Post::all();
         return view('mahanaim.index', compact('missions', 'philosophies', 'visions',
-             'staffs', 'posts', 'photos', 'events', 'partners', 'overviews', 'infos'));
+            'staffs', 'posts', 'photos', 'events', 'partners', 'overviews', 'infos', 'notices', 'posts'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +46,6 @@ class HomeController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -59,7 +56,6 @@ class HomeController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -70,7 +66,6 @@ class HomeController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,7 +76,6 @@ class HomeController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -93,7 +87,6 @@ class HomeController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -104,4 +97,5 @@ class HomeController extends Controller
     {
         //
     }
+
 }

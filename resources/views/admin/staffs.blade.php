@@ -63,7 +63,7 @@
                 <div class="row">
 
                     @foreach($staffs as $staff)
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-sm-3">
                         <div class="member">
                             <div class="card card-body">
                                 <img src="{{ $staff->passport }}" class="img-fluid rounded-circle mx-auto d-block" alt="" style="height: 150px; width: 150px;">
@@ -73,7 +73,7 @@
                                 <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#updatemodal-{{ $staff->id }}">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <form method="post" action="{{route('delete-staff', $staff->id)}}" class="form-btn">
+                                <form method="post" action="{{route('delete-staff', $staff->id)}}" class="form-btn" style="display: inline-block;">
                                     @csrf
                                     <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Staff?")'>
                                         <i class="fas fa-trash"></i>

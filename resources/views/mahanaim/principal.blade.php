@@ -1,29 +1,30 @@
 @extends('mahanaim.custom')
 
 @section('content')
-<main id="main">
-    <div class="container-fluid">
+<main id="main" style="padding-top: 75px;">
+    <div class="container">
         <div class="row about-container">
             <div class="col-lg-12 content order-lg-1 order-2">
-                <section id="facts">
+                <section id="facts" class="pt-5">
                     <div class="container wow fadeIn">
                         <div class="section-header">
                             <h3 class="section-title">Principal's Message</h3>
-                            <hr>
+                            <hr style="margin-right: 25px;">
                         </div>
                         <div class="row">
                             @foreach($overviews as $overview)
                             <article class="media content-section">
                                 <div class="media-body">
                                     <div class="article-metadata">
-                                        <h4><a class="article-title" href="">{{ $overview->title }}</a></h4>
+                                        <h4 class="pl-4"><a class="article-title" href="">{{ $overview->title }}</a></h4>
                                     </div>
                                     <div class="col-sm-3 float-left">
                                         <img src="{{ $overview->image }}" class="img-fluid" alt="" style="width: 100%;">
+                                        <h5>Name</h5>
                                     </div>
-                                    <div class="col-sm-9 float-right">
+                                    <div class="col-sm-9 float-right" style="padding-right: 45px;">
                                         <p class="article-content">{!! $overview->content !!}</p>
-                                        <hr>
+                                        <hr style="margin-right: 25px;">
                                     </div>
                                 </div>
                             </article>

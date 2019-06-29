@@ -64,24 +64,30 @@
                                 </a>
                             </div>
 
-                            <div class="caption">
-                            <h4 class="title"><a href="">{{ $school->name }}</a></h4>
-                            <p class="description"> {{ $school->description }}</p>
-                                <button class="btn btn-info btn-sm float-left" data-toggle="modal" data-target="#modal-{{ $school->id }}">
-                                    <i class="fas fa-info"></i>
-                                </button>
-                                <button class="btn btn-success btn-sm mx-1" data-toggle="modal" data-target="#updatemodal-{{ $school->id }}">
+                            <h4 class="title pt-5"><a href="">{{ $school->name }}</a></h4>
+                            <p class="">
+                                <?php
+                                $cont =substr($school->description,0,150);
+                                ?>
+                                {!! $cont !!}...&nbsp;
+                                <a href="" data-toggle="modal" data-target="#modal-{{ $school->id }}">
+                                    Read more
+                                </a>
+                            </p>
+
+                            <div class="caption" style="display: block;">
+                                <button class="btn btn-success btn-sm mx-1 float-left" data-toggle="modal" data-target="#updatemodal-{{ $school->id }}">
                                     <i class="fas fa-edit"></i>
                                 </button>
 
-                                <form method="post" action="{{route('delete-school', $school->id)}}" class="form-btn">
+                                <form method="post" action="{{route('delete-school', $school->id)}}" class="form-btn" style="display: inline-block;">
                                     @csrf
                                 <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this School?")'>
                                     <i class="fas fa-trash"></i>
                                 </button>
                                 </form>
 
-                                <a href="{{route('courses', $school->id)}}" class="btn btn-warning btn-sm float-right">
+                                <a href="{{route('courses', $school->id)}}" class="btn btn-warning btn-sm float-right mr-2">
                                     <i class="fas fa-book-open">&nbsp;Courses</i>
                                 </a>
                             </div>

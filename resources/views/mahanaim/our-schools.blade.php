@@ -2,8 +2,8 @@
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 @section('content')
-    <main id="main">
-        <div class="container-fluid">
+    <main id="main" style="padding-top: 126px;">
+        <div class="container">
 
     <div class="row">
         <!--==========================
@@ -28,14 +28,18 @@
                                 </div>
 
                                 <div class="caption">
-                                    <h4 class="title"><a href="">{{ $school->name }}</a></h4>
-                                    <p class="description"> {{ $school->description }}</p>
-                                    <button class="btn btn-info btn-sm float-left" data-toggle="modal" data-target="#modal-{{ $school->id }}">
-                                        <i class="fas fa-info"></i>
-                                    </button>
-
-                                    <a href="{{route('our-courses', $school->id)}}" class="btn btn-warning btn-sm float-right">
-                                        <i class="fas fa-book-open">&nbsp;Courses</i>
+                                    <h4 class="title pt-5"><a href="">{{ $school->name }}</a></h4>
+                                    <p class="">
+                                        <?php
+                                        $cont =substr($school->description,0,170);
+                                        ?>
+                                        {!! $cont !!}...&nbsp;
+                                        <a href="#" data-toggle="modal" data-target="#modal-{{ $school->id }}">
+                                            More
+                                        </a>
+                                    </p>
+                                    <a href="{{route('our-courses', $school->id)}}" class="btn btn-info btn-sm mx-auto">
+                                        <i class="fas fa-graduation-cap">&nbsp;Courses</i>
                                     </a>
                                 </div>
                             </div>

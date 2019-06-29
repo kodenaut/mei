@@ -6,6 +6,7 @@
     Blog Section
     ============================-->
     <main id="main">
+        <div class="container">
         <div class="row about-container">
 
             <div class="col-lg-12 content order-lg-1 order-2">
@@ -13,18 +14,18 @@
                 <!--==========================
   Team Section
 ============================-->
-                <section id="team">
+                <section id="team" class="pb-5">
                     <div class="container wow fadeInUp">
                         <div class="section-header">
                             <br>
                             <h3 class="section-title">Staff</h3>
-                            <hr>
+                            <hr style="margin: 25px;">
                             <p class="section-description">Mahanaim Eduactional Institute Members of Staff.</p>
                         </div>
                         <div class="row">
 
                             @foreach($staffs as $staff)
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-sm-3">
                                     <div class="member">
                                         <div class="card card-body">
                                             <img src="{{ $staff->passport }}" class="img-fluid rounded-circle mx-auto d-block" alt="" style="height: 150px; width: 150px;">
@@ -46,6 +47,7 @@
                 <hr>
 
             </div>
+        </div>
         </div>
     </main>
 @endsection

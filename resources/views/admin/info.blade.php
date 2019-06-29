@@ -18,23 +18,24 @@
                     <article class="media content-section">
                         <div class="media-body">
                             <div class="article-metadata">
-                                <h4><a class="article-title" href="">{{ $info->title }}</a></h4>
+                                <h4 class="pl-3"><a class="article-title" href="">{{ $info->title }}</a></h4>
                             </div>
                             <div class="col-sm-12 float-right">
                                 <p class="article-content">{!! $info->content !!}</p>
-                                <hr>
-                                <a href="{{route('edit-info', $info->id)}}" class="btn btn-success btn-sm mx-1">
-                                    <i class="fas fa-edit"></i>
-                                </a>
+                                <br>
                                 <form method="post" action="{{route('delete-info', $info->id)}}" class="form-btn float-right">
                                     @csrf
                                     <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Information?")'>
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
+                                <a href="{{route('edit-info', $info->id)}}" class="btn btn-success btn-sm mx-1 float-right">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                             </div>
                         </div>
                     </article>
+                        <hr>
                     </div>
                 @endforeach
             </div>

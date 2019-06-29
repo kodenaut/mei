@@ -137,7 +137,7 @@ class BlogController extends Controller
     }
 
     public function posts(){
-        $posts = Post::all();
+        $posts = Post::paginate(2);
         return view('mahanaim.posts', compact('posts'));
     }
 }

@@ -3,7 +3,7 @@
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 @section('content')
-    <main id="main">
+    <main id="main" style="padding-top: 120px;">
         <div class="container-fluid">
 
     <div class="row">

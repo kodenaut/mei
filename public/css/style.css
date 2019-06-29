@@ -139,8 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 90vh;
-  background:  url(../img/bg.jpg) top center;
+  height: 85vh;
   background-size: cover;
   position: relative;
 }
@@ -226,9 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero1 {
   width: 100%;
-  height: 70vh;
-  background: url(../img/bg.jpg) top center;
-  background-size: cover;
+  height: 50vh;
   position: relative;
 }
 
@@ -405,6 +402,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu, .nav-menu * {
   margin: 0;
   padding: 0;
+  background: white;
   list-style: none;
 }
 
@@ -460,6 +458,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Nav Meu Container */
 #nav-menu-container {
   float: right;
+  background: #0f253c;
   margin: 0;
 }
 
@@ -474,9 +473,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 8px 10px 8px;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+  color: #0b0b0b;
+  font-weight: bolder;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
   text-transform: uppercase;
   font-size: 13px;
   outline: none;
@@ -674,7 +673,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about {
   background: #fff;
   background-size: cover;
-  padding-top: 35px;
   padding-bottom: 30px;
 }
 
@@ -738,19 +736,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #111;
 }
 
-#about .description {
-  font-size: 14px;
-  white-space: nowrap;
-  line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%
-}
-
 
 /* Facts Section
 --------------------------------*/
 #facts {
   background: #f7f7f7;
-  margin: 5px;
-  padding-top: 15px;
 }
 
 #facts .counters span {
@@ -772,14 +762,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #fff;
   background-size: cover;
   margin: 5px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 #services .box {
-  padding: 50px 20px;
   text-align: center;
   border: 1px solid #e6e6e6;
-  height: 200px;
+  height: 240px;
   position: relative;
   background: #e2f0fb;
   margin-bottom: 20%;
@@ -848,7 +837,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   white-space: nowrap;
   max-height: 3.6em;
   max-lines: 5;
-  line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%;
 }
 
 /* Call To Action Section
@@ -917,7 +905,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio #portfolio-flters li {
   cursor: pointer;
-  margin: 0 10px;
   display: inline-block;
   padding: 10px 22px;
   font-size: 12px;
@@ -1136,75 +1123,4 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   font-size: 13px;
   color: #ccc;
-}
-
-.content-section {
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
-  margin-bottom: 20px;
-}
-
-.article-title {
-  color: steelblue;
-}
-
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
-}
-
-.article-content {
-  white-space: pre-line;
-  height:98%;
-  line-height:20px;
-  overflow:hidden;
-}
-
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
-}
-
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
-}
-
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.account-heading {
-  font-size: 2.5rem;
-}
-
-.form-btn {
-  display: inline-block;
-}
-
-.message-box {
-  padding: 50px 20px;
-  margin-bottom: 50px;
-  text-align: center;
-  border: 1px solid #e6e6e6;
-  position: relative;
-  background: #e2f0fb;
 }

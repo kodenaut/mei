@@ -43,8 +43,8 @@ class CourseController extends Controller
         $qualification = $request->input('qualification');
         $duration = $request->input('duration');
         $modules = $request->input('modules');
-        $exam = $request->input('name');
-        $mode = $request->input('name');
+        $exam = $request->input('exam');
+        $mode = $request->input('mode');
         //
         DB::table('courses')->insert([[
             'name'=>$name,

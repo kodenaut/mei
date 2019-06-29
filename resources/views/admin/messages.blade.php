@@ -37,22 +37,29 @@
                                                 {{ $message->subject }}
                                             </td>
                                             <td>
-                                                <p>{{ $message->message }}</p>
+                                                <p class="article-content">
+                                                    <?php
+                                                    $cont =substr($message->message,0,100);
+                                                    ?>
+                                                    {!! $cont !!}...&nbsp;
+                                                    <a href="" data-toggle="modal" data-target="#modal-{{ $message->id }}" style="color: #0a568c;">
+                                                        Read more
+                                                    </a>
+                                                </p>
                                             </td>
 
                                             <td>
-                                                <!--
-                                    <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-{{ $message->id }}">
-                                        <i class="fas fa-info"></i>
-                                    </button>
-                                    -->
-                                    <form method="post" action="{{route('delete-message', $message->id)}}">
+                                    <a href="mailto:{{$message->email}}" class="btn btn-outline-info btn-sm m-1" style="display: inline-block;">
+                                        <i class="fas fa-reply"></i>
+                                    </a>
+                                    <form method="post" action="{{route('delete-message', $message->id)}}" class="form-btn m-1" style="display: inline-block;">
                                         @csrf
                                         <button class="btn btn-danger btn-sm" type="submit" onclick='return confirm("Are you sure you want to Delete this Message?")'>
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
                                             </td>
+
                                         </tr>
 
                                         <!-- Message Modal -->
@@ -72,6 +79,9 @@
                                                             {{ $message->message }}
                                                         </p>
                                                     </div>
+                                                    <div class="modal-footer">
+                                                        <p>{{ $message->name }}</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,6 +95,12 @@
 
                         </div>
         </section><!-- #schools -->
+    </div>
 
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 mx-auto">
+            {{ $messages->links() }}
+        </div>
     </div>
 @endsection

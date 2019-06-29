@@ -2,14 +2,14 @@
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 @section('content')
-    <main id="main">
-        <div class="container-fluid">
+    <main id="main" style="padding-top: 120px;">
+        <div class="container">
 
             <div class="row">
                 <!--==========================
             Schools Section
           ============================-->
-                <section id="services" style="width: 100%;">
+                <section id="services">
                     <div class="container wow fadeIn">
                         <div class="section-header">
                             <h3 class="section-title">Alumni</h3>
@@ -18,21 +18,24 @@
                         </div>
 
                             @foreach($alumnis as $alumni)
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="box">
-                                        <div class="icon">
-                                            <a href="">
-                                                <img class="img-fluid rounded-circle" src="{{ $alumni->image }}" alt="{{ $alumni->firstname }}" style="height: 70px; width: 80px;">
-                                            </a>
-                                        </div>
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s" style="border-radius: 15px;">
+                                    <div class="card card-body mb-3">
+                                    <div class="box" style="height: 400px;">
+                                        <img src="{{ $alumni->image }}" class="img-fluid rounded-circle mx-auto" style="width: 150px; height: 150px;">
+                                        <div class="caption m-2" style="border-radius: 5px;">
+                                            <h4 class="title pt-0"><a href="">{{ $alumni->firstname }}&nbsp;{{ $alumni->lastname }}</a></h4>
+                                            <p class="m-2">
+                                                <?php
+                                                    $cont =substr($alumni->content,0,370);
+                                                ?>
+                                                {!! $cont !!}...&nbsp;
+                                                    <a href="#" data-toggle="modal" data-target="#modal-{{ $alumni->id }}">
+                                                        Read more
+                                                    </a>
+                                            </p>
 
-                                        <div class="caption">
-                                            <h4 class="title"><a href="">{{ $alumni->firstname }}&nbsp;{{ $alumni->lastname }}</a></h4>
-                                            <p class="m-0 p-0" style="line-height: 1.2em; overflow: hidden; text-overflow: ellipsis; max-width: 90%;white-space: nowrap;"> {!! $alumni->content !!}</p>
-                                            <button class="btn btn-info btn-sm float-left" data-toggle="modal" data-target="#modal-{{ $alumni->id }}">
-                                                <i class="fas fa-info"></i>
-                                            </button>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
 
@@ -69,4 +72,11 @@
             </div>
         </div>
     </main>
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 mx-auto">
+            {{ $alumnis->links() }}
+        </div>
+    </div>
 @endsection

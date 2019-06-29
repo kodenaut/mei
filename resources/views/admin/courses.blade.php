@@ -123,7 +123,7 @@
 
                                             <div class="col-sm-6">
                                                 <li class="list-group-item">
-                                                <form method="post" action="{{route('delete-course', $course->id)}}" class="form-btn">
+                                                <form method="post" action="{{route('delete-course', $course->id)}}" class="form-btn" style="display: inline-block;">
                                                     @csrf
                                                     <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Course?")'>
                                                         <i class="fas fa-trash"></i>
@@ -132,6 +132,9 @@
                                                 <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#updatemodal-{{ $course->id }}">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
+                                                    <a href="{{route('papers', $course->id)}}" class="btn btn-success btn-sm float-right mx-1">
+                                                        <i class="fas fa-book-open">&nbsp;Papers</i>
+                                                    </a>
                                                 </li>
                                             </div>
                                         </div>
