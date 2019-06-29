@@ -2,73 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e951d1b-606e-48b5-a16c-a8a97684589a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/AdminLTE.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/corals_header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/core.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/ladda-themeless.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/lightbox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/pace.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/sweetalert2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/toastr.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/adminlte.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/corals_functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/corals_main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/fastclick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/icheck.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/jquery.blockUI.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/jquery.slimscroll.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/ladda.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/lightbox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/lodash.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/pace.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/select2.full.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/spin.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/sweetalert2.all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/toastr.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/papers.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlumniController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NoticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NoticeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/messages.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/messages.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schools.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schools.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/staffs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/staffs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/background.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/background.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/chancellor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/chancellor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/custom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/fee-custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/fee-custom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/notice-board.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/notice-board.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/our-alumni.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/our-alumni.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/our-courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/our-courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/our-schools.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/our-schools.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/our-staff.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/our-staff.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/principal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/principal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/show-post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/show-post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,28 +35,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-              <folding>
-                <element signature="e#1203#1249#0#HTML" expanded="true" />
-                <element signature="e#1478#1512#0#HTML" expanded="true" />
-                <element signature="e#1553#1576#0#HTML" expanded="true" />
-                <element signature="e#4945#4966#0#HTML" expanded="true" />
-                <element signature="e#2118#2138#0#HTML" expanded="true" />
-                <element signature="e#5091#5111#0#HTML" expanded="true" />
-                <element signature="e#5599#5619#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="140">
+              <caret line="186" column="54" lean-forward="true" selection-start-line="186" selection-start-column="54" selection-end-line="186" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -125,17 +46,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="56">
+              <caret line="145" column="69" selection-start-line="145" selection-start-column="69" selection-end-line="145" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/custom.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="31" column="206" selection-start-line="31" selection-start-column="206" selection-end-line="31" selection-end-column="206" />
+            <state relative-caret-position="119">
+              <caret line="1111" column="16" selection-start-line="1111" selection-start-column="16" selection-end-line="1111" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -144,7 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>li</find>
       <find>icon</find>
       <find>has</find>
       <find>bio</find>
@@ -174,6 +94,7 @@
       <find>title</find>
       <find>tea</find>
       <find>box</find>
+      <find>social</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -214,12 +135,9 @@
         <option value="$PROJECT_DIR$/resources/views/mahanaim/background.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/mahanaim/principal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/mahanaim/show-post.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/mahanaim/our-staff.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/resources/views/admin/schools.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/staffs.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AlumniController.php" />
-        <option value="$PROJECT_DIR$/resources/views/mahanaim/our-alumni.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/mahanaim/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/info.blade.php" />
@@ -237,8 +155,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PaperController.php" />
         <option value="$PROJECT_DIR$/resources/views/mahanaim/fee-custom.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/mahanaim/custom.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/mahanaim/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/mahanaim/our-alumni.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/mahanaim/our-staff.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/mahanaim/layout.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -372,6 +293,17 @@
             <path>
               <item name="mahanaim" type="b2602c69:ProjectViewProjectNode" />
               <item name="mahanaim" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mahanaim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mahanaim" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mahanaim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mahanaim" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -492,12 +424,12 @@
       <workItem from="1561611202619" duration="3744000" />
       <workItem from="1561640080012" duration="6438000" />
       <workItem from="1561698613958" duration="13080000" />
-      <workItem from="1561789586822" duration="15579000" />
+      <workItem from="1561789586822" duration="21616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270649000" />
+    <option name="totallyTimeSpent" value="276686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
@@ -673,23 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/our-staff.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-          <folding>
-            <element signature="e#677#698#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="773" column="21" lean-forward="true" selection-start-line="773" selection-start-column="21" selection-end-line="773" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/staffs.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -697,13 +612,6 @@
           <folding>
             <element signature="e#3711#3741#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="122" selection-start-line="19" selection-start-column="122" selection-end-line="19" selection-end-column="122" />
         </state>
       </provider>
     </entry>
@@ -731,13 +639,6 @@
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/our-alumni.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="80" column="10" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="80" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -865,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/fee-structure.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/papers.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -905,10 +799,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/custom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="31" column="206" selection-start-line="31" selection-start-column="206" selection-end-line="31" selection-end-column="206" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/our-alumni.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="23" column="115" selection-start-line="23" selection-start-column="115" selection-end-line="23" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/our-staff.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#158#183#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/fee-structure.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -919,33 +844,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/custom.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="31" column="206" selection-start-line="31" selection-start-column="206" selection-end-line="31" selection-end-column="206" />
+        <state relative-caret-position="229">
+          <caret line="13" column="143" selection-start-line="13" selection-start-column="143" selection-end-line="13" selection-end-column="143" />
+          <folding>
+            <element signature="e#659#682#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="186" column="54" lean-forward="true" selection-start-line="186" selection-start-column="54" selection-end-line="186" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="56">
+          <caret line="145" column="69" selection-start-line="145" selection-start-column="69" selection-end-line="145" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/mahanaim/papers.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-          <folding>
-            <element signature="e#1203#1249#0#HTML" expanded="true" />
-            <element signature="e#1478#1512#0#HTML" expanded="true" />
-            <element signature="e#1553#1576#0#HTML" expanded="true" />
-            <element signature="e#4945#4966#0#HTML" expanded="true" />
-            <element signature="e#2118#2138#0#HTML" expanded="true" />
-            <element signature="e#5091#5111#0#HTML" expanded="true" />
-            <element signature="e#5599#5619#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="1111" column="16" selection-start-line="1111" selection-start-column="16" selection-end-line="1111" selection-end-column="16" />
         </state>
       </provider>
     </entry>

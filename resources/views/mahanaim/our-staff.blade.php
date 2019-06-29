@@ -5,7 +5,7 @@
     <!--==========================
     Blog Section
     ============================-->
-    <main id="main">
+    <main id="main" style="padding-top: 131px;">
         <div class="container">
         <div class="row about-container">
 
@@ -20,7 +20,6 @@
                             <br>
                             <h3 class="section-title">Staff</h3>
                             <hr style="margin: 25px;">
-                            <p class="section-description">Mahanaim Eduactional Institute Members of Staff.</p>
                         </div>
                         <div class="row">
 
@@ -44,7 +43,6 @@
                 </section><!-- #team -->
 
                 <br>
-                <hr>
 
             </div>
         </div>

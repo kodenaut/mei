@@ -11,7 +11,7 @@
                     <div class="list-group">
                         <a class="list-group-item list-group-item-primary" style="color: black;"><b>Courses</b></a>
                         @foreach($courses as $course)
-                        <a class="list-group-item list-group-item-danger" href="{{route('course-papers', $course->id) }}">{{ $course->name }}</a>
+                        <a class="list-group-item list-group-item-light" href="{{route('course-papers', $course->id) }}" style="color: #0a568c;">{{ $course->name }}</a>
                             @endforeach
                     </div>
                 </div>

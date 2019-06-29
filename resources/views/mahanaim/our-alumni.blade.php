@@ -21,7 +21,7 @@
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s" style="border-radius: 15px;">
                                     <div class="card card-body mb-3">
                                     <div class="box" style="height: 400px;">
-                                        <img src="{{ $alumni->image }}" class="img-fluid rounded-circle mx-auto" style="width: 150px; height: 150px;">
+                                        <img src="{{ $alumni->image }}" class="img-fluid rounded-circle mx-auto m-1" style="width: 150px; height: 150px;">
                                         <div class="caption m-2" style="border-radius: 5px;">
                                             <h4 class="title pt-0"><a href="">{{ $alumni->firstname }}&nbsp;{{ $alumni->lastname }}</a></h4>
                                             <p class="m-2">
