@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Info;
+use App\Notice;
+use App\Overview;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
@@ -113,5 +116,12 @@ class InfoController extends Controller
         $info->delete();
         return redirect('/info')->with('success', 'Info Has Been Deleted!');
 
+    }
+    public function meiinfo(){
+        $infos = Info::all();
+        $posts = Post::all();
+        $notices = Notice::all();
+        $overviews = Overview::all();
+        return view('mahanaim.mei-info', compact('infos', 'posts', 'overviews', 'notices'));
     }
 }

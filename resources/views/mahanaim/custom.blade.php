@@ -61,7 +61,9 @@ Header
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
                         <li><a href="{{route('our-schools')}}">Schools</a></li>
+                        <!--
                         <li><a href="{{route('past-papers')}}">Past Papers</a></li>
+                        -->
                         <li><a href="#">Examination</a></li>
                     </ul>
                 </li>
@@ -75,7 +77,7 @@ Header
                     </ul>
                 </li>
                 <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
-                <li><a href="{{route('our-posts')}}">Blog</a></li>
+                <li><a href="{{route('our-posts')}}">News</a></li>
                 <!--
                 <li><a href="{{route('our-photos')}}">Gallery</a></li>
                 -->
@@ -138,15 +140,49 @@ Header
 
 @yield('content')
 
-<footer id="footer">
+<!--==========================
+  Footer
+============================-->
+<footer id="footer" style="padding-top: 15px;">
     <div class="container">
-        <div class="copyright">
-            &copy; Copyright <strong>mei</strong>. All Rights Reserved
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <i class="fa fa-phone fa-3x"></i>
+                <p>Give us a call:<br><a href="#"> +254 701033228</a></p>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <div class="text-center">
+                    <h4>Find us online:</h4>
+                    <a href="https://twitter.com/Mahanaimcollege" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+                    <a href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
+                    <a href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a>
+                    <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
+                </div>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <i class="fas fa-envelope fa-3x"></i>
+                <p>Send us an Email:<br><a href="mailto:info@mei.ac.ke">info@mei.ac.ke</a><br>
+                    <a href="mailto:info@mahanaim.ac.ke">info@mahanaim.ac.ke</a> </p>
+            </div>
         </div>
-        <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">Mahanaim</a>
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 text-center">
+                <div class="copyright text-center">
+                    &copy; Copyright <strong>mei</strong>. All Rights Reserved
+                </div>
+
+                <div class="credits">
+                    Designed by <a href="https://kodenaut.github.io">Mahanaim</a>
+
+                </div>
+            </div>
         </div>
     </div>
+    <br>
 </footer><!-- #footer -->
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

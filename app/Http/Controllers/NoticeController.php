@@ -43,7 +43,7 @@ class NoticeController extends Controller
         $this->validate($request, array(
             'title' => 'required',
             'content'=>'required',
-            'file' => 'file|mimes:pdf|max:4096',
+            'file' => 'image|mimes:pdf,jpg,png,svg,gif|max:4096',
         ));
         //save the data to the database
         $notice  = new Notice() ;

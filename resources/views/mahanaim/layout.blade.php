@@ -13,6 +13,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Concert One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+
     <!-- Bootstrap CSS File -->
     <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
@@ -25,12 +28,22 @@
     <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
+    <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
+
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -54,6 +67,7 @@ Header
                     <ul>
                         <li><a href="{{route('our-staffs')}}">Staff</a></li>
                         <li><a href="{{route('background')}}">Backround</a> </li>
+                        <li><a href="{{route('mei-info')}}">MEI Information</a> </li>
                         <li><a href="{{route('chancellor')}}">Chancellor's Message</a> </li>
                         <li><a href="{{route('principal')}}">Principal's Message</a> </li>
                     </ul>
@@ -61,7 +75,9 @@ Header
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
                         <li><a href="{{route('our-schools')}}">Schools</a></li>
+                        <!--
                         <li><a href="{{route('past-papers')}}">Past Papers</a></li>
+                        -->
                         <li><a href="#">Examination</a></li>
                     </ul>
                 </li>
@@ -74,15 +90,16 @@ Header
                         <li><a href="#">E-Learning</a></li>
                     </ul>
                 </li>
-                <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
-                <li><a href="{{route('our-posts')}}">Blog</a></li>
                 <!--
-                <li><a href="{{route('our-photos')}}">Gallery</a></li>
+                <li><a href="{{route('our-posts')}}">News</a></li>
                 -->
-                <li class="menu-has-children"><a href="">Accounts</a>
+                <li><a href="{{route('our-photos')}}">Gallery</a></li>
+                <li><a href="">Contact</a></li>
+                <li class="menu-has-children"><a href="">Portal</a>
                     <ul>
                         <li><a href="https://mahanaim.dsl.ke/staff/" target="_blank">Staff</a></li>
                         <li><a href="https://mahanaim.dsl.ke/students/" target="_blank">Student</a> </li>
+                        <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
                     </ul>
             </ul>
         </nav><!-- #nav-menu-container -->
@@ -107,29 +124,33 @@ Header
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="{{asset('img/bg.jpg')}}" alt="Los Angeles" style="width:100%;">
+                    <img src="{{asset('img/1.jpg')}}" alt="Los Angeles" style="width:100%;">
                 </div>
 
+                <div class="item">
+                    <img src="{{asset('img/g.jpg')}}" alt="Chicago" style="width:100%;">
+                </div>
 
                 <div class="item">
-                    <img src="{{asset('img/bg.jpg')}}" alt="Chicago" style="width:100%;">
+                    <img src="{{asset('img/3.jpg')}}" alt="Chicago" style="width:100%;">
                 </div>
 
             </div>
 
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="glyphicon glyphicon-chevron-left" style="margin-top: 50%;"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="glyphicon glyphicon-chevron-right" style="margin-top: 50%;"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
 
 
         <! -- End of Slider -->
+
     </div>
 </section><!-- #hero -->
 
@@ -139,30 +160,8 @@ Header
   Footer
 ============================-->
 <footer id="footer">
+    <br>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-4 text-center">
-                <i class="fa fa-phone fa-3x"></i>
-                <p>Give us a call:<br><a href="#"> +254 701033228</a></p>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <div class="text-center">
-                    <h4>Find us online:</h4>
-                    <a href="https://twitter.com/Mahanaimcollege" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
-                    <a href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
-                    <a href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a>
-                    <a href="#"><i class="fa fa-instagram fa-3x"></i></a>
-                </div>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <i class="fas fa-envelope fa-3x"></i>
-                <p>Send us an Email:<br><a href="mailto:info@mei.ac.ke">info@mei.ac.ke</a><br>
-                <a href="mailto:info@mahanaim.ac.ke">info@mahanaim.ac.ke</a> </p>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 text-center">
@@ -200,5 +199,21 @@ Header
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
+<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<script src="js/easing.min.js"></script>
+<script src="js/hoverIntent.js"></script>
+<script src="js/superfish.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.tabs.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="{{asset('js/main1.js')}}"></script>
 </body>
 </html>

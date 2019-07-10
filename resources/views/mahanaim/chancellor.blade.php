@@ -1,7 +1,7 @@
-@extends('mahanaim.custom')
+@extends('mahanaim.layout')
 
 @section('content')
-    <main id="main" style="padding-top: 75px;">
+    <main id="main" style="padding-top: 5px;">
         <div class="container">
             <div class="row about-container">
                 <div class="col-lg-12 content order-lg-1 order-2">

@@ -12,6 +12,7 @@ use App\Post;
 use App\Staff;
 use App\Vision;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -26,16 +27,35 @@ class HomeController extends Controller
         $missions = Mission::all();
         $philosophies = Philosophy::all();
         $staffs = Staff::all();
-        $posts = Post::all();
-        $events = Event::all();
         $photos = Photo::all();
         $partners = Partner::all();
+        $events = Event::all();
         $overviews = Overview::all();
         $infos = Info::all();
-        $notices = Notice::all();
-        $posts = Post::all();
+        $notices = DB::table('notices')
+            ->latest()
+            ->limit(3)
+            ->get();
+        $posts = DB::table('posts')
+            ->latest()
+            ->limit(4)
+            ->get();
+
+        $olds = DB::table('posts')
+            ->skip(4)
+            ->take(4)
+            ->get();
+        $news = DB::table('posts')
+            ->latest()
+            ->limit(2)
+            ->get();
+        $wms = DB::table('posts')
+            ->latest()
+            ->limit(1)
+            ->get();
         return view('mahanaim.index', compact('missions', 'philosophies', 'visions',
-            'staffs', 'posts', 'photos', 'events', 'partners', 'overviews', 'infos', 'notices', 'posts'));
+            'staffs', 'posts', 'photos', 'events', 'partners', 'overviews', 'infos', 'notices', 'posts', 'olds',
+            'news', 'wms'));
     }
     /**
      * Show the form for creating a new resource.

@@ -59,7 +59,9 @@ Header
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
                         <li><a href="{{route('our-schools')}}">Schools</a></li>
+                        <!--
                         <li><a href="{{route('past-papers')}}">Past Papers</a></li>
+                        -->
                         <li><a href="#">Examination</a></li>
                     </ul>
                 </li>
@@ -72,15 +74,18 @@ Header
                         <li><a href="#">E-Learning</a></li>
                     </ul>
                 </li>
-                <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
-                <li><a href="{{route('our-posts')}}">Blog</a></li>
+
+                <!--
+                <li><a href="{{route('our-posts')}}">News</a></li>
+                -->
                 <!--
                 <li><a href="{{route('our-photos')}}">Gallery</a></li>
                 -->
-                <li class="menu-has-children"><a href="">Accounts</a>
+                <li class="menu-has-children"><a href="">Portal</a>
                     <ul>
                         <li><a href="https://mahanaim.dsl.ke/staff/" target="_blank">Staff</a></li>
                         <li><a href="https://mahanaim.dsl.ke/students/" target="_blank">Student</a> </li>
+                        <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
                     </ul>
             </ul>
         </nav><!-- #nav-menu-container -->
@@ -97,6 +102,7 @@ Header
 </section><!-- #hero -->
 
 @yield('content')
+
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 

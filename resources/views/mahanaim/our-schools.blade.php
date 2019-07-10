@@ -1,8 +1,8 @@
-@extends('mahanaim.custom')
+@extends('mahanaim.layout')
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 @section('content')
-    <main id="main" style="padding-top: 126px;">
+    <main id="main" style="padding-top: 6px;">
         <div class="container">
 
     <div class="row">
@@ -29,7 +29,7 @@
 
                                 <div class="caption">
                                     <h4 class="title pt-5"><a href="">{{ $school->name }}</a></h4>
-                                    <p class="">
+                                    <p class="" style="color: black;">
                                         <?php
                                         $cont =substr($school->description,0,170);
                                         ?>
@@ -58,7 +58,7 @@
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
-                                        <p>
+                                        <p style="color: black;">
                                             {{ $school->description }}
                                         </p>
                                     </div>

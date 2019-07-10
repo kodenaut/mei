@@ -1,11 +1,11 @@
-@extends('mahanaim.custom')
+@extends('mahanaim.layout')
 
 
 @section('content')
     <!--==========================
     Blog Section
     ============================-->
-    <main id="main" style="padding-top: 131px;">
+    <main id="main" style="padding-top: 2px;">
         <div class="container">
         <div class="row about-container">
 

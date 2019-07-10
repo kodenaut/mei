@@ -1,239 +1,108 @@
 @extends('mahanaim.layout')
 
 @section('content')
-<main id="main">
-
-    <!--==========================
-      About Us Section
-    ============================-->
-        <div class="container">
-            <div class="row about-container">
-                <div class="col-lg-12 content order-lg-1 order-2">
-                    <section id="about">
-                        <div class="container wow fadeIn">
-                                <div class="row pb-5" style="background: #dae0e5 ">
-                                <div class="col-sm-4"></div>
-                                    <div class="col-sm-4">
-                                        <div class="social text-center mt-4">
-                                            <a href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank" style="margin: 10px;"> <i class="fab fa-facebook fa-3x" style="color: #0a568c;"></i></a>
-                                            <a href="https://twitter.com/Mahanaimcollege" target="_blank" style="margin: 10px;"><i class="fab fa-twitter fa-3x" style="color: #0a568c;"></i></a>
-                                            <a href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank" style="margin: 10px;"><i class="fab fa-linkedin fa-3x" style="color: #0a568c;"></i></a>
-                                            <a href="" target="_blank" style="margin: 10px;"><i class="fab fa-instagram fa-3x" style="color: #0a568c;"></i></a>
-                                    </div>
-                                </div>
-                            </div>
+<!-- Top Stories Area -->
+<br>
+<main id="main" style="margin-top: 2px;">
+    <div class="container">
+        <div class="row about-container">
+            <div class="col-lg-12 content order-lg-1 order-2">
+                <!-- End Stories Area -->
 
 
-                            <div class="section-header">
-                                <h3 class="section-title">Our Tagline</h3>
-                                <br>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-                                        <h4 class="title"><a href="">Challenge</a></h4>
-                                        <p class="">We encourage tomorrow’s leaders through various challenges,
-                                            especially in overcoming their personal limits & thoughts.</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-                                        <h4 class="title"><a href="">Change</a></h4>
-                                        <p class="">Anyone who boards the Mahanaim Ship of Change gains a clean and a radiant heart.</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-users"></i></a></div>
-                                        <h4 class="title"><a href="">Cohesion</a></h4>
-                                        <p class="">A single solace, where the exchange between youths from over 80 different countries occur, promotes unison.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <hr>
-
-                    <!--==========================
-    Information Section
-    ============================-->
-                    <div class="row">
-                        <div class="col-sm-9">
-                    <section id="facts">
-                        <div class="container wow fadeIn">
-                            <div class="section-header">
-                                <div class="col-sm-9">
-                                <h3 class="section-title">MEI Information</h3>
-                                <hr class="mr-4">
-                                </div>
-                            </div>
-
-                                @foreach($infos as $info)
-                                    <article class="media content-section" style="width: 100%;">
-                                        <div class="media-body">
-                                            <div class="article-metadata">
-                                                <h4><a class="article-title pl-4" href=""><strong>{{ $info->title }}</strong></a></h4>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <p class="article-content">{!! $info->content  !!} </p>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                    </article>
-                                @endforeach
-
-
-                        </div>
-                    </section>
-                        </div>
-
-
-                        <!-- Notice Board-->
-                        <div class="col-sm-3">
-                            <div class="list-group" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
-                            <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Notice Board</b></a>
-                            @foreach($notices as $notice)
-                            <a class="list-group-item list-group-item-light" href="{{route('view-notice', $notice->id)}}"><i class="fas fa-angle-double-right"></i> {{ $notice->title }}</a>
-                                @endforeach
-                            </div>
-
-                            <hr>
-                            <br>
-
-                            <div class="list-group" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
-                            <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Recent News</b></a>
-                            @foreach($posts as $post)
-                                <a class="list-group-item list-group-item-light" href="{{route('show-post', $post->id)}}"><i class="fas fa-angle-double-right"></i> {{ $post->title }}</a>
-                            @endforeach
-                            </div>
-
-                            <div class="list-group" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
-                                <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Follow Us:</b></a>
-                                <a class="list-group-item list-group-item-light" href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-facebook-square"></i> Facebook</b></a>
-                                <a class="list-group-item list-group-item-light" href="https://twitter.com/Mahanaimcollege" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-twitter-square"></i> Twitter</b></a>
-                                <a class="list-group-item list-group-item-light" href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-linkedin-square"></i> LinkedIn</b></a>
-                                <a class="list-group-item list-group-item-light" href="" style="color: #1b4b72;"><b><i class="fab fa-instagram"></i> Instagram</b></a>
-                            </div>
-
-                        </div>
-
-                        <!-- End of Notice Board -->
-                    </div>
-                    <hr>
-                    <br>
-
-                            <!--==========================
-                    Schools Section
-                    ============================-->
-                        <section id="services" style="width: 100%;">
-                            <div class="container wow fadeIn">
-                                <div class="section-header">
-                                    <h3 class="section-title">Our Partners</h3>
-                                    <hr>
-                                    <br>
-                                </div>
-
-                                <div class="row">
-                                    @foreach($partners as $partner)
-                                        <div class="partner text-center m-3">
-                                            <a href="{{ $partner->link }}" target="_blank">
-                                                <img class="img-fluid rounded-circle" src="{{$partner->logo}}" alt="Name" style="height: 70px; width: 70px;">
-                                            </a>
-                                            <div class="caption">
-                                                <h6>{{ $partner->name }}</h6>
-                                                <p>{{ $partner->country }}</p>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </section>
-                    <br>
-                    <hr>
-
-
-                                        <!--==========================
-                                          Contact Section
-                                        ============================-->
-    <section id="contact">
-        <div class="container wow fadeInUp">
-            <div class="section-header">
-                <h3 class="section-title">Contact Us</h3>
-                <p class="section-description">Visit our offices or send us any inquiries:</p>
-            </div>
-        </div>
-
-        <!-- Uncomment below if you wan to use dynamic maps -->
-
-        <div class="container wow fadeInUp mt-5">
-            <div class="row justify-content-center">
-
-                <div class="col-lg-3 col-md-4">
-
-                    <div class="info">
-                        <div>
-                            <i class="fa fa-map-marker"></i>
-                            <p>Off Thika Road<br>Behind Safari Park Hotel<br>
-                            Next to USIU University</p>
-                        </div>
-
-                        <div>
-                            <i class="fa fa-envelope"></i>
-                            <p>info@mahanaim.ac.ke</p>
-                        </div>
-
-                        <div>
-                            <i class="fa fa-phone"></i>
-                            <p>+254 701033228</p>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://twitter.com/Mahanaimcollege" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                    </div>
-
+<!-- Start main body Area -->
+<div class="main-body section-gap">
+    <div class="container box_1170">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="list-group p-0">
+                    <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #1b6d85; color: black;">Quick Links</a>
+                    <a href="{{route('our-schools')}}" class="list-group-item">Schools</a>
+                    <a href="{{route('fee-structure')}}" class="list-group-item">Fee Structure</a>
+                    <a href="{{route('term-dates')}}" class="list-group-item">Term Dates</a>
+                    <a href="{{route('timetable')}}" class="list-group-item">Timetable</a>
+                    <a href="#" class="list-group-item">Contact</a>
                 </div>
-
-                <div class="col-lg-5 col-md-8">
-                    <div class="form">
-                        <form action="{{route('save-message')}}" method="post" role="form" class="contactForm">
-                            @csrf
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                                <div class="validation"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                            </div>
-                            <div class="form-group"><button type="submit" class="btn btn-info" style="width: 100%;">Send Message</button></div>
-                        </form>
-                    </div>
+                <div class="list-group">
+                    <a href="#" class="list-group-item" style="font-family: Symbola;background: #1b6d85; color: black;"><strong>Follow us</strong></a>
+                    <a href="#" class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-linkedin"></i>&nbsp;LinkedIn</a>
                 </div>
+            </div>
+            <div class="col-lg-7 post-list">
 
+                <!-- Start Post Area -->
+                <section class="post-area">
+
+                        <!-- Single post -->
+                    <div class="card card-body">
+                        <a href="" class="list-group-item mx-1 px-1 mt-0" style="background: #1b6d85; color: black; font-family: Symbola;"><strong>Recent News</strong></a>
+                        @foreach($news as $new)
+                        <div class="single-stories-carousel d-flex align-items-center">
+                            <div class="col-sm-2 stories-thumb my-1 p-0">
+                                <img class="img-fluid" src="{{ $new->image }}" alt="" style="height: 100px; width: 100%;">
+                            </div>
+                            <div class="stories-details" style="font-family: Symbola;">
+                                <h5 style="margin-top: 0;"><a href="{{route('show-post', $new->id)}}" style="color: #1b6d85; font-family: Purisa;"><strong>{{ $new->title }}</strong></a>
+                                    <span class="badge float-right" style="background: #1b1b1b;">{{ date('d-M-y', strtotime($new->created_at))}}</span>
+                                </h5>
+                                <p class="" style="">
+                                    <?php
+                                    $cont =substr($new->content,0,100);
+                                    ?>
+                                    {!! $cont !!}...&nbsp;
+                                    <a href="{{route('show-post', $new->id)}}">
+                                        <span class="badge" style="background: #0a568c;">More</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                            <hr style="border-style: dashed; margin: 0;">
+                        @endforeach
+                        <!-- End Single post -->
+                    </div>
+
+                    <br>
+                    <div class="list-group m-1 p-1" style="border: 1px solid lightgray;">
+                        <a href="" class="list-group-item mx-1 px-1" style="background: #1b6d85; color: black; font-family: Symbola;"><strong>Recent Notices</strong></a>
+                        <ul style="list-style: square; padding-left: 22px;">
+                        @foreach($notices as $notice)
+                            <li>
+                                <a href="{{route('view-notice', $notice->id)}}" style="color: black; font-family: Symbola;"><strong>{{ $notice->title }}</strong>
+                                <span class="badge float-right" style="background: #1b1b1b;">{{ date('d-M-y', strtotime($notice->created_at))}}</span>
+                                </a>
+                            </li>
+                                <hr style="border-style: dashed; margin: 0;">
+                        @endforeach
+                        </ul>
+
+                    </div>
+
+                <!-- Start Post Area -->
+                </section>
             </div>
 
-        </div>
-    </section><!-- #contact -->
-        </div>
 
-
+            <div class="col-lg-3 sidebar">
+                    <div class="list-group p-1" style="border: 1px solid lightgray; color: black; font-family: Symbola; font-size: 15px; border-radius: 3px;">
+                        <a href="#" class="list-group-item p-3" style="background: #1b6d85; color: black;"><strong>Weekly Message<span class="badge float-right" style="background: #1b1b1b;">Week 3</span> </strong></a>
+                        @foreach($wms as $wm)
+                           <?php
+                            $cont =substr($new->content,0,280);
+                            ?>
+                            {!! $cont !!}... <a href="{{route('show-post', $wm->id)}}"><span class="badge" style="background: #0a568c;">More</span></a>
+                        @endforeach
+                    </div>
             </div>
         </div>
+    </div>
+</div>
+<!-- Start main body Area -->
+            </div>
+        </div>
+    </div>
 </main>
+
 @endsection

@@ -47,6 +47,9 @@ Route::get('/past-papers', 'PaperController@papers')->name('past-papers');
 Route::get('/course-papers/{id}', 'PaperController@coursepapers')->name('course-papers');
 
 
+Route::get('/mei-info', 'InfoController@meiinfo')->name('mei-info');
+
+
 
 
 //Admin
@@ -58,6 +61,10 @@ Route::get('/edit-philosophy/{id}', 'PhilosophyController@edit')->name('edit-phi
 Route::post('/update-philosophy/{id}', 'PhilosophyController@update')->name('update-philosophy');
 Route::get('/edit-vision/{id}', 'VisionController@edit')->name('edit-vision');
 Route::post('/update-vision/{id}', 'VisionController@update')->name('update-vision');
+
+//Quick Links
+Route::get('/term-dates', 'QuickController@termdates')->name('term-dates');
+Route::get('/timetable', 'QuickController@timetable')->name('timetable');
 
 
 Route::get('/overview', 'OverviewController@index')->name('overview');
@@ -154,6 +161,13 @@ Route::get('/past-papers/{id}', 'PaperController@index')->name('papers');
 Route::post('/add-paper/{id}', 'PaperController@store')->name('add-paper');
 Route::post('/update-paper/{id}', 'PaperController@update')->name('update-paper');
 Route::post('/delete-paper/{id}', 'PaperController@destroy')->name('delete-paper');
+
+//Quick Links
+Route::get('/our-schedule', 'QuickController@index')->name('our-schedule');
+Route::post('/add-schedule', 'QuickController@store')->name('add-schedule');
+
+Route::get('/our-timetable', 'QuickController@ourtimetable')->name('our-timetable');
+Route::post('/add-timetable', 'QuickController@savetable')->name('add-timetable');
 
 
 
