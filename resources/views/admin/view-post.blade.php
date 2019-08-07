@@ -16,7 +16,7 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <article class="media content-section m-2" style="width: 100%;">
+                            <article class="media content-section" style="width: 100%; font-family: Monotron;">
                                 <div class="media-body">
                                     <div class="col-sm-3 float-left">
                                         <img src="{{ $post->image }}" class="img-fluid" alt="" style="width: 100%;">

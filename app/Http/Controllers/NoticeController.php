@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 
 use App\Notice;
@@ -76,8 +77,15 @@ class NoticeController extends Controller
     {
         //
         $notice = Notice::find($id);
-        $posts = Post::all();
-        return view('mahanaim.notice-board', compact('notice', 'posts'));
+        $wms = DB::table('posts')
+            ->latest()
+            ->limit(1)
+            ->get();
+        $notices = DB::table('notices')
+            ->latest()
+            ->limit(5)
+            ->get();
+        return view('mahanaim.notice-board', compact('notice', 'wms', 'notices'));
     }
 
     /**

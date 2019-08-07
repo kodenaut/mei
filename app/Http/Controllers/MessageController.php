@@ -104,4 +104,8 @@ class MessageController extends Controller
             ->with('success','Message Has Been Deleted');
 
     }
+
+    public function contact(){
+        return view('mahanaim.contact');
+    }
 }

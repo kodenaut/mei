@@ -15,8 +15,7 @@
                 <section id="services">
                     <div class="container wow fadeIn">
                         <div class="section-header">
-                            <h3 class="section-title">Alumni</h3>
-                            <hr>
+                            <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Alumni</strong></a>
                         </div>
 
                             @foreach($alumnis as $alumni)

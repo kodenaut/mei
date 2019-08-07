@@ -19,6 +19,8 @@
     <link href="{{asset('vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+
     <!-- Bootstrap CSS-->
     <link href="{{asset('vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -48,7 +50,7 @@
         <div class="header-mobile__bar">
             <div class="container-fluid">
                 <div class="header-mobile-inner">
-                    <a class="logo" href="">
+                    <a class="logo" href="{{route('dashboard')}}">
                         <img src="{{asset('img/logo.png')}}" alt="Mahanaim College" />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
@@ -75,41 +77,13 @@
                             <i class="fas fa-copy"></i>Admissions</a>
                     </li>
                     <li>
-                        <a href="{{route('staffs')}}">
-                            <i class="fas fa-table"></i>Staff</a>
-                    </li>
-                    <li>
-                        <a href="{{route('schools')}}">
-                            <i class="far fa-check-square"></i>Schools</a>
-                    </li>
-                    <li>
-                        <a href="{{route('events')}}">
-                            <i class="fas fa-calendar-alt"></i>Events</a>
-                    </li>
-                    <li>
-                        <a href="{{route('posts')}}">
-                            <i class="fas fa-map-marker-alt"></i>Blog</a>
-                    </li>
-                    <li>
-                        <a href="{{route('photos')}}">
-                            <i class="fas fa-photo"></i>Gallery</a>
-                    </li>
-                    <li>
                         <a href="#">
                             <i class="fas fa-copy"></i>Admissions</a>
                     </li>
                     <li><a href="{{route('fees')}}">
                             <i class="fas fa-book-open"></i> Fees</a>
                     </li>
-                    <li>
-                        <a href="{{route('notices')}}">
-                            <i class="fas fa-copy"></i>Notice</a>
-                    </li>
 
-                    <li>
-                        <a href="{{route('partners')}}">
-                            <i class="fas fa-copy"></i>Partners</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -119,7 +93,7 @@
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar d-none d-lg-block">
         <div class="logo">
-            <a href="#">
+            <a href="{{route('dashboard')}}">
                 <img src="{{asset('img/logo.png')}}" alt="Mahanaim" />
             </a>
         </div>
@@ -140,46 +114,18 @@
                     </li>
                     <li>
                         <a href="{{route('info')}}">
-                            <i class="fas fa-copy"></i>Info</a>
+                            <i class="fas fa-info"></i>Info</a>
                     </li>
 
                     <li>
-                        <a href="{{route('staffs')}}">
-                            <i class="fas fa-table"></i>Staff</a>
-                    </li>
+
                     <li>
-                        <a href="{{route('schools')}}">
-                            <i class="far fa-check-square"></i>Schools</a>
-                    </li>
-                    <li>
-                        <a href="{{route('posts')}}">
-                            <i class="fas fa-map-marker-alt"></i>Blog</a>
-                    </li>
-                    <li>
-                        <a href="{{route('photos')}}">
-                            <i class="fas fa-photo"></i>Gallery</a>
-                    </li>
                     <li>
                         <a href="#">
                             <i class="fas fa-copy"></i>Admissions</a>
                     </li>
-                    <li><a href="{{route('alumnis')}}">
-                            <i class="fas fa-users"></i> Alumni</a>
-                    </li>
                     <li><a href="{{route('fees')}}">
                             <i class="fas fa-book-open"></i> Fees</a>
-                    </li>
-                    <li>
-                        <a href="{{route('notices')}}">
-                            <i class="fas fa-copy"></i>Notice</a>
-                    </li>
-                    <li>
-                        <a href="{{route('slides')}}">
-                            <i class="fas fa-copy"></i>Slides</a>
-                    </li>
-                    <li>
-                        <a href="{{route('partners')}}">
-                            <i class="fas fa-copy"></i>Partners</a>
                     </li>
                 </ul>
             </nav>
@@ -195,7 +141,7 @@
                 <div class="container-fluid">
                     <div class="header-wrap">
                         <form class="form-header" action="" method="POST">
-                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                            <input class="au-input au-input--xl" type="text" name="search" placeholder="Search..." />
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>

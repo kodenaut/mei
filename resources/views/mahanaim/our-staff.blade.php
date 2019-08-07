@@ -6,22 +6,18 @@
     Blog Section
     ============================-->
     <main id="main" style="padding-top: 2px;">
-        <div class="container">
+        <div class="container wow fadeInUp">
         <div class="row about-container">
 
-            <div class="col-lg-12 content order-lg-1 order-2">
-
+            <div class="col-lg-12 content">
                 <!--==========================
   Team Section
 ============================-->
-                <section id="team" class="pb-5">
-                    <div class="container wow fadeInUp">
+                <section id="team" class="pb-3">
                         <div class="section-header">
-                            <br>
-                            <h3 class="section-title">Staff</h3>
-                            <hr style="margin: 25px;">
+                            <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Staff</strong></a>
                         </div>
-                        <div class="row">
+                        <div class="row mt-2">
 
                             @foreach($staffs as $staff)
                                 <div class="col-sm-3">
@@ -39,7 +35,6 @@
 
                         </div>
 
-                    </div>
                 </section><!-- #team -->
 
                 <br>

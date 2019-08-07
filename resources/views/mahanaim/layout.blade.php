@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Concert One">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neucha">
 
     <!-- Bootstrap CSS File -->
     <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -56,25 +57,29 @@ Header
 
         <div id="logo" class="pull-left">
             <a href="{{route('homepage')}}"><img src="{{asset('img/logo.png')}}" alt="" title="" /></a>
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <!--<h1><a href="#hero">Regna</a></h1>-->
         </div>
 
-        <nav id="nav-menu-container">
-            <ul class="nav-menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light float-right sticky-top fixed-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class=" navbar-nav nav-menu mr-auto">
                 <li class="menu-active"><a href="{{route('homepage')}}">Home</a></li>
-                <li class="menu-has-children"><a href="">About</a>
+                <li class="menu-has-children"><a class="" href="">About</a>
                     <ul>
                         <li><a href="{{route('our-staffs')}}">Staff</a></li>
                         <li><a href="{{route('background')}}">Backround</a> </li>
-                        <li><a href="{{route('mei-info')}}">MEI Information</a> </li>
+                        <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
                         <li><a href="{{route('chancellor')}}">Chancellor's Message</a> </li>
                         <li><a href="{{route('principal')}}">Principal's Message</a> </li>
                     </ul>
                 </li>
-                <li class="menu-has-children"><a href="">Academics</a>
+                <li class="menu-has-children nav-item"><a href="">Academics</a>
                     <ul>
-                        <li><a href="{{route('our-schools')}}">Schools</a></li>
+                        <li><a class="" href="{{route('our-schools')}}">Schools</a></li>
+                        <li><a href="{{route('term-dates')}}">Academic Calender</a></li>
                         <!--
                         <li><a href="{{route('past-papers')}}">Past Papers</a></li>
                         -->
@@ -84,7 +89,6 @@ Header
                 <li class="menu-has-children"><a href="">Admissions</a>
                     <ul>
                         <li><a href="#">Apply</a></li>
-                        <li><a href="#">Academic Calender</a></li>
                         <li><a href="{{route('fee-structure')}}">Fee Structure</a></li>
                         <li><a href="#">Scholarship</a></li>
                         <li><a href="#">E-Learning</a></li>
@@ -94,14 +98,14 @@ Header
                 <li><a href="{{route('our-posts')}}">News</a></li>
                 -->
                 <li><a href="{{route('our-photos')}}">Gallery</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
                 <li class="menu-has-children"><a href="">Portal</a>
                     <ul>
                         <li><a href="https://mahanaim.dsl.ke/staff/" target="_blank">Staff</a></li>
                         <li><a href="https://mahanaim.dsl.ke/students/" target="_blank">Student</a> </li>
-                        <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
                     </ul>
             </ul>
+            </div>
         </nav><!-- #nav-menu-container -->
     </div>
 </header><!-- #header -->
@@ -110,40 +114,37 @@ Header
   Hero Section
 ============================-->
 <section id="hero">
-    <div class="hero-container">
+        <div class="container">
 
         <!-- Begin Slider -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
 
-            <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="{{asset('img/1.jpg')}}" alt="Los Angeles" style="width:100%;">
+                    <img src="{{asset('img/1.jpg')}}" alt="Los Angeles" style="width:100%; height: 180px;">
                 </div>
 
                 <div class="item">
-                    <img src="{{asset('img/g.jpg')}}" alt="Chicago" style="width:100%;">
+                    <img src="{{asset('img/g.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
                 </div>
 
                 <div class="item">
-                    <img src="{{asset('img/3.jpg')}}" alt="Chicago" style="width:100%;">
+                    <img src="{{asset('img/1.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
                 </div>
 
             </div>
 
-            <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" style="margin-top: 50%;"></span>
+                <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" style="margin-top: 50%;"></span>
+                <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
@@ -151,9 +152,14 @@ Header
 
         <! -- End of Slider -->
 
-    </div>
-</section><!-- #hero -->
+            <!--
+            <div class="video">
+            <iframe src="https://www.youtube.com/embed/NTYJOV_lLIU?autoplay=1"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            -->
 
+        </div>
+</section><!-- #hero -->
 @yield('content')
 
 <!--==========================

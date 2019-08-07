@@ -13,7 +13,7 @@
   ============================-->
         <div class="col-sm-3" style="padding-top: 5%;">
             <div class="list-group">
-                <a class="list-group-item list-group-item-light" style="color: black;"><b>Schools</b></a>
+                <a class="list-group-item list-group-item-light" style="color: black; background: #0f7b9f;"><b>Schools</b></a>
                 <a class="list-group-item list-group-item-primary" href="{{route('fee-structure')}}">Engineering</a>
                 <a class="list-group-item list-group-item-success" href="{{route('ict-fee')}}">ICT</a>
                 <a class="list-group-item list-group-item-warning" href="{{route('icdl-fee')}}">ICDL</a>
@@ -28,12 +28,11 @@
 
         <div class="col-sm-9">
                 <div class="section-header text-center">
-                    <h3 class="section-title pt-2">Fee Structure</h3>
-                    <hr>
+                    <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Fee Structure</strong></a>
                 </div>
 
+                     <div class="card card-body mt-1">
                 @foreach($fees as $fee)
-                        <div class="col-sm-12" style="height: 110%;">
                             <iframe src="{{ $fee->structure }}" style="height: 100%; width: 100%;"></iframe>
                         </div>
 

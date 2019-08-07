@@ -6,18 +6,15 @@
     Blog Section
     ============================-->
     <main id="main">
-        <div class="row about-container">
+        <div class="container wow fadeInUp">
 
-            <div class="col-lg-12 content order-lg-1 order-2">
 
                 <!--==========================
       Portfolio Section
     ============================-->
                 <section id="portfolio">
-                    <div class="container wow fadeInUp">
                         <div class="section-header">
-                            <h3 class="section-title">Gallery</h3>
-                            <hr>
+                            <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Gallery</strong></a>
                         </div>
 
                         <div class="row" id="portfolio-wrapper">
@@ -25,7 +22,7 @@
                             @foreach($photos as $photo)
                                 <div class="col-lg-3 col-md-6 portfolio-item filter-app">
                                     <a href="">
-                                        <img src="{{$photo->image}}" class="img-fluid" alt="" style="width: 100%; height: 100%;">
+                                        <img src="{{$photo->image}}" class="img-fluid" alt="" style="width: 100%; height:180px;">
                                         <div class="details" style="width: 84%;">
                                             <span>{{ $photo->caption }}</span>
                                         </div>
@@ -34,8 +31,6 @@
                             @endforeach
 
                         </div>
-
-                    </div>
                 </section><!-- #portfolio -->
 
             </div>

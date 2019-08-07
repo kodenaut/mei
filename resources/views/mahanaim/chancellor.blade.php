@@ -2,18 +2,18 @@
 
 @section('content')
     <main id="main" style="padding-top: 5px;">
-        <div class="container">
+        <div class="container  wow fadeIn">
             <div class="row about-container">
                 <div class="col-lg-12 content order-lg-1 order-2">
 
                     <section id="facts">
-                        <div class="container wow fadeIn">
                             <div class="section-header">
-                                <h3 class="section-title">Chancellor's Message</h3>
-                                <hr style="margin-right: 25px;">
+                                <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Chancellor's Message</strong></a>
                             </div>
                             <div class="row">
+
                                 @foreach($overviews as $overview)
+                                    <div class="card card-body">
                                     <article class="media content-section">
                                         <div class="media-body">
                                             <div class="article-metadata">
@@ -28,12 +28,12 @@
                                             </div>
                                         </div>
                                     </article>
+                                    </div>
 
                                 @endforeach
 
                             </div>
 
-                        </div>
                     </section>
                     <!-- End Messages Section-->
                     <!-- End of Overview -->

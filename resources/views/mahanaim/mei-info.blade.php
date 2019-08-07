@@ -63,7 +63,7 @@
                                     </div>
 
                                     @foreach($infos as $info)
-                                        <article class="media content-section" style="width: 100%;">
+                                        <article class="media content-section" style="width: 100%; color: black;">
                                             <div class="media-body">
                                                 <div class="article-metadata">
                                                     <h4 class="" style="font-family: Concert One;"><a class="article-title pl-4" href="" style="color: #0a568c;"><strong>{{ $info->title }}</strong></a></h4>
@@ -101,14 +101,6 @@
                                 @endforeach
                             </div>
                             <hr>
-
-                            <div class="list-group" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
-                                <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Follow Us:</b></a>
-                                <a class="list-group-item list-group-item-light" href="https://web.facebook.com/Mahanaim-Educational-Institute-365783176877179/" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-facebook-square"></i> Facebook</b></a>
-                                <a class="list-group-item list-group-item-light" href="https://twitter.com/Mahanaimcollege" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-twitter-square"></i> Twitter</b></a>
-                                <a class="list-group-item list-group-item-light" href="https://www.linkedin.com/in/mahanaim-educational-institute-b87231179/" target="_blank" style="color: #1b4b72;"><b><i class="fab fa-linkedin-square"></i> LinkedIn</b></a>
-                                <a class="list-group-item list-group-item-light" href="" style="color: #1b4b72;"><b><i class="fab fa-instagram"></i> Instagram</b></a>
-                            </div>
 
                         </div>
 

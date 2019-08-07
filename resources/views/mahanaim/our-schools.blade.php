@@ -2,7 +2,7 @@
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 @section('content')
-    <main id="main" style="padding-top: 6px;">
+    <main id="main">
         <div class="container">
 
     <div class="row">
@@ -12,12 +12,9 @@
         <section id="services" style="width: 100%;">
             <div class="container wow fadeIn">
                 <div class="section-header">
-                    <h3 class="section-title">Schools</h3>
-                    <hr>
-                    <br>
+                    <a href="" class="list-group-item mt-5 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Schools</strong></a>
                 </div>
-                <div class="row">
-
+                <div class="row" style="margin-top: 37px;">
                     @foreach($schools as $school)
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="box">

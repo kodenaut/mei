@@ -11,26 +11,46 @@
         <div class="container">
         <div class="row about-container">
 
-            <div class="col-lg-12 content order-lg-1 order-2">
+            <div class="col-sm-2">
+                <div class="list-group">
+                    <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #0f7b9f; color: black;">Quick Links</a>
+                    <a href="{{route('our-schools')}}" class="list-group-item">Schools</a>
+                    <a href="{{route('fee-structure')}}" class="list-group-item">Fee Structure</a>
+                    <a href="{{route('term-dates')}}" class="list-group-item">Term Dates</a>
+                    <a href="{{route('timetable')}}" class="list-group-item">Timetable</a>
+                    <a href="{{route('contact')}}" class="list-group-item">Contact</a>
+                </div>
+                <br>
+                <div class="list-group">
+                    <a href="#" class="list-group-item" style="font-family: Symbola;background: #0f7b9f; color: black;"><strong>Follow us</strong></a>
+                    <a href="#" class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-linkedin"></i>&nbsp;LinkedIn</a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-10 content order-lg-1 order-2">
+
                 <section id="facts">
                     <div class="container wow fadeIn">
                         <div class="section-header">
-                            <h3 class="section-title pt-4">{{ $post->title }}</h3>
+                            <a href="" class="list-group-item mx-1 px-1 mt-0 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>{{ $post->title }}</strong></a>
+
                             <hr style="margin-right: 25px;">
                         </div>
                         <div class="row">
-                                <article class="media content-section m-2" style="width: 100%;">
-                                    <div class="media-body">
+                                <article class="media content-section" style="width: 100%;">
                                         <div class="col-sm-3 float-left">
                                             <img src="{{ $post->image }}" class="img-fluid" alt="" style="width: 100%;">
                                         </div>
-                                        <div class="col-sm-9 float-right" style="padding-right: 45px;">
-                                            <p class="article-content" style="white-space: pre-line; line-height: 1.2em; height: 3.6em; overflow: hidden; text-overflow: ellipsis; max-width: 90%;">{!! $post->content !!}</p>
+                                        <div class="col-sm-9" style="font-family: Symbola">
+                                            {!! $post->content !!}
                                             <hr style="margin-right: 25px;">
                                             <small class="float-right">Posted on:&nbsp;{{ date('d-M-y', strtotime($post->created_at))}}</small>
                                             <a class="mr-2 float-left" href="">Author</a>
                                         </div>
-                                    </div>
                                 </article>
                         </div>
 

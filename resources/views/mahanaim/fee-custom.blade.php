@@ -59,6 +59,7 @@ Header
                 <li class="menu-has-children"><a href="">Academics</a>
                     <ul>
                         <li><a href="{{route('our-schools')}}">Schools</a></li>
+                        <li><a href="{{route('term-dates')}}">Academic Calender</a></li>
                         <!--
                         <li><a href="{{route('past-papers')}}">Past Papers</a></li>
                         -->
@@ -68,7 +69,6 @@ Header
                 <li class="menu-has-children"><a href="">Admissions</a>
                     <ul>
                         <li><a href="#">Apply</a></li>
-                        <li><a href="#">Academic Calender</a></li>
                         <li><a href="{{route('fee-structure')}}">Fee Structure</a></li>
                         <li><a href="#">Scholarship</a></li>
                         <li><a href="#">E-Learning</a></li>
@@ -95,13 +95,10 @@ Header
 <!--==========================
   Hero Section
 ============================-->
-<section id="hero2">
-    <div class="hero-container">
-
-    </div>
-</section><!-- #hero -->
-
+<div class="container">
 @yield('content')
+
+</div>
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 

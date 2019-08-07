@@ -37,6 +37,7 @@ Route::get('/business-fee', 'FeeController@businessfee')->name('business-fee');
 Route::get('/languages-fee', 'FeeController@languagesfee')->name('languages-fee');
 Route::get('/sports-fee', 'FeeController@sportsfee')->name('sports-fee');
 
+Route::get('/contact-us', 'MessageController@contact')->name('contact');
 Route::post('/save-message', 'MessageController@store')->name('save-message');
 
 Route::get('/our-alumni', 'AlumniController@alumnis')->name('our-alumnis');
@@ -48,6 +49,10 @@ Route::get('/course-papers/{id}', 'PaperController@coursepapers')->name('course-
 
 
 Route::get('/mei-info', 'InfoController@meiinfo')->name('mei-info');
+
+//Quick Links
+Route::get('/term-dates', 'QuickController@termdates')->name('term-dates');
+Route::get('/timetable', 'QuickController@timetable')->name('timetable');
 
 
 
@@ -61,10 +66,6 @@ Route::get('/edit-philosophy/{id}', 'PhilosophyController@edit')->name('edit-phi
 Route::post('/update-philosophy/{id}', 'PhilosophyController@update')->name('update-philosophy');
 Route::get('/edit-vision/{id}', 'VisionController@edit')->name('edit-vision');
 Route::post('/update-vision/{id}', 'VisionController@update')->name('update-vision');
-
-//Quick Links
-Route::get('/term-dates', 'QuickController@termdates')->name('term-dates');
-Route::get('/timetable', 'QuickController@timetable')->name('timetable');
 
 
 Route::get('/overview', 'OverviewController@index')->name('overview');
@@ -82,7 +83,7 @@ Route::get('/edit-post/{id}', 'BlogController@edit')->name('edit-post');
 Route::post('/update-post/{id}', 'BlogController@update')->name('update-post');
 Route::post('/delete-post/{id}', 'BlogController@destroy')->name('delete-post');
 
-Route::get('/our-notices', 'NoticeController@notices')->name('our-notices');
+Route::get('/notices', 'NoticeController@index')->name('our-notices');
 //Route::get('/view-notice/{id}', 'NoticeController@view')->name('view-notice');
 
 Route::get('/events', 'EventController@index')->name('events');

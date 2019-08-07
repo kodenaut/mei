@@ -34,7 +34,7 @@ class HomeController extends Controller
         $infos = Info::all();
         $notices = DB::table('notices')
             ->latest()
-            ->limit(3)
+            ->limit(5)
             ->get();
         $posts = DB::table('posts')
             ->latest()

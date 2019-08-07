@@ -54,7 +54,10 @@
                     @foreach($tables as $table)
 
 
-                        <div class="caption" style="display: block;">
+                        <div class="card card-body">
+                            <iframe src="{{ $table->file }}"></iframe>
+                        </div>
+                        <div class="caption" style="display: inline-block;">
                             <button class="btn btn-success btn-sm mx-1 float-left" data-toggle="modal" data-target="#updatemodal-{{ $table->id }}">
                                 <i class="fas fa-edit"></i>
                             </button>
