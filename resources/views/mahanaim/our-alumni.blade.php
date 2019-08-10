@@ -5,7 +5,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 @section('content')
-    <main id="main" style="padding-top: 5px;">
+    <main id="main">
         <div class="container">
 
             <div class="row">
@@ -15,7 +15,7 @@
                 <section id="services">
                     <div class="container wow fadeIn">
                         <div class="section-header">
-                            <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Alumni</strong></a>
+                            <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Alumni</strong></a>
                         </div>
 
                             @foreach($alumnis as $alumni)

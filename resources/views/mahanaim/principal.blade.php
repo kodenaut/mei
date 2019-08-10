@@ -1,13 +1,13 @@
 @extends('mahanaim.layout')
 
 @section('content')
-<main id="main" style="padding-top: 2px;">
+<main id="main">
     <div class="container wow fadeIn">
         <div class="row about-container">
             <div class="col-lg-12 content order-lg-1 order-2">
-                <section id="facts" class="pt-2">
+                <section id="facts">
                         <div class="section-header">
-                            <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Principal's Message</strong></a>
+                            <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Principal's Message</strong></a>
                         </div>
                         <div class="row">
                             @foreach($overviews as $overview)

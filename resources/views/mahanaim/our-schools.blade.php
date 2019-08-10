@@ -12,7 +12,7 @@
         <section id="services" style="width: 100%;">
             <div class="container wow fadeIn">
                 <div class="section-header">
-                    <a href="" class="list-group-item mt-5 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Schools</strong></a>
+                    <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Schools</strong></a>
                 </div>
                 <div class="row" style="margin-top: 37px;">
                     @foreach($schools as $school)

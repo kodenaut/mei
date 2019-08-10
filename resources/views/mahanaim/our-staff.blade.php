@@ -5,7 +5,7 @@
     <!--==========================
     Blog Section
     ============================-->
-    <main id="main" style="padding-top: 2px;">
+    <main id="main">
         <div class="container wow fadeInUp">
         <div class="row about-container">
 
@@ -15,7 +15,7 @@
 ============================-->
                 <section id="team" class="pb-3">
                         <div class="section-header">
-                            <a href="" class="list-group-item mt-3 text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Staff</strong></a>
+                            <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Staff</strong></a>
                         </div>
                         <div class="row mt-2">
 

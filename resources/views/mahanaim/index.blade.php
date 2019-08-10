@@ -3,7 +3,7 @@
 @section('content')
 <!-- Top Stories Area -->
 
-<main id="main" class="mt-5">
+<main id="main" class="mt-2">
 <!-- Start main body Area -->
     <div class="container">
         <div class="row">

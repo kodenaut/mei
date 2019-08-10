@@ -6,7 +6,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 @section('content')
-    <main id="main" style="padding-top: 5px;">
+    <main id="main">
         <div class="container-fluid">
 
     <div class="row">
@@ -16,8 +16,7 @@
         <section id="services" style="width: 100%;">
             <div class="container wow fadeIn">
                 <div class="section-header">
-                    <h3 class="section-title">{{ $school->name }}&nbsp;Courses</h3>
-                    <hr>
+                    <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>{{$school->name}}&nbsp;Courses</strong></a>
                 </div>
                 <div class="row">
 

@@ -36,8 +36,6 @@
     <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
 
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -162,6 +160,11 @@ Header
 </section><!-- #hero -->
 @yield('content')
 
+
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
 <!--==========================
   Footer
 ============================-->
@@ -171,23 +174,19 @@ Header
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 text-center">
-            <div class="copyright text-center">
-                &copy; Copyright <strong>mei</strong>. All Rights Reserved
-            </div>
+                <div class="copyright text-center">
+                    &copy; Copyright <strong>mei</strong>. All Rights Reserved
+                </div>
 
-            <div class="credits">
-                Designed by <a href="https://kodenaut.github.io">Mahanaim</a>
+                <div class="credits">
+                    Designed by <a href="https://kodenaut.github.io">Mahanaim</a>
 
-            </div>
+                </div>
             </div>
         </div>
-        </div>
+    </div>
     <br>
 </footer><!-- #footer -->
-
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-
 
 <!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js"></script>
