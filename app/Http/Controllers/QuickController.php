@@ -43,7 +43,7 @@ class QuickController extends Controller
         //
         $this->validate($request, array(
             'title' => 'required',
-            'file' => 'file|mimes:pdf,jpg,png,svg,gif|max:4096',
+            'file' => 'file|mimes:pdf,jpg,png,svg,gif,xlsx|max:4096',
         ));
         //save the data to the database
         $term = new Term();

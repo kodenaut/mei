@@ -160,6 +160,10 @@
 
 
                 </div>
+
+                <div class="row justify-content-center ">
+                    {{ $schools->links() }}
+                </div>
             </div>
         </section><!-- #schools -->
 

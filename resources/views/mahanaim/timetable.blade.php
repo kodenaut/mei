@@ -16,7 +16,7 @@
                             <div class="row">
                                 <div class="col-sm-2">
                                     <div class="list-group p-0">
-                                        <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #0f7b9f; color: black;">Quick Links</a>
+                                        <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #265ea1; color: white;">Quick Links</a>
                                         <a href="{{route('our-schools')}}" class="list-group-item">Schools</a>
                                         <a href="{{route('fee-structure')}}" class="list-group-item">Fee Structure</a>
                                         <a href="{{route('term-dates')}}" class="list-group-item">Term Dates</a>

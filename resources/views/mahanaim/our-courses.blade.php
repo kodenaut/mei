@@ -7,16 +7,16 @@
 
 @section('content')
     <main id="main">
-        <div class="container-fluid">
+        <div class="container wow fadeIn">
 
-    <div class="row">
+    <div class="row about-container">
+        <div class="col-lg-12 content">
         <!--==========================
     Schools Section
   ============================-->
         <section id="services" style="width: 100%;">
-            <div class="container wow fadeIn">
                 <div class="section-header">
-                    <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>{{$school->name}}&nbsp;Courses</strong></a>
+                    <a href="" class="list-group-item text-center" style="background: #265ea1; color: white; font-size: 18px; font-family: Symbola;"><strong>{{$school->name}}&nbsp;Courses</strong></a>
                 </div>
                 <div class="row">
 
@@ -24,9 +24,9 @@
                         <div class="col-sm-4 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="caption">
                                 <ul class="list-group">
-                                    <li class="list-group-item active">{{ $course->name }}</li>
+                                    <li class="list-group-item list-group-item-info"><strong>{{ $course->name }}</strong></li>
 
-                                    <div class="row my-1">
+                                    <div class="row">
                                         <div class="col-sm-6">
                                             <li class="list-group-item">Grade:&nbsp;{{ $course->qualification }}</li>
                                         </div>
@@ -35,7 +35,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row my-1">
+                                    <div class="row">
                                         <div class="col-sm-6">
                                             <li class="list-group-item">Modules:&nbsp;{{ $course->modules }}</li>
                                         </div>
@@ -43,7 +43,7 @@
                                             <li class="list-group-item">Exam:&nbsp;{{ $course->exam_body }}</li>
                                         </div>
                                     </div>
-                                    <div class="row my-1">
+                                    <div class="row">
                                         <div class="col-sm-12 text-center">
                                             <li class="list-group-item">Mode:&nbsp;{{ $course->mode }}</li>
                                         </div>
@@ -56,10 +56,10 @@
 
 
                 </div>
-            </div>
         </section><!-- #schools -->
 
     </div>
+        </div>
         </div>
     </main>
 @endsection

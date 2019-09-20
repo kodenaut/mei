@@ -1,115 +1,105 @@
 @extends('mahanaim.layout')
-
 @section('content')
-    <br>
-    <main id="main" style="padding-top: 5px;">
+<main id="main" class=>
+    <!-- Start main body Area -->
+    <div class="container">
+        <div class="row about-container">
+            <div class="col-lg-12 content">
+            <div class="card card-body my-1" >
+                <section id="services" style="width: 100%; margin-top: 0; padding-top: 0;">
+                    <h3 class="text-center"><span class="badge" style="background: #265ea1;">Mission Statement</span></h3>
+                <div class="row text-center">
+                    @foreach($infos as $about)
+                        <div class="col-sm-4" style="font-family: Symbola;">
+                            <span class="badge">{{ $about->title }}</span>
+                            <hr>
+                                <?php
+                                $cont =substr($about->content,0,200);
+                                ?>
+                                {!! $cont !!}...&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modal-{{ $about->id }}" style="color: #0a568c;">
+                                    More
+                                </a>
+                        </div>
 
-        <!--==========================
-          About Us Section
-        ============================-->
-        <div class="container">
-            <div class="row about-container">
-                <div class="col-lg-12 content order-lg-1 order-2">
-                    <section id="about">
-                        <div class="container wow fadeIn">
 
-                            <div class="section-header">
-                                <h3 class="section-title">Our Tagline</h3>
-                                <br>
-                            </div>
+                        <!-- Modal -->
+                        <div class="modal" id="modal-{{$about->id}}">
+                            <div class="modal-dialog modal-md">
+                                <div class="modal-content">
 
-                            <div class="row mr-4">
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-                                        <h4 class="title"><a href="">Challenge</a></h4>
-                                        <p class="">We encourage tomorrow’s leaders through various challenges,
-                                            especially in overcoming their personal limits & thoughts.</p>
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-danger">{{ $about->title }}</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-                                        <h4 class="title"><a href="">Change</a></h4>
-                                        <p class="">Anyone who boards the Mahanaim Ship of Change gains a clean and a radiant heart.</p>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <p style="color: black;">
+                                            {{ $about->content }}
+                                        </p>
                                     </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="box">
-                                        <div class="icon"><a href=""><i class="fa fa-users"></i></a></div>
-                                        <h4 class="title"><a href="">Cohesion</a></h4>
-                                        <p class="">A single solace, where the exchange between youths from over 80 different countries occur, promotes unison.</p>
+                                    <div class="modal-footer">
+                                        <span class="float-right">{{ $about->title }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
-                    <hr>
+                        <!--End of Modal-->
+                    @endforeach
 
-                    <!--==========================
-    Information Section
-    ============================-->
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <section id="facts">
-                                <div class="container wow fadeIn">
-                                    <div class="section-header">
-                                        <div class="col-sm-9">
-                                            <h3 class="section-title">MEI Information</h3>
-                                            <hr class="mr-4">
+                </div>
+                   <br>
+                    <h3 class="text-center"><span class="badge" style="background: #265ea1;">Our Tagline</span></h3>
+                    <div class="row text-center">
+                        @foreach($tags as $about)
+                            <div class="col-sm-4" style="font-family: Symbola;">
+                                <span class="badge">{{ $about->title }}</span>
+                                <hr>
+                                <?php
+                                $cont =substr($about->content,0,200);
+                                ?>
+                                {!! $cont !!}...&nbsp;
+                                <a href="#" data-toggle="modal" data-target="#modal-{{ $about->id }}" style="color: #0a568c;">
+                                    More
+                                </a>
+                            </div>
+
+
+                            <!-- Modal -->
+                            <div class="modal" id="modal-{{$about->id}}">
+                                <div class="modal-dialog modal-md">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title text-danger">{{ $about->title }}</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <p style="color: black;">
+                                                {{ $about->content }}
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <span class="float-right">{{ $about->title }}</span>
                                         </div>
                                     </div>
-
-                                    @foreach($infos as $info)
-                                        <article class="media content-section" style="width: 100%; color: black;">
-                                            <div class="media-body">
-                                                <div class="article-metadata">
-                                                    <h4 class="" style="font-family: Concert One;"><a class="article-title pl-4" href="" style="color: #0a568c;"><strong>{{ $info->title }}</strong></a></h4>
-                                                </div>
-                                                <div class="col-sm-8">
-                                                    <p class="article-content">{!! $info->content  !!} </p>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    @endforeach
-
-
                                 </div>
-                            </section>
-                        </div>
-
-
-                        <!-- Notice Board-->
-                        <div class="col-sm-3">
-                            <div class="list-group" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
-                                <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Notice Board</b></a>
-                                @foreach($notices as $notice)
-                                    <a class="list-group-item list-group-item-light" href="{{route('view-notice', $notice->id)}}" style="color: #0a568c;"><i class="fas fa-angle-double-right"></i> {{ $notice->title }}</a>
-                                @endforeach
                             </div>
-
-                            <hr>
-                            <br>
-
-                            <div class="list-group" style="font-size: 14px; font-family: 'Source Sans Pro', sans-serif;">
-                                <a class="list-group-item list-group-item-primary" style="background: #98ccff; color: #ac2925;"><b>Recent News</b></a>
-                                @foreach($posts as $post)
-                                    <a class="list-group-item list-group-item-light" href="{{route('show-post', $post->id)}}" style="color: #0a568c;"><i class="fas fa-angle-double-right"></i> {{ $post->title }}</a>
-                                @endforeach
-                            </div>
-                            <hr>
-
-                        </div>
-
-                        <!-- End of Notice Board -->
+                            <!--End of Modal-->
+                    @endforeach
                     </div>
-                    <hr>
-                    <br>
-                </div>
+
+
+                </section>
             </div>
+
         </div>
-    </main>
+        </div>
+    </div>
+</main>
     @endsection

@@ -15,14 +15,21 @@
                             @csrf
 
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="control-label">Title:</label>
                                         <input type="text" class="form-control" name="title" value="{{ $overview->title }}">
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Name:</label>
+                                        <input type="text" class="form-control" name="name" value="{{ $overview->name }}">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="control-label">Image:</label>
                                         <input type="file" class="form-control" name="image" value="{{ $overview->image }}">

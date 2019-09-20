@@ -108,10 +108,10 @@ class OverviewController extends Controller
             $image->move(public_path().'/uploads', $image->getClientOriginalName());
             $url=URL::to("/") . '/uploads'.'/'. $image->getClientOriginalName();
 
-            DB::update("UPDATE overviews set title = ?, name = ?, content = ?, image = ? WHERE id = ?", [$title, $name, $content, $url, $id]);
+            DB::update("UPDATE greetings set title = ?, name = ?, content = ?, image = ? WHERE id = ?", [$title, $name, $content, $url, $id]);
             return redirect('/overview')->with('success', 'Overview Has Been Updated!');
         }else {
-            DB::update("UPDATE overviews set title = ?, $name, content = ? WHERE id = ?", [$title, $name, $content, $id]);
+            DB::update("UPDATE greetings set title = ?, $name, content = ? WHERE id = ?", [$title, $name, $content, $id]);
             return redirect('/overview')->with('success', 'Overview Has Been Updated!');
         }
     }
@@ -128,5 +128,9 @@ class OverviewController extends Controller
         $overview = Overview::find($id);
         $overview->delete();
         return redirect('/overview')->with('success', 'Overview Has Been Deleted!');
+    }
+    public function greetings(){
+        $greetings = Overview::all();
+        return view('mahanaim.greetings', compact('greetings'));
     }
 }

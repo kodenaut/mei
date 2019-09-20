@@ -7,7 +7,7 @@
                 <div class="col-lg-12 content order-lg-1 order-2">
                 <section id="facts" class="mb-3">
                         <div class="section-header">
-                            <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Background Information</strong></a>
+                            <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: white; font-size: 18px; font-family: Symbola;"><strong>Background Information</strong></a>
                         </div>
                             <div class="card card-body">
                             @foreach($overviews as $overview)

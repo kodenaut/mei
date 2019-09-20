@@ -3,8 +3,8 @@
 @section('content')
     <!-- Top Stories Area -->
     <main id="main">
-        <div class="container mt-5">
-            <div class="row" id="contatti">
+        <div class="container mt-1">
+            <div class="row mx-1" id="contatti">
 
                     <div class="row m-3">
                         <div class="col-sm-6 maps">
@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-sm-6">
                             <h2 class="text-uppercase mt-3 font-weight-bold text-white text-center">Contact Us</h2>
-                            <form action="{{route('save-message')}}">
+                            <form method="post" action="{{route('save-message')}}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-6">

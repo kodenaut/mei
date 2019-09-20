@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Mission;
-use App\Philosophy;
+use App\Statement;
+use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class MissionController extends Controller
+class StatementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class MissionController extends Controller
     public function index()
     {
         //
-        $missions = Mission::all();
-        return view('mahanaim.index', compact('missions'));
+        $infos = Statement::all();
+        return view('admin.info', compact('infos'));
     }
 
     /**
@@ -27,7 +28,8 @@ class MissionController extends Controller
      */
     public function create()
     {
-
+        //
+        return view('admin.add-info');
     }
 
     /**
@@ -39,7 +41,20 @@ class MissionController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, array(
+            'title' => 'required',
+            'content' => 'required',
+        ));
+        //save the data to the database
+        $info  = new Statement();
+        $info->title = $request->get('title');
+        $info->content = $request->get('content');
 
+
+        $info->save();
+
+        return redirect()->route('info')
+            ->with('success','Information Added successfully');
     }
 
     /**
@@ -51,7 +66,6 @@ class MissionController extends Controller
     public function show($id)
     {
         //
-
     }
 
     /**
@@ -63,8 +77,8 @@ class MissionController extends Controller
     public function edit($id)
     {
         //
-        $mission = Mission::find($id);
-        return view('admin.update-mission', compact('mission'));
+        $info = Statement::find($id);
+        return view('admin.edit-info', compact('info'));
     }
 
     /**
@@ -77,15 +91,12 @@ class MissionController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $request->validate([
-            'content'=>'required',
-            ]);
+        $title = $request->get('title');
+        $content = $request->get('content');
 
-        $mission = Mission::find($id);
-        $mission->content = $request->get('content');
 
-        $mission->save();
-        return redirect('/admin')->with('success', 'Mission Has Been Updated!');
+        DB::update("UPDATE statements set title = ?, content = ? WHERE id = ?", [$title, $content, $id]);
+        return redirect('/info')->with('success', 'Info Has Been Updated!');
     }
 
     /**
@@ -97,5 +108,14 @@ class MissionController extends Controller
     public function destroy($id)
     {
         //
+        $info = Statement::find($id);
+        $info->delete();
+        return redirect('/info')->with('success', 'Info Has Been Deleted!');
+    }
+
+    public function meiinfo(){
+        $infos = Statement::all();
+        $tags = Tag::all();
+        return view('mahanaim.mei-info', compact('infos', 'tags'));
     }
 }

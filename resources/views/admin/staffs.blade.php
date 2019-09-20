@@ -119,7 +119,7 @@
 
                                 <div class="form-group">
                                     <label class="control-label">Passport:</label>
-                                    <input type="file" name="passport" class="form-control" value="{{ $staff->paspport }}">
+                                    <input type="file" name="passport" class="form-control" value="{{ $staff->passport }}">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-info">Update</button>
@@ -132,6 +132,10 @@
                         <!-- End of Update Modal -->
 
                         @endforeach
+                </div>
+
+                <div class="row justify-content-center ">
+                    {{ $staffs->links() }}
                 </div>
 
             </div>

@@ -132,9 +132,6 @@
                                                 <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#updatemodal-{{ $course->id }}">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
-                                                    <a href="{{route('papers', $course->id)}}" class="btn btn-success btn-sm float-right mx-1">
-                                                        <i class="fas fa-book-open">&nbsp;Papers</i>
-                                                    </a>
                                                 </li>
                                             </div>
                                         </div>

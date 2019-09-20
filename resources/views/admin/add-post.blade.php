@@ -53,7 +53,8 @@
 
     <script>
         var editor_config = {
-            path_absolute : "/",
+            images_upload_url: "upload.php",
+
             selector: "textarea.my-editor",
             plugins: [
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -87,4 +88,5 @@
 
         tinymce.init(editor_config);
     </script>
+
 @endsection

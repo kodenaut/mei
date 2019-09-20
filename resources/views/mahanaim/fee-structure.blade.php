@@ -7,13 +7,13 @@
 @section('content')
     <main id="main">
         <div class="container">
-        <div class="row">
+        <div class="row about-container">
         <!--==========================
     Schools Section
   ============================-->
         <div class="col-sm-2">
             <div class="list-group">
-                <a class="list-group-item list-group-item-light" style="color: black; background: #0f7b9f;"><b>Schools</b></a>
+                <a class="list-group-item list-group-item-light" style="color: white; background: #265ea1;"><b>Schools</b></a>
                 <a class="list-group-item list-group-item-primary" href="{{route('fee-structure')}}">Engineering</a>
                 <a class="list-group-item list-group-item-success" href="{{route('ict-fee')}}">ICT</a>
                 <a class="list-group-item list-group-item-warning" href="{{route('icdl-fee')}}">ICDL</a>
@@ -28,12 +28,12 @@
 
         <div class="col-sm-10">
                 <div class="section-header text-center">
-                    <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Fee Structure</strong></a>
+                    <a href="" class="list-group-item text-center" style="background: #024DA1; color: white; font-size: 18px; font-family: Symbola;"><strong>Fee Structure</strong></a>
                 </div>
 
-                     <div class="card card-body mt-1">
+                     <div class="card card-body mt-1" style="height: 92%;">
                 @foreach($fees as $fee)
-                            <iframe src="{{ $fee->structure }}" style="height: 100%; width: 100%;"></iframe>
+                            <iframe src="{{ $fee->structure }}" style="width: 100%; height: 100%;"></iframe>
                         </div>
 
 

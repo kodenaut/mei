@@ -16,7 +16,7 @@ class MessageController extends Controller
     public function index()
     {
         //
-        $messages = Message::paginate(3);
+        $messages = DB::table('messages')->paginate(10);
         return view('admin.messages', compact('messages'));
     }
 
@@ -51,7 +51,7 @@ class MessageController extends Controller
             'message'=>$message,
 
         ]]);
-        return redirect()->route('homepage')
+        return redirect()->route('contact')
             ->with('success','Message Sent successfully');
     }
 

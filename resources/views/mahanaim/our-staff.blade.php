@@ -15,17 +15,17 @@
 ============================-->
                 <section id="team" class="pb-3">
                         <div class="section-header">
-                            <a href="" class="list-group-item text-center" style="background: #0f7b9f; color: black; font-size: 18px; font-family: Symbola;"><strong>Our Staff</strong></a>
+                            <a href="" class="list-group-item text-center" style="background: #265ea1; color: white; font-size: 18px; font-family: Symbola;"><strong>Our Staff</strong></a>
                         </div>
                         <div class="row mt-2">
 
                             @foreach($staffs as $staff)
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 my-1">
                                     <div class="member">
                                         <div class="card card-body">
-                                            <img src="{{ $staff->passport }}" class="img-fluid rounded-circle mx-auto d-block" alt="" style="height: 150px; width: 150px;">
+                                            <img src="{{ $staff->passport }}" class="img-fluid rounded-circle mx-auto d-block" alt="" style="height: 80px; width: 80px;">
                                             <div class="caption">
-                                                <h5>{{ $staff->salutation }}&nbsp;{{ $staff->first_name }}&nbsp;{{ $staff->last_name }}</h5>
+                                                <h6>{{ $staff->salutation }}&nbsp;{{ $staff->first_name }}&nbsp;{{ $staff->last_name }}</h6>
                                                 <span>{{ $staff->position }}</span>
                                             </div>
                                         </div>

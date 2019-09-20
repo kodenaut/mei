@@ -18,7 +18,8 @@ class SchoolController extends Controller
     public function index()
     {
         //
-        $schools = School::all();
+        $schools = DB::table('schools')
+        ->paginate(3);
         return view('admin.schools', compact('schools'));
     }
 

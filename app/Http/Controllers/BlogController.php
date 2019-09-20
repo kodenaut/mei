@@ -17,7 +17,9 @@ class BlogController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = DB::table('posts')
+        ->latest()
+        ->paginate(2);
         return view('admin.blog', compact('posts'));
     }
 

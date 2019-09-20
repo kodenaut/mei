@@ -23,8 +23,10 @@ class AdminController extends Controller
         $photos = DB::table("photos")->count();
         $partners = DB::table("partners")->count();
         $notices = DB::table("notices")->count();
+        //$papers = DB::table("papers")->count();
+        $students =  DB::table("students")->count();
 
-        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners", "$notices");
+        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners", "$notices", "$students");
         return view('admin.dashboard', compact('details'));
     }
 

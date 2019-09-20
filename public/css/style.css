@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header #logo img {
   padding: 0;
-
+  width: 150px;
 }
 
 @media (max-width: 768px) {
@@ -137,6 +137,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 180px;
   position: relative;
   width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
@@ -423,9 +425,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Sections Header
 --------------------------------*/
 .section-header .section-title {
-  font-size: 25px;
+  font-size: 20px;
   color: #111;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 700;
 }
@@ -554,10 +555,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 #services .box {
   text-align: center;
   border: 1px solid #e6e6e6;
-  height: 240px;
   position: relative;
   background: #e2f0fb;
-  margin-bottom: 20%;
+  margin-bottom: 1%;
 }
 
 #services .boxmodal {
@@ -675,7 +675,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 #portfolio {
   background: #f7f7f7;
-  margin-top: 25px;
+  margin-top: 1px;
 }
 #portfolio #portfolio-wrapper {
   margin-top: 1px;
@@ -708,9 +708,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio .portfolio-item {
   position: relative;
-  height: 200px;
   overflow: hidden !important;
-  margin-bottom: 15px;
+  margin-bottom: 1%;
   transition: all 350ms ease;
   transform: scale(1);
 }
@@ -788,7 +787,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 #footer {
   background: #343b40;
-  padding-top: 1px;
   color: #fff;
   font-size: 14px;
 }
@@ -1001,3 +999,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1); }
+
+
+.required {
+  color: red;
+}

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Vision;
+use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class VisionController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +16,8 @@ class VisionController extends Controller
     public function index()
     {
         //
+        $students = DB::table('students')->paginate(10);
+        return view('admin.students', compact('students'));
     }
 
     /**
@@ -36,6 +39,20 @@ class VisionController extends Controller
     public function store(Request $request)
     {
         //
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $school = $request->input('school');
+        $phone = $request->input('phone');
+
+        DB::table('students')->insert([[
+            'name'=>$name,
+            'email'=>$email,
+            'school'=>$school,
+            'phone'=>$phone,
+
+        ]]);
+        return redirect()->route('homepage')
+            ->with('success','KCSE Past Papers');
     }
 
     /**
@@ -58,8 +75,6 @@ class VisionController extends Controller
     public function edit($id)
     {
         //
-        $vision = Vision::find($id);
-        return view('admin.update-vision', compact('vision'));
     }
 
     /**
@@ -72,15 +87,6 @@ class VisionController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $request->validate([
-            'content'=>'required',
-        ]);
-
-        $vision = Vision::find($id);
-        $vision->content = $request->get('content');
-
-        $vision->save();
-        return redirect('/admin')->with('success', 'Vision Has Been Updated!');
     }
 
     /**
@@ -92,5 +98,9 @@ class VisionController extends Controller
     public function destroy($id)
     {
         //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('kcse-students')
+            ->with('success','Record Has Been Deleted');
     }
 }

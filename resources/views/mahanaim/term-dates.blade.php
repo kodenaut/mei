@@ -13,7 +13,7 @@
                             <div class="row">
                                 <div class="col-sm-2">
                                     <div class="list-group p-0">
-                                        <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #1b6d85; color: black;">Quick Links</a>
+                                        <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #265ea1; color: white;">Quick Links</a>
                                         <a href="{{route('our-schools')}}" class="list-group-item" style="color: #0a568c;">Schools</a>
                                         <a href="{{route('fee-structure')}}" class="list-group-item" style="color: #0a568c;">Fee Structure</a>
                                         <a href="{{route('term-dates')}}" class="list-group-item" style="color: #0a568c;">Term Dates</a>
@@ -26,9 +26,9 @@
                                     <!-- Start Post Area -->
 
                                         <!-- Single post -->
-                                        <div class="card card-body mt-1">
+                                        <div class="card card-body mt-1" style="height: 117%;">
                                             @foreach($terms as $term)
-                                                        <iframe src="{{ $term->file }}"style="width: 100%; height: 100%;"></iframe>
+                                                        <iframe src="{{ $term->file }}" style="width: 100%; height: 95%;"></iframe>
                                             @endforeach
                                         <!-- End Single post -->
                                         </div>
@@ -45,5 +45,7 @@
                 </div>
 
     </main>
+    <br>
+    <br>
 
 @endsection

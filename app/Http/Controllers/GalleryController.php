@@ -127,7 +127,7 @@ class GalleryController extends Controller
     }
 
     public function photos(){
-        $photos = Photo::all();
+        $photos = DB::table('photos')->paginate(8);
         return view('mahanaim.photos', compact('photos'));
     }
 }

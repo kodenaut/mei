@@ -23,17 +23,17 @@ class AboutController extends Controller
     }
 
     public function background(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Background'");
+        $overviews = DB::select("SELECT * FROM greetings WHERE title='Background'");
         return view('mahanaim.background', compact('overviews'));
 }
 
     public function chancellor(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Chancellor'");
+        $overviews = DB::select("SELECT * FROM greetings WHERE title='Chancellor'");
         return view('mahanaim.chancellor', compact('overviews'));
     }
 
     public function principal(){
-        $overviews = DB::select("SELECT * FROM overviews WHERE title='Principal'");
+        $overviews = DB::select("SELECT * FROM greetings WHERE title='Principal'");
         return view('mahanaim.principal', compact('overviews'));
     }
 

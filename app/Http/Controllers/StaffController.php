@@ -17,7 +17,8 @@ class StaffController extends Controller
     public function index()
     {
         //
-        $staffs = Staff::all();
+        $staffs = DB::table('staff')
+            ->paginate(8);
         return view('admin.staffs', compact('staffs'));
     }
 

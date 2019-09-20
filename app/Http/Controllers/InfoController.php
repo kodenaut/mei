@@ -98,7 +98,7 @@ class InfoController extends Controller
         $content = $request->get('content');
 
 
-            DB::update("UPDATE infos set title = ?, content = ? WHERE id = ?", [$title, $content, $id]);
+            DB::update("UPDATE statements set title = ?, content = ? WHERE id = ?", [$title, $content, $id]);
             return redirect('/info')->with('success', 'Info Has Been Updated!');
 
     }
@@ -118,10 +118,7 @@ class InfoController extends Controller
 
     }
     public function meiinfo(){
-        $infos = Info::all();
-        $posts = Post::all();
-        $notices = Notice::all();
-        $overviews = Overview::all();
-        return view('mahanaim.mei-info', compact('infos', 'posts', 'overviews', 'notices'));
+
+        return view('mahanaim.mei-info', compact('infos', 'posts', 'notices'));
     }
 }

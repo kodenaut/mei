@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Philosophy;
+use App\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class PhilosophyController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,6 @@ class PhilosophyController extends Controller
     public function index()
     {
         //
-        $philosophies = Philosophy::all();
-        return view('mahanaim.index', compact('philosophies'));
     }
 
     /**
@@ -38,6 +37,14 @@ class PhilosophyController extends Controller
     public function store(Request $request)
     {
         //
+        $title = $request->input('title');
+
+        DB::table('subjects')->insert([[
+            'title'=>$title,
+
+        ]]);
+        return redirect()->route('kcse-papers')
+            ->with('success','Subject Sent successfully');
     }
 
     /**
@@ -60,8 +67,6 @@ class PhilosophyController extends Controller
     public function edit($id)
     {
         //
-        $philosophy = Philosophy::find($id);
-        return view('admin.update-philosophy', compact('philosophy'));
     }
 
     /**
@@ -74,16 +79,11 @@ class PhilosophyController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $request->validate([
-            'content'=>'required',
-        ]);
+        $title = $request->get('title');
 
-        $philosophy = Philosophy::find($id);
-        $philosophy->content = $request->get('content');
-
-        $philosophy->save();
-        return redirect('/admin')->with('success', 'Philosophy Has Been Updated!');
-    }
+        DB::update("UPDATE subjects set title = ? WHERE id = ?", [$title, $id]);
+        return redirect('/kcse-papers')->with('success', 'Subject Has Been Updated!');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -94,5 +94,10 @@ class PhilosophyController extends Controller
     public function destroy($id)
     {
         //
+        $subject = Subject::find($id);
+        $subject->delete();
+
+        return redirect()->route('kcse-papers')
+            ->with('success','Subject Deleted successfully');
     }
 }

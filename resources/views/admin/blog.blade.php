@@ -37,7 +37,10 @@
                     </div>
                 </article>
                     @endforeach
+            </div>
 
+            <div class="row justify-content-center ">
+                {{ $posts->links() }}
             </div>
 
         </div>

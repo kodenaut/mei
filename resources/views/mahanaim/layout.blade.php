@@ -54,10 +54,10 @@ Header
     <div class="container">
 
         <div id="logo" class="pull-left">
-            <a href="{{route('homepage')}}"><img src="{{asset('img/logo.png')}}" alt="" title="" /></a>
+            <a href="{{route('homepage')}}"><img src="{{asset('img/logo.png')}}" class="img-fluid mb-1" alt="" title="" /></a>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light float-right sticky-top fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light float-right sticky-top fixed-top my-0">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,11 +67,9 @@ Header
                 <li class="menu-active"><a href="{{route('homepage')}}">Home</a></li>
                 <li class="menu-has-children"><a class="" href="">About</a>
                     <ul>
+                        <li><a href="{{route('greetings')}}">Greetings</a> </li>
+                        <li><a href="{{route('mei-info')}}">Mission Statement</a> </li>
                         <li><a href="{{route('our-staffs')}}">Staff</a></li>
-                        <li><a href="{{route('background')}}">Backround</a> </li>
-                        <li><a href="{{route('our-alumnis')}}">Alumni</a> </li>
-                        <li><a href="{{route('chancellor')}}">Chancellor's Message</a> </li>
-                        <li><a href="{{route('principal')}}">Principal's Message</a> </li>
                     </ul>
                 </li>
                 <li class="menu-has-children nav-item"><a href="">Academics</a>
@@ -86,7 +84,7 @@ Header
                 </li>
                 <li class="menu-has-children"><a href="">Admissions</a>
                     <ul>
-                        <li><a href="#">Apply</a></li>
+                        <li><a href="https://mahanaim.dsl.ke/application/Default.aspx" target="_blank">Apply</a></li>
                         <li><a href="{{route('fee-structure')}}">Fee Structure</a></li>
                         <li><a href="#">Scholarship</a></li>
                         <li><a href="#">E-Learning</a></li>
@@ -104,8 +102,8 @@ Header
                     </ul>
             </ul>
             </div>
-        </nav><!-- #nav-menu-container -->
-    </div>
+        </nav>
+            </div>
 </header><!-- #header -->
 
 <!--==========================
@@ -120,19 +118,24 @@ Header
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
             </ol>
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="{{asset('img/1.jpg')}}" alt="Los Angeles" style="width:100%; height: 180px;">
+                    <img src="{{asset('img/yong.jpg')}}" alt="Los Angeles" style="width:100%; height: 180px;">
                 </div>
 
                 <div class="item">
-                    <img src="{{asset('img/g.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
+                    <img src="{{asset('img/govern.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
                 </div>
 
                 <div class="item">
-                    <img src="{{asset('img/1.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
+                    <img src="{{asset('img/cod.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
+                </div>
+                <div class="item">
+                    <img src="{{asset('img/juja.jpg')}}" alt="Chicago" style="width:100%; height: 180px;">
                 </div>
 
             </div>
@@ -161,13 +164,10 @@ Header
 @yield('content')
 
 
-
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-
 <!--==========================
   Footer
 ============================-->
+<br>
 <footer id="footer">
     <br>
     <div class="container">
@@ -175,18 +175,23 @@ Header
             <div class="col-sm-4"></div>
             <div class="col-sm-4 text-center">
                 <div class="copyright text-center">
-                    &copy; Copyright <strong>mei</strong>. All Rights Reserved
+                    <br>
+                    &copy; 2019 Copyright <strong>mei</strong>. All Rights Reserved
                 </div>
 
+                <br>
                 <div class="credits">
-                    Designed by <a href="https://kodenaut.github.io">Mahanaim</a>
+                    Developed by <a href="https://kodenaut.github.io" target="_blank">Kodenaut</a>
 
                 </div>
             </div>
+
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
         </div>
     </div>
-    <br>
-</footer><!-- #footer -->
+    <br><br>
+</footer> <!-- #footer -->
 
 <!-- JavaScript Libraries -->
 <script src="lib/jquery/jquery.min.js"></script>
