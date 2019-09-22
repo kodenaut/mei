@@ -38,38 +38,32 @@ class PastPaperController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         //
-        $this->validate($request, array(
-            'title' => 'required',
-            'year' => 'required',
-            'qpaper' => 'file|mimes:pdf|max:2048',
-            'apaper' => 'file|mimes:pdf|max:2048',
-        ));
-        //save the data to the database
         $title = $request->input('title');
         $year = $request->input('year');
-        $q_paper = $request->input('qpaper');
-        $a_paper = $request->input('apaper');
+
 
         if ($request->hasFile('file')) {
-            $file = $request->file('image');
+            $file = $request->file('file');
             $file->move(public_path() . '/uploads', $file->getClientOriginalName());;
             $url = URL::to("/") . '/uploads' . '/' . $file->getClientOriginalName();
-            $paper->image = $url;
+        //
+        DB::table('past_papers')->insert([[
+            'title'=>$title,
+            'year'=>$year,
+            'file'=>$url,
+            'subject_id'=>$id,
 
-            DB::table('courses')->insert([[
+        ]]);
 
-
-            ]]);
 
             return redirect()->route('kcse-papers')
                 ->with('success','Paper Added successfully!');
         }else{
-            $paper->save();
             return redirect()->route('kcse-papers')
-                ->with('success','Paper Added Successfully!');
+                ->with('success','Failed!');
         }
     }
 
@@ -105,6 +99,20 @@ class PastPaperController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $title = $request->get('title');
+        $year = $request->get('year');
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $file->move(public_path().'/uploads', $file->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $file->getClientOriginalName();
+
+            DB::update("UPDATE past_papers set title = ?, year = ?, file = ? WHERE id = ?", [$title, $year, $url, $id]);
+            return redirect('/kcse-papers')->with('success', 'Paper Has Been Updated!');
+        }else {
+            DB::update("UPDATE past_papers set title = ?, year = ? WHERE id = ?", [$title, $year, $id]);
+            return redirect('/kcse-papers')->with('success', 'Paper Has Been Updated!');
+        }
     }
 
     /**
@@ -116,11 +124,22 @@ class PastPaperController extends Controller
     public function destroy($id)
     {
         //
+        $paper = PastPaper::find($id);
+        $paper->delete();
+        return redirect()->route('kcse-papers')
+            ->with('success','Paper Deleted successfully!');
+
     }
 
     public function subject_papers($id){
         $subject = Subject::find($id);
         $papers = DB::select("SELECT * FROM past_papers WHERE subject_id = $id");
         return view('admin.subject_papers', compact('papers', 'subject'));
+    }
+
+    public function papers($id){
+        $subject = Subject::find($id);
+        $papers = DB::select("SELECT * FROM past_papers WHERE subject_id = $id");
+        return view('mahanaim.papers', compact('papers', 'subject'));
     }
 }

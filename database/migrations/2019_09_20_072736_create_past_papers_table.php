@@ -16,8 +16,7 @@ class CreatePastPapersTable extends Migration
         Schema::create('past_papers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('q_paper');
-            $table->string('a_paper')->nullable();
+            $table->string('file');
 
             $table->unsignedBigInteger('subject_id');
 

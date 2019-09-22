@@ -36,14 +36,8 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label class="control-label">Question Paper:</label>
-                                    <input type="file" class="form-control" name="qpaper">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label class="control-label">Answers:</label>
-                                    <input type="file" class="form-control" name="apaper">
+                                    <label class="control-label">File:</label>
+                                    <input type="file" class="form-control" name="file">
                                 </div>
                             </div>
                         </div>
@@ -80,10 +74,10 @@
                                         <li style="list-style: none;">
                                             <a href="" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $paper->title }}</strong>
                                             </a>
-                                            <a href="#" data-toggle="modal" data-target="#paper-{{ $subject->id }}"><i class="fas fa-edit"></i> </a>
-                                            <form method="post" action="{{route('delete-subject', $subject->id)}}" class="form-btn m-1" style="display: inline-block;">
+                                            <a href="#" data-toggle="modal" data-target="#paper-{{ $paper->id }}"><i class="fas fa-edit"></i> </a>
+                                            <form method="post" action="{{route('delete-paper', $paper->id)}}" class="form-btn m-1" style="display: inline-block;">
                                                 @csrf
-                                                <button style="color: red;" type="submit" onclick='return confirm("Are you sure you want to Delete this Subject?")'>
+                                                <button style="color: red;" type="submit" onclick='return confirm("Are you sure you want to Delete this Paper?")'>
                                                     <i class="fas fa-trash"></i>
                                                 </button>
                                             </form>
@@ -99,19 +93,39 @@
 
                                                 <!-- Modal Header -->
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">New Subject</h4>
+                                                    <h4 class="modal-title">Update Paper</h4>
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 </div>
                                                 <!-- Modal body -->
                                                 <div class="modal-body">
-                                                    <form method="post" class="form-horizontal" action="{{route('update-subject', $subject->id)}}" enctype="multipart/form-data">
+                                                    <form method="post" class="form-horizontal" action="{{route('update-paper', $paper->id)}}" enctype="multipart/form-data">
                                                         @csrf
-                                                        <div class="form-group">
-                                                            <label class="control-label">Title:</label>
-                                                            <input type="text" class="form-control" name="title" value="{{ $subject->title }}">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Title:</label>
+                                                                    <input type="text" class="form-control" name="title" value="{{ $paper->title }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">Year:</label>
+                                                                    <input type="text" class="form-control" name="year" value="{{ $paper->year }}">
+                                                                </div>
+                                                            </div>
                                                         </div>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label">File:</label>
+                                                                    <input type="file" class="form-control" name="file" value="{{ $paper->file }}">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn btn-info">Submit</button>
+                                                            <button type="submit" class="btn btn-info">Update</button>
                                                         </div>
                                                     </form>
                                                 </div>

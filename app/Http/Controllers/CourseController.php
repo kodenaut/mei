@@ -40,6 +40,26 @@ class CourseController extends Controller
     public function store(Request $request, $id)
     {
 
+        $name = $request->input('name');
+        $qualification = $request->input('qualification');
+        $duration = $request->input('duration');
+        $modules = $request->input('modules');
+        $exam = $request->input('exam');
+        $mode = $request->input('mode');
+        //
+        DB::table('courses')->insert([[
+            'name'=>$name,
+            'qualification'=>$qualification,
+            'duration'=>$duration,
+            'modules'=>$modules,
+            'exam_body'=>$exam,
+            'mode'=>$mode,
+            'school_id'=>$id,
+
+        ]]);
+        return redirect()->route('schools')
+            ->with('success','Course Added successfully');
+
     }
 
     /**

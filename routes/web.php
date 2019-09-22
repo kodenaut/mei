@@ -46,8 +46,9 @@ Route::get('/our-alumni', 'AlumniController@alumnis')->name('our-alumnis');
 
 Route::get('/view-notice/{id}', 'NoticeController@show')->name('view-notice');
 
-Route::get('/past-papers', 'PaperController@papers')->name('past-papers');
-Route::get('/course-papers/{id}', 'PaperController@coursepapers')->name('course-papers');
+
+//Route::get('/past-papers', 'PaperController@papers')->name('past-papers');
+//Route::get('/course-papers/{id}', 'PaperController@coursepapers')->name('course-papers');
 
 
 Route::get('/mei-info', 'StatementController@meiinfo')->name('mei-info');
@@ -58,6 +59,7 @@ Route::get('/timetable', 'QuickController@timetable')->name('timetable');
 
 
 Route::post('/past-papers', 'StudentController@store')->name('past-papers');
+Route::get('/papers/{id}', 'PastPaperController@papers')->name('papers');
 
 
 
@@ -171,6 +173,8 @@ Route::post('delete-student/{id}', 'StudentController@destroy')->name('delete-st
 //KCSE Papers
 Route::get('kcse-papers', 'PastPaperController@index')->name('kcse-papers');
 Route::post('add-paper/{id}', 'PastPaperController@store')->name('add-paper');
+Route::post('update-paper/{id}', 'PastPaperController@update')->name('update-paper');
+Route::post('delete-paper/{id}', 'PastPaperController@destroy')->name('delete-paper');
 
 
 //Subjects

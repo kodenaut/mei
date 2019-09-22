@@ -30,24 +30,24 @@
                         </div>
 
                         <div class="col-sm-9">
-                            <section id="services" style="width: 100%;">
-                                <div class="section-header">
-                                    <a href="" class="list-group-item text-center" style="background: #265ea1; color: white; font-size: 18px; font-family: Symbola;"><strong>{{ $subject->title }} Papers</strong></a>
+                        <section id="services" style="width: 100%;">
+                        <div class="section-header">
+                            <a href="" class="list-group-item text-center" style="background: #265ea1; color: white; font-size: 18px; font-family: Symbola;"><strong>KCSE Subjects</strong></a>
+                        </div>
+                        <div class="row mb-3">
+                            @foreach($subjects as $subject)
+                                <div class="col-sm-3">
+                                    <li style="list-style: none;">
+                                        <a href="{{route('papers', $subject->id)}}" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $subject->title }}</strong>
+                                        </a>
+                                    </li>
                                 </div>
-                                <div class="row mb-3">
-                                    @foreach($papers as $paper)
-                                        <div class="col-sm-3">
-                                            <li style="list-style: none;">
-                                                <a href="{{ $paper->file }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $paper->title }}~{{ $paper->year }}</strong>
-                                                </a>
-                                            </li>
-                                        </div>
 
-                                        <hr style="border-style: dashed; margin: 0;">
-                                    @endforeach
+                                <hr style="border-style: dashed; margin: 0;">
+                            @endforeach
 
-                                </div>
-                            </section><!-- #schools -->
+                        </div>
+                    </section><!-- #schools -->
                         </div>
                     </div>
 

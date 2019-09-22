@@ -74,7 +74,7 @@
 
                                                 <!-- Modal Header -->
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">New Subject</h4>
+                                                    <h4 class="modal-title">Update {{ $subject->title }}</h4>
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 </div>
                                     <!-- Modal body -->

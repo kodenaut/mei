@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -44,15 +45,20 @@ class StudentController extends Controller
         $school = $request->input('school');
         $phone = $request->input('phone');
 
-        DB::table('students')->insert([[
-            'name'=>$name,
-            'email'=>$email,
-            'school'=>$school,
-            'phone'=>$phone,
 
-        ]]);
-        return redirect()->route('homepage')
-            ->with('success','KCSE Past Papers');
+                DB::table('students')->insert([[
+                    'name' => $name,
+                    'email' => $email,
+                    'school' => $school,
+                    'phone' => $phone,
+
+                ]]);
+
+
+        $subjects = Subject::all();
+        return view('mahanaim.past-papers', compact('subjects'))
+            ->with('success', 'User Already Exists!');
+
     }
 
     /**
