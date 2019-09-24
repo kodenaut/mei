@@ -13,15 +13,15 @@
                     <a href="{{route('our-schools')}}" class="list-group-item">Schools</a>
                     <a href="{{route('fee-structure')}}" class="list-group-item">Fee Structure</a>
                     <a href="{{route('term-dates')}}" class="list-group-item">Term Dates</a>
-                    <a href="#" class="list-group-item">Timetable</a>
+                    <a href="{{ route('timetable') }}" class="list-group-item">Timetable</a>
                     <a href="#" data-toggle="modal" data-target="#kcse-modal" class="list-group-item">KCSE Past Papers</a>
                     <a href="{{route('contact')}}" class="list-group-item">Contact</a>
                 </div>
                 <div class="list-group">
                     <a href="#" class="list-group-item" style="font-family: Symbola; background: #265ea1; color: white;"><strong>Follow us</strong></a>
-                    <a href="#" class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
-                    <a href="#" class="list-group-item"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
-                    <a href="#" class="list-group-item"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+                    <a href="https://www.facebook.com/Mahanaim-Educational-Institute-365783176877179/" class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                    <a href="https://twitter.com/Mahanaimcollege" class="list-group-item"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+                    <a href="https://www.instagram.com/mahanaimcollege/" class="list-group-item"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
                     <a href="#" class="list-group-item"><i class="fab fa-linkedin"></i>&nbsp;LinkedIn</a>
                 </div>
             </div>

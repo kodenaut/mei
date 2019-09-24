@@ -26,10 +26,21 @@
                                     <!-- Start Post Area -->
 
                                         <!-- Single post -->
-                                        <div class="card card-body mt-1" style="height: 117%;">
+                                        <div class="card card-body mt-1" style="height: 100%;">
+                                            <div class="section-header">
+                                                <a href="" class="list-group-item text-center" style="background: #265ea1; color: white; font-size: 18px; font-family: Symbola;"><strong>Our Schedule</strong></a>
+                                            </div>
+
+                                            <div class="row">
                                             @foreach($terms as $term)
-                                                        <iframe src="{{ $term->file }}" style="width: 100%; height: 95%;"></iframe>
+                                                <div class="col-sm-2">
+                                                <li style="list-style: none;">
+                                                    <a href="{{ $term->file }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $term->title }}</strong>
+                                                    </a>
+                                                </li>
+                                                </div>
                                             @endforeach
+                                            </div>
                                         <!-- End Single post -->
                                         </div>
 

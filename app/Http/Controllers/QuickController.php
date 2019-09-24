@@ -110,19 +110,13 @@ class QuickController extends Controller
     }
 
     public function termdates(){
-        $terms = DB::table('terms')
-            ->latest()
-            ->limit(1)
-            ->get();
+        $terms = Term::all();
         return view('mahanaim.term-dates', compact('terms'));
 
     }
 
     public function timetable(){
-        $timetables = DB::table('timetables')
-            ->latest()
-            ->limit(1)
-            ->get();
+        $timetables = Timetable::all();
         return view('mahanaim.timetable', compact('timetables'));
     }
 

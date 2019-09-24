@@ -35,7 +35,6 @@
         </div>
     </div>
 
-    <div class="row">
         <!--==========================
     Schools Section
   ============================-->
@@ -49,12 +48,15 @@
                     <hr>
                     <br>
                 </div>
+
+
                 <div class="row">
-
                     @foreach($terms as $term)
-
-
-                                <div class="caption" style="display: block;">
+                                    <div class="col-sm-2">
+                                        <li style="list-style: none;">
+                                            <a href="{{ $term->file }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $term->title }}</strong>
+                                            </a>
+                                        </li>
                                     <button class="btn btn-success btn-sm mx-1 float-left" data-toggle="modal" data-target="#updatemodal-{{ $term->id }}">
                                         <i class="fas fa-edit"></i>
                                     </button>
@@ -65,9 +67,9 @@
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
-                                </div>
-                            </div>
-                        </div>
+                                    </div>
+
+
 
                         <!-- School Modal -->
                         <div class="modal" id="modal-{{ $term->id }}">
@@ -123,11 +125,10 @@
                         </div>
 
                         <!-- End of Modal-->
-        </section>
                     @endforeach
-
-
-
                 </div>
+            </div>
+        </section>
+
 
 @endsection

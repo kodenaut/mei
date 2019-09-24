@@ -17,7 +17,9 @@ class StudentController extends Controller
     public function index()
     {
         //
-        $students = DB::table('students')->paginate(10);
+        $students = DB::table('students')
+            ->distinct()
+        ->paginate(10);
         return view('admin.students', compact('students'));
     }
 
@@ -40,25 +42,36 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $school = $request->input('school');
-        $phone = $request->input('phone');
+
+        $this->validate($request, array(
+            'name' => 'required',
+            'email' => 'required',
+            'school' => 'required',
+            'phone' => 'required',
+        ));
+        //save the data to the database
+        $student  = new Student() ;
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->school = $request->school;
+        $student->phone = $request->phone;
+
+        $students = Student::all();
+        foreach ($students as $std){
+            if ($request->phone == $std->phone ){
+                $subjects = Subject::all();
+                return view('mahanaim.past-papers', compact('subjects'))
+                    ->with('success', 'User Already Exists!');
+            }
 
 
-                DB::table('students')->insert([[
-                    'name' => $name,
-                    'email' => $email,
-                    'school' => $school,
-                    'phone' => $phone,
+        }
 
-                ]]);
-
+        $student->save();
 
         $subjects = Subject::all();
         return view('mahanaim.past-papers', compact('subjects'))
-            ->with('success', 'User Already Exists!');
-
+            ->with('success', 'Account Created Successfully!');
     }
 
     /**

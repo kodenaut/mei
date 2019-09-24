@@ -57,10 +57,13 @@
                     <hr>
                 </div>
 
-                @foreach($fees as $fee)
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="caption">
+                @foreach($fees as $fee)
+                    <div class="col-sm-3">
+                        <li style="list-style: none;">
+                            <a href="{{ $fee->file }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $fee->title }}</strong>
+                            </a>
+
                             <form method="post" action="{{route('delete-fee', $fee->id)}}" class="form-btn float-right m-1">
                                 @csrf
                                 <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Fee Structure?")'>
@@ -70,9 +73,8 @@
                             <button class="btn btn-info btn-sm float-right m-1" data-toggle="modal" data-target="#updatemodal-{{ $fee->id }}">
                                 <i class="fas fa-edit"></i>
                             </button>
+                        </li>
                         </div>
-                        <iframe src="{{ $fee->structure }}" style="height: 100%; width: 100%;"></iframe>
-                    </div>
 
                         <!-- Update Modal -->
                         <div class="modal" id="updatemodal-{{ $fee->id }}">
@@ -106,8 +108,9 @@
 
 
 
-                </div>
                     @endforeach
+                </div>
+
             </div>
         </section><!-- #schools -->
 

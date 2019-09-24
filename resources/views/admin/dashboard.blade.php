@@ -1,3 +1,4 @@
+
      @extends('admin.layout')
 
      @section('content')
@@ -206,6 +207,75 @@
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{route('kcse-students')}}">
                                     <span class="float-left">{{ $details[9] }}</span>
+                                    <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 mb-3">
+                            <div class="card text-white bg-warning o-hidden h-90">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-envelope-open"></i>
+                                    </div>
+                                    <div class="mr-5">Greetings</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="{{route('overview')}}">
+                                    <span class="float-left">{{ $details[10] }}</span>
+                                    <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-3 mb-3">
+                            <div class="card text-white bg-success o-hidden h-90">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-envelope-open"></i>
+                                    </div>
+                                    <div class="mr-5">Term Dates</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="{{route('our-schedule')}}">
+                                    <span class="float-left">{{ $details[11] }}</span>
+                                    <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 mb-3">
+                            <div class="card text-white bg-danger o-hidden h-90">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-envelope-open"></i>
+                                    </div>
+                                    <div class="mr-5">Timetable</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="{{route('our-timetable')}}">
+                                    <span class="float-left">{{ $details[12] }}</span>
+                                    <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 mb-3">
+                            <div class="card text-white bg-info o-hidden h-90">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-envelope-open"></i>
+                                    </div>
+                                    <div class="mr-5">Fee Structure</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="{{route('fees')}}">
+                                    <span class="float-left">{{ $details[13] }}</span>
                                     <span class="float-right">
                             <i class="fas fa-angle-right"></i>
                           </span>

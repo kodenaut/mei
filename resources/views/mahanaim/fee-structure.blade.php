@@ -11,6 +11,7 @@
         <!--==========================
     Schools Section
   ============================-->
+            <!--
         <div class="col-sm-2">
             <div class="list-group">
                 <a class="list-group-item list-group-item-light" style="color: white; background: #265ea1;"><b>Schools</b></a>
@@ -25,20 +26,46 @@
                 <a class="list-group-item list-group-item-success" href="{{route('sports-fee')}}">Sports</a>
             </div>
         </div>
+        -->
 
-        <div class="col-sm-10">
+            <div class="col-sm-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item" style="font-family: Symbola; font-weight: bold; font-size: 16px; background: #265ea1; color: white;">Quick Links</a>
+                    <a href="{{route('our-schools')}}" class="list-group-item">Schools</a>
+                    <a href="{{route('fee-structure')}}" class="list-group-item">Fee Structure</a>
+                    <a href="{{route('term-dates')}}" class="list-group-item">Term Dates</a>
+                    <a href="{{ route('timetable') }}" class="list-group-item">Timetable</a>
+                    <a href="#" data-toggle="modal" data-target="#kcse-modal" class="list-group-item">KCSE Past Papers</a>
+                    <a href="{{route('contact')}}" class="list-group-item">Contact</a>
+                </div>
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item" style="font-family: Symbola; background: #265ea1; color: white;"><strong>Follow us</strong></a>
+                    <a href="#" class="list-group-item"><i class="fab fa-facebook"></i>&nbsp;Facebook</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-twitter"></i>&nbsp;Twitter</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-instagram"></i>&nbsp;Instagram</a>
+                    <a href="#" class="list-group-item"><i class="fab fa-linkedin"></i>&nbsp;LinkedIn</a>
+                </div>
+            </div>
+
+
+        <div class="col-sm-9">
                 <div class="section-header text-center">
                     <a href="" class="list-group-item text-center" style="background: #024DA1; color: white; font-size: 18px; font-family: Symbola;"><strong>Fee Structure</strong></a>
                 </div>
 
                      <div class="card card-body mt-1" style="height: 92%;">
                 @foreach($fees as $fee)
-                            <iframe src="{{ $fee->structure }}" style="width: 100%; height: 100%;"></iframe>
-                        </div>
-
-
+                             <div class="col-sm-3">
+                                 <li style="list-style: none;">
+                                     <a href="{{ $fee->structure }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $fee->title }}</strong>
+                                     </a>
+                                 </li>
+                             </div>
                 @endforeach
-            </div>
+                     </div>
+        </div>
+
         </div>
 
     </div>

@@ -1,12 +1,10 @@
-@extends('mahanaim.fee-custom')
+@extends('mahanaim.layout')
 
 @section('content')
     <!-- Top Stories Area -->
-    <br>
     <main id="main" style="margin-top: 2px;">
         <div class="container">
             <div class="row about-container">
-                <div class="col-lg-12 content order-lg-1 order-2">
                     <!-- End Stories Area -->
 
 
@@ -29,14 +27,20 @@
                                     <!-- Start Post Area -->
 
                                         <!-- Single post -->
-                                        <div class="card card-body" style="height: 180%;">
-                                            <a href="" class="list-group-item mx-1 px-1 mt-0" style="background: #0f7b9f; color: black; font-size: 16px; font-family: Symbola;"><strong>Time Table</strong></a>
-                                            @foreach($timetables as $timetable)
+                                        <div class="card card-body" style="height: 100%;">
+                                            <a href="" class="list-group-item mx-1 px-1 mt-0" style="background: #265ea1; color: black; font-size: 16px; font-family: Symbola;"><strong>Time Tables</strong></a>
 
-                                                        <iframe src="{{ $timetable->file }}" height="98%"></iframe>
+                                            <div class="row">
+                                            @foreach($timetables as $timetable)
+                                                <div class="col-sm-2">
+                                                    <li style="list-style: none;">
+                                                        <a href="{{ $timetable->file }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $timetable->title }}</strong>
+                                                        </a>
+                                                    </li>
                                                 </div>
-                                                <hr style="border-style: dashed; margin: 0;">
                                         @endforeach
+                                            </div>
+                                        </div>
                                         <!-- End Single post -->
 
 

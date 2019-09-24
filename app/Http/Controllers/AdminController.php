@@ -25,8 +25,13 @@ class AdminController extends Controller
         $notices = DB::table("notices")->count();
         //$papers = DB::table("papers")->count();
         $students =  DB::table("students")->count();
+        $greetings = DB::table("greetings")->count();
+        $terms = DB::table("terms")->count();
+        $tables = DB::table("timetables")->count();
+        $fees = DB::table("fees")->count();
 
-        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners", "$notices", "$students");
+        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners", "$notices", "$students",
+            "$greetings", "$terms", "$tables", "$fees");
         return view('admin.dashboard', compact('details'));
     }
 
@@ -95,4 +100,12 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function logout(){
+        //logout user
+        auth()->logout();
+        // redirect to homepage
+        return redirect('login');
+    }
+
 }

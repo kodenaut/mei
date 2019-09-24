@@ -16,7 +16,7 @@ class FeeController extends Controller
      */
 
     public function index(){
-        $fees = DB::select("SELECT * FROM fees WHERE title='SOE'");
+        $fees = Fee::all();
         return view('admin.fees', compact('fees'));
     }
     public function engineering()
@@ -209,5 +209,10 @@ class FeeController extends Controller
         $fee->delete();
         return redirect()->route('fees')
             ->with('success','Fee Deleted successfully');
+    }
+
+    public function fees(){
+        $fees = Fee::all();
+        return view('mahanaim.fee-structure', compact('fees'));
     }
 }

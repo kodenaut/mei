@@ -39,6 +39,7 @@
                     </div>
                 </div>
 
+                <!--
                 <div class="row">
                     <div class="col-xs-6 form-group pl-3">
                         <div class="checkbox icheck pl-3">
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+                -->
 
             </form>
         </div>

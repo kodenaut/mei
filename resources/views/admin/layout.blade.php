@@ -1,3 +1,11 @@
+
+@if((Auth::guest()))
+
+        <script type="text/javascript">
+            window.location="{{ route('login') }}";
+        </script>
+        @endif
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -185,8 +193,9 @@
                                             </div>
                                         </div>
                                         <div class="account-dropdown__footer">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                            <a href="{{ url('/logout') }}">
+                                                <i class="zmdi zmdi-power"></i>Logout
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

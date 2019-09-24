@@ -35,13 +35,12 @@
         </div>
     </div>
 
-    <div class="row">
         <!--==========================
     Schools Section
   ============================-->
-        <section id="services" style="width: 100%;">
+        <div id="services" style="width: 100%;">
             <div class="container wow fadeIn">
-                <div class="section-header">
+                <div class="section-header" style="margin-bottom: 0;">
                     <button class="btn btn-outline-info btn-sm float-right" data-toggle="modal" data-target="#modal-add" style="margin: 2px;">
                         Add Timetable&nbsp;<i class="fas fa-plus-circle"></i>
                     </button>
@@ -49,15 +48,16 @@
                     <hr>
                     <br>
                 </div>
-                <div class="row">
 
+                <div class="row">
                     @foreach($tables as $table)
 
+                        <div class="col-sm-2">
+                                <li style="list-style: none;">
+                                    <a href="{{ $table->file }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $table->title }}</strong>
+                                    </a>
+                                </li>
 
-                        <div class="card card-body">
-                            <iframe src="{{ $table->file }}"></iframe>
-                        </div>
-                        <div class="caption" style="display: inline-block;">
                             <button class="btn btn-success btn-sm mx-1 float-left" data-toggle="modal" data-target="#updatemodal-{{ $table->id }}">
                                 <i class="fas fa-edit"></i>
                             </button>
@@ -69,8 +69,7 @@
                                 </button>
                             </form>
                         </div>
-                </div>
-            </div>
+
 
             <!-- School Modal -->
             <div class="modal" id="modal-{{ $table->id }}">
@@ -126,11 +125,10 @@
             </div>
 
             <!-- End of Modal-->
-        </section>
         @endforeach
+        </div>
 
-
-
-    </div>
+            </div>
+        </div>
 
 @endsection
