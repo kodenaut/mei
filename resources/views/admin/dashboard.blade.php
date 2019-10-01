@@ -189,7 +189,7 @@
                                     <div class="mr-5">KCSE Past-Papers</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{route('kcse-papers')}}">
-                                    <span class="float-left"></span>
+                                    <span class="float-left">{{ $details[9] }}</span>
                                     <span class="float-right">
                             <i class="fas fa-angle-right"></i>
                           </span>
@@ -206,7 +206,7 @@
                                     <div class="mr-5">KCSE Students</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{route('kcse-students')}}">
-                                    <span class="float-left">{{ $details[9] }}</span>
+                                    <span class="float-left">{{ $details[10] }}</span>
                                     <span class="float-right">
                             <i class="fas fa-angle-right"></i>
                           </span>
@@ -223,7 +223,7 @@
                                     <div class="mr-5">Greetings</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{route('overview')}}">
-                                    <span class="float-left">{{ $details[10] }}</span>
+                                    <span class="float-left">{{ $details[16] }}</span>
                                     <span class="float-right">
                             <i class="fas fa-angle-right"></i>
                           </span>
@@ -276,6 +276,40 @@
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{route('fees')}}">
                                     <span class="float-left">{{ $details[13] }}</span>
+                                    <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 mb-3">
+                            <div class="card text-white bg-primary o-hidden h-90">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-envelope-open"></i>
+                                    </div>
+                                    <div class="mr-5">Tags</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="{{route('tags')}}">
+                                    <span class="float-left">{{ $details[14] }}</span>
+                                    <span class="float-right">
+                            <i class="fas fa-angle-right"></i>
+                          </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 mb-3">
+                            <div class="card text-white bg-secondary o-hidden h-90">
+                                <div class="card-body">
+                                    <div class="card-body-icon">
+                                        <i class="fas fa-fw fa-envelope-open"></i>
+                                    </div>
+                                    <div class="mr-5">Mission Statement</div>
+                                </div>
+                                <a class="card-footer text-white clearfix small z-1" href="{{route('tags')}}">
+                                    <span class="float-left">{{ $details[15] }}</span>
                                     <span class="float-right">
                             <i class="fas fa-angle-right"></i>
                           </span>

@@ -61,7 +61,7 @@
                                         <i class="fas fa-edit"></i>
                                     </button>
 
-                                    <form method="post" action="" class="form-btn" style="display: inline-block;">
+                                    <form method="post" action={{route('delete-term', $term->id)}}"" class="form-btn" style="display: inline-block;">
                                         @csrf
                                         <button class="btn btn-danger btn-sm form-btn" type="submit" onclick='return confirm("Are you sure you want to Delete this Schedule?")'>
                                             <i class="fas fa-trash"></i>

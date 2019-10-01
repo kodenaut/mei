@@ -28,11 +28,11 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="control-label">Year:</label>
-                                    <input type="text" class="form-control" name="year">
+                                    <input type="number" class="form-control" name="year">
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -40,6 +40,7 @@
                                     <input type="file" class="form-control" name="file">
                                 </div>
                             </div>
+
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-info">Submit</button>
@@ -72,7 +73,7 @@
                                 @foreach($papers as $paper)
                                     <div class="col-sm-3">
                                         <li style="list-style: none;">
-                                            <a href="" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $paper->title }}</strong>
+                                            <a href="" style="color: black; font-family: Symbola;"><strong><i class="fas fa-book-open"></i> {{ $paper->title }}</strong>
                                             </a>
                                             <a href="#" data-toggle="modal" data-target="#paper-{{ $paper->id }}"><i class="fas fa-edit"></i> </a>
                                             <form method="post" action="{{route('delete-paper', $paper->id)}}" class="form-btn m-1" style="display: inline-block;">
@@ -87,7 +88,7 @@
                                     <hr style="border-style: dashed; margin: 0;">
 
                                     <!-- The Modal -->
-                                    <div class="modal" id="paper-{{ $subject->id }}">
+                                    <div class="modal" id="paper-{{ $paper->id }}">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
 
@@ -107,14 +108,14 @@
                                                                     <input type="text" class="form-control" name="title" value="{{ $paper->title }}">
                                                                 </div>
                                                             </div>
+
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                     <label class="control-label">Year:</label>
-                                                                    <input type="text" class="form-control" name="year" value="{{ $paper->year }}">
+                                                                    <input type="number" class="form-control" name="year" value="{{ $paper->year }}">
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">
@@ -123,6 +124,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
 
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-info">Update</button>

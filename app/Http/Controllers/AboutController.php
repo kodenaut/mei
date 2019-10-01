@@ -102,4 +102,8 @@ class AboutController extends Controller
     {
         //
     }
+
+    public function tcs(){
+        return view('mahanaim.tcs');
+    }
 }

@@ -55,13 +55,14 @@ Route::get('/mei-info', 'StatementController@meiinfo')->name('mei-info');
 
 //Quick Links
 Route::get('/term-dates', 'QuickController@termdates')->name('term-dates');
+Route::post('/delete-term/{id}', 'QuickController@destroy')->name('delete-term');
 Route::get('/timetable', 'QuickController@timetable')->name('timetable');
 
 
 Route::post('/past-papers', 'StudentController@store')->name('past-papers');
 Route::get('/papers/{id}', 'PastPaperController@papers')->name('papers');
 
-
+Route::get('/tcs', 'AboutController@tcs')->name('tcs');
 
 //Admin
 
@@ -139,6 +140,8 @@ Route::group(['middleware'=>['web','auth']],function() {
 
     Route::get('/notices', 'NoticeController@index')->name('notices');
     Route::post('/add-notice', 'NoticeController@store')->name('add-notice');
+    Route::post('/update-notice/{id}', 'NoticeController@update')->name('update-notice');
+    Route::post('/delete-notice/{id}', 'NoticeController@destroy')->name('delete-notice');
 
     Route::get('/messages', 'MessageController@index')->name('messages');
     Route::post('/delete-message/{id}', 'MessageController@destroy')->name('delete-message');

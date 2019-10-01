@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notice;
 use App\Student;
 use App\Subject;
 use Illuminate\Http\Request;
@@ -60,7 +61,8 @@ class StudentController extends Controller
         foreach ($students as $std){
             if ($request->phone == $std->phone ){
                 $subjects = Subject::all();
-                return view('mahanaim.past-papers', compact('subjects'))
+                $notices = Notice::all();
+                return view('mahanaim.past-papers', compact('subjects', 'notices'))
                     ->with('success', 'User Already Exists!');
             }
 
@@ -70,7 +72,8 @@ class StudentController extends Controller
         $student->save();
 
         $subjects = Subject::all();
-        return view('mahanaim.past-papers', compact('subjects'))
+        $notices = Notice::all();
+        return view('mahanaim.past-papers', compact('subjects', 'notices'))
             ->with('success', 'Account Created Successfully!');
     }
 

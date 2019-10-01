@@ -54,7 +54,7 @@ Header
     <div class="container">
 
         <div id="logo" class="pull-left">
-            <a href="{{route('homepage')}}"><img src="{{asset('img/logo.png')}}" class="img-fluid mb-1" alt="" title="" /></a>
+            <a href="{{route('homepage')}}"><img src="{{asset('img/logo.jpg')}}" class="img-fluid mb-1" alt="" title="" /></a>
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light float-right sticky-top fixed-top my-0">
@@ -172,25 +172,57 @@ Header
     <br>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4"></div>
+            <div class="col-sm-4 justify-content-center">
+                <div class="text-white text-center">
+                    <h4 class="" style="margin-left: 50px;">Visit our Offices</h4>
+                    <div class="col-sm-6">
+                        <h5 class="text-center" style="color: #007bff; font-weight: bold; margin-left: 40px;">Main Campus</h5>
+                        <ul class="" style="list-style: none;">
+                            <li>Behind Safari Park Hotel</li>
+                            <li>Next to USIU.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5 class="text-center" style="color: #007bff; font-weight: bold; margin-left: 45px;">Juja Campus</h5>
+                        <ul class="" style="list-style: none;">
+                            <li>Harmony House</li>
+                            <li>Opposite Happy Supermarket</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="col-sm-4 text-center">
+                <div class="text-center">
+                    <h4 class="" style="">Follow Us</h4>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook fa-2x"></i>
+                        <i class="fab fa-twitter fa-2x"></i>
+                        <i class="fab fa-instagram fa-2x"></i>
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </div>
+
+                </div>
                 <div class="copyright text-center">
-                    <br>
                     &copy; 2019 Copyright <strong>mei</strong>. All Rights Reserved
                 </div>
-
-                <br>
                 <div class="credits">
                     Developed by <a href="https://kodenaut.github.io" target="_blank">Kodenaut</a>
+                </div>
+                <br>
+            </div>
 
+            <div class="col-sm-4 text-center">
+                <h4>Contact Us</h4>
+                <div class="text-white">
+                    <i class="fas fa-phone mt-3"></i> <a href="tel:+">+254701033228</a>
+                    <br>
+                    <i class="fa fa-envelope mt-3"></i> <a href="mailto:info@mei.ac.ke">info@mei.ac.ke</a><br>
                 </div>
             </div>
 
             <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
         </div>
     </div>
-    <br><br>
 </footer> <!-- #footer -->
 
 <!-- JavaScript Libraries -->

@@ -107,6 +107,11 @@ class QuickController extends Controller
     public function destroy($id)
     {
         //
+        $term = Term::find($id);
+        $term->delete();
+        return redirect()->route('our-schedule')
+            ->with('success', 'Schedule Deleted successfully');
+
     }
 
     public function termdates(){

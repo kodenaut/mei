@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\URL;
 
 use App\Notice;
 use Illuminate\Http\Request;
+use Mockery\Matcher\Not;
 
 class NoticeController extends Controller
 {
@@ -109,6 +110,21 @@ class NoticeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $title = $request->get('title');
+        $content = $request->get('content');
+
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $file->move(public_path().'/uploads', $file->getClientOriginalName());
+            $url=URL::to("/") . '/uploads'.'/'. $file->getClientOriginalName();
+
+            DB::update("UPDATE notices set title = ?, content = ?, file = ? WHERE id = ?", [$title, $content, $url, $id]);
+            return redirect('/notices')->with('success', 'Notice Has Been Updated!');
+        }else {
+            DB::update("UPDATE notices set title = ?, content = ? WHERE id = ?", [$title, $content, $id]);
+            return redirect('/notices')->with('success', 'Notice Has Been Updated!');
+        }
     }
 
     /**
@@ -120,6 +136,10 @@ class NoticeController extends Controller
     public function destroy($id)
     {
         //
+        $notice = Notice::find($id);
+        $notice->delete();
+        return redirect('/notices')->with('success', 'Notice Has Been Deleted!');
+
     }
 
     public function notices(){

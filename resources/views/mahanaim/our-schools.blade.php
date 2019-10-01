@@ -28,7 +28,7 @@
                                     <h4 class="title pt-5"><a href="">{{ $school->name }}</a></h4>
                                     <p class="" style="color: black;">
                                         <?php
-                                        $cont =substr($school->description,0,150);
+                                        $cont =substr($school->description,0,50);
                                         ?>
                                         {!! $cont !!}...&nbsp;
                                         <a href="#" data-toggle="modal" data-target="#modal-{{ $school->id }}">

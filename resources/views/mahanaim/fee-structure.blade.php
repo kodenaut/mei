@@ -54,16 +54,67 @@
                     <a href="" class="list-group-item text-center" style="background: #024DA1; color: white; font-size: 18px; font-family: Symbola;"><strong>Fee Structure</strong></a>
                 </div>
 
-                     <div class="card card-body mt-1" style="height: 92%;">
+
+                     <div class="card card-body mt-1" style="height: 45%;">
+                         <div class="">
+                             <h4 class="text-center">Download Fee Structure</h4>
+                             <hr>
+                         </div>
+                         <div class="row">
                 @foreach($fees as $fee)
                              <div class="col-sm-3">
-                                 <li style="list-style: none;">
+                                 <li style="list-style: none; margin: 5px;">
                                      <a href="{{ $fee->structure }}" target="_blank" style="color: black; font-family: Symbola;"><strong><i class="fas fa-angle-double-right"></i> {{ $fee->title }}</strong>
                                      </a>
                                  </li>
                              </div>
                 @endforeach
+                         </div>
                      </div>
+
+            <div class="list-group mt-2 p-1" style="border: 1px solid lightgray;">
+                <a href="" class="list-group-item mx-1 px-1" style="background: #265ea1; color: white; font-family: Symbola;"><strong>Recent Notices</strong></a>
+                <ul style="list-style: none; padding-left: 22px;">
+                    @foreach($notices as $notice)
+                        <li>
+                            <a href="" style="color: black; font-family: Symbola;" data-toggle="modal" data-target="#notice-{{ $notice->id }}"><strong><i class="fas fa-angle-double-right"></i> {{ $notice->title }}</strong>
+                                <span class="badge float-right" style="background: #1b1b1b;">{{ date('d-M-y', strtotime($notice->created_at))}}</span>
+                            </a>
+                        </li>
+                        <hr style="border-style: dashed; margin: 0;">
+
+                        <!-- School Modal -->
+                        <div class="modal" id="notice-{{ $notice->id }}">
+                            <div class="modal-dialog modal-md">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-danger">{{ $notice->title }}</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <p style="color: black;">
+                                            {!! $notice->content !!}
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        @if($notice->file)
+                                            Document: <a href="{{ $notice->file }}" target="_blank">{{ $notice->title }}</a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- End of Modal-->
+                    @endforeach
+                </ul>
+
+            </div>
+
         </div>
 
         </div>

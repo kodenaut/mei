@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notice;
 use App\PastPaper;
 use App\Subject;
 use Illuminate\Http\Request;
@@ -40,23 +41,26 @@ class PastPaperController extends Controller
      */
     public function store(Request $request, $id)
     {
-        //
-        $title = $request->input('title');
-        $year = $request->input('year');
 
+        $this->validate($request, array(
+            'title' => 'required',
+            'year'=>'required',
+            'file' => 'mimes:pdf,jpg,png,svg,gif|max:4096',
+        ));
+        //save the data to the database
+        $paper  = new PastPaper() ;
+        $paper->title = $request->get('title');
+        $paper->year = $request->get('year');
 
-        if ($request->hasFile('file')) {
+        if($request->hasFile('file')) {
             $file = $request->file('file');
-            $file->move(public_path() . '/uploads', $file->getClientOriginalName());;
+            $file->move(public_path() . '/uploads', $file->getClientOriginalName());
             $url = URL::to("/") . '/uploads' . '/' . $file->getClientOriginalName();
-        //
-        DB::table('past_papers')->insert([[
-            'title'=>$title,
-            'year'=>$year,
-            'file'=>$url,
-            'subject_id'=>$id,
+            $paper->file = $url;
 
-        ]]);
+            $paper->subject_id=$id;
+
+            $paper->save();
 
 
             return redirect()->route('kcse-papers')
@@ -138,8 +142,9 @@ class PastPaperController extends Controller
     }
 
     public function papers($id){
+        $notices = Notice::all();
         $subject = Subject::find($id);
         $papers = DB::select("SELECT * FROM past_papers WHERE subject_id = $id");
-        return view('mahanaim.papers', compact('papers', 'subject'));
+        return view('mahanaim.papers', compact('papers', 'subject', 'notices'));
     }
 }

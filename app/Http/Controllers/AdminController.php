@@ -23,15 +23,17 @@ class AdminController extends Controller
         $photos = DB::table("photos")->count();
         $partners = DB::table("partners")->count();
         $notices = DB::table("notices")->count();
-        //$papers = DB::table("papers")->count();
+        $papers = DB::table("past_papers")->count();
         $students =  DB::table("students")->count();
         $greetings = DB::table("greetings")->count();
         $terms = DB::table("terms")->count();
         $tables = DB::table("timetables")->count();
         $fees = DB::table("fees")->count();
+        $tags = DB::table("tags")->count();
+        $statements = DB::table("statements")->count();
 
-        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners", "$notices", "$students",
-            "$greetings", "$terms", "$tables", "$fees");
+        $details = array("$staffs", "$schools", "$courses", "$messages", "$posts", "$events", "$photos", "$partners", "$notices", "$papers", "$students",
+            "$greetings", "$terms", "$tables", "$fees", "$tags", "$statements");
         return view('admin.dashboard', compact('details'));
     }
 

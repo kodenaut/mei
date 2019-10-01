@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->string('qualification');
             $table->string('duration');
-            $table->integer('modules');
+            $table->string('modules');
             $table->string('exam_body');
             $table->string('mode');
 

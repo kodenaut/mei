@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Fee;
+use App\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
@@ -213,6 +214,7 @@ class FeeController extends Controller
 
     public function fees(){
         $fees = Fee::all();
-        return view('mahanaim.fee-structure', compact('fees'));
+        $notices = Notice::all();
+        return view('mahanaim.fee-structure', compact('fees', 'notices'));
     }
 }

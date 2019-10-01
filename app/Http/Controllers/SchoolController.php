@@ -19,7 +19,7 @@ class SchoolController extends Controller
     {
         //
         $schools = DB::table('schools')
-        ->paginate(3);
+        ->paginate(6);
         return view('admin.schools', compact('schools'));
     }
 

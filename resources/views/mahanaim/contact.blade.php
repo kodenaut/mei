@@ -56,7 +56,7 @@
                             <div class="col-sm-6">
                             <div class="text-white text-center">
                                 <i class="fas fa-globe mt-3"></i>
-                                <ul class="">
+                                <ul class="" style="list-style: none;">
                                     <li>Off Thika Road</li>
                                     <li>Behind Safari Park Hotel</li>
                                     <li>Next to USIU.</li>

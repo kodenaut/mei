@@ -53,10 +53,10 @@
                     <hr>
                     <br>
                 </div>
-                <div class="row">
+                <div class="row mb-5">
 
                     @foreach($schools as $school)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp mt-5" data-wow-delay="0.2s">
                         <div class="box">
                             <div class="icon">
                                 <a href="">
@@ -67,7 +67,7 @@
                             <h4 class="title pt-5"><a href="">{{ $school->name }}</a></h4>
                             <p class="">
                                 <?php
-                                $cont =substr($school->description,0,150);
+                                $cont =substr($school->description,0,80);
                                 ?>
                                 {!! $cont !!}...&nbsp;
                                 <a href="" data-toggle="modal" data-target="#modal-{{ $school->id }}">

@@ -88,7 +88,7 @@
                     <br>
                     <div class="list-group m-0 p-1" style="border: 1px solid lightgray;">
                         <a href="" class="list-group-item mx-1 px-1" style="background: #265ea1; color: white; font-family: Symbola;"><strong>Recent Notices</strong></a>
-                        <ul style="list-style: square; padding-left: 22px;">
+                        <ul style="list-style: none; padding-left: 22px;">
                         @foreach($notices as $notice)
                             <li>
                                 <a href="" style="color: black; font-family: Symbola;" data-toggle="modal" data-target="#notice-{{ $notice->id }}"><strong><i class="fas fa-angle-double-right"></i> {{ $notice->title }}</strong>
@@ -114,6 +114,11 @@
                                                     {!! $notice->content !!}
                                                 </p>
                                             </div>
+                                            <div class="modal-footer">
+                                                @if($notice->file)
+                                                Document: <a href="{{ $notice->file }}" target="_blank">{{ $notice->title }}</a>
+                                                    @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +141,7 @@
                           <img src="{{ $wm->image }}" class="img-fluid mx-auto rounded-circle" style="height: 50px; width: 50px;">
                         <h5 class="text-center my-0" style="color: #0f7b9f;">{{$wm->firstname}}&nbsp;{{ $wm->lastname }}</h5>
                            <?php
-                            $cont =substr($wm->content,0,50);
+                            $cont =substr($wm->content,0,100);
                             ?>
                             {!! $cont !!}...
                                <a href="" data-toggle="modal" data-target="#new-{{ $wm->id }}">
@@ -218,6 +223,9 @@
                                     <input type="number" name="phone" class="form-control" required>
                                 </div>
                             </div>
+                        </div>
+                        <div class="">
+                            <h5 class=""><input type="checkbox" id="checkbox" class="mt-2">&nbsp;By checking this box you agree to our <a href="{{route('tcs')}}" target="_blank" class="text-primary"> terms and conditions</a>.</h5>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
